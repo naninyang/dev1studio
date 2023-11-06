@@ -1,0 +1,25 @@
+@import './designSystem'
+
+.home
+  height: 100dvh
+  background: url(/images/home.webp) no-repeat 50% 50%/cover
+
+  .splash
+    width: 100%
+    height: 100dvh
+    animation: splash 5s cubic-bezier(.4,0,.2,1)
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+@keyframes splash
+  0%
+    opacity: 1
+
+  50.05%
+    opacity: 1
+
+  100%
+    opacity: 0
