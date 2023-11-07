@@ -45,9 +45,9 @@ const AppDocument: React.FC<DocumentProps> & {
 AppDocument.getInitialProps = async (ctx) => {
   const { renderPage } = ctx;
   const page = await renderPage((App) => {
-    return function (props) {
-      return <App {...props} />;
-    };
+    const Dev1StudioApp = (props: any) => <App {...props} />;
+    Dev1StudioApp.displayName = 'Dev1StudioApp';
+    return Dev1StudioApp;
   });
 
   const { css, ids } = extractCritical(page.html);
