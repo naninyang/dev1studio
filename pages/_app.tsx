@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import Script from 'next/script';
 import { GA_TRACKING_ID, pageview } from '@/lib/gtag';
 import '@/styles/global.sass';
+import Header from '@/components/Header';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
           });
         `}
       </Script>
+      <Header />
       <Component {...pageProps} />
     </>
   );

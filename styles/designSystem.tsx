@@ -7,8 +7,8 @@ function hexToRgb(hex: string): string {
 }
 
 export const hex: { [key: string]: string } = {
-  black: '#000',
-  white: '#fff',
+  black: '#000000',
+  white: '#FFFFFF',
   dark: '#171717',
   light: '#E5C3C3',
   deep: '#050042',
