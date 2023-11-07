@@ -42,7 +42,7 @@ const CardDevelog = () => {
           <div className={styles.item}>
             <div className={`${styles['item-front']} ${isActive ? styles.active : ''}`}>
               <header>
-                <span>dev1stud</span>
+                <span>DEV1L.studio</span>
                 <strong>develog</strong>
               </header>
               <div className={styles.logo}>
@@ -69,7 +69,7 @@ const CardDevelog = () => {
             <div className={`${styles['item-back']} ${!isActive ? styles.active : ''}`}>
               <header>
                 <div className={styles.primary}>
-                  <span>dev1stud</span>
+                  <span>DEV1L.studio</span>
                   <strong>develog</strong>
                 </div>
                 <div className={styles.secondary}>데브런닷스튜디오 디벨로그</div>

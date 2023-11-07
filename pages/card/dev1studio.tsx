@@ -42,8 +42,8 @@ const CardDev1studio = () => {
           <div className={styles.item}>
             <div className={`${styles['item-front']} ${isActive ? styles.active : ''}`}>
               <header>
-                <span>dev1stud</span>
-                <strong>io</strong>
+                <span>DEV1L</span>
+                <strong>.studio</strong>
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
@@ -69,8 +69,8 @@ const CardDev1studio = () => {
             <div className={`${styles['item-back']} ${!isActive ? styles.active : ''}`}>
               <header>
                 <div className={styles.primary}>
-                  <span>dev1stud</span>
-                  <strong>io</strong>
+                  <span>DEV1L</span>
+                  <strong>.studio</strong>
                 </div>
                 <div className={styles.secondary}>데브런닷스튜디오</div>
               </header>

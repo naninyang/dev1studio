@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <Container>
       <h1>
-        <span>DEV1.studio</span>
+        <span>DEV1L.studio</span>
       </h1>
     </Container>
   );

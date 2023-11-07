@@ -42,7 +42,7 @@ const CardNews = () => {
           <div className={styles.item}>
             <div className={`${styles['item-front']} ${isActive ? styles.active : ''}`}>
               <header>
-                <span>dev1stud</span>
+                <span>DEV1L</span>
                 <strong>short.view:news</strong>
               </header>
               <div className={styles.logo}>
@@ -69,7 +69,7 @@ const CardNews = () => {
             <div className={`${styles['item-back']} ${!isActive ? styles.active : ''}`}>
               <header>
                 <div className={styles.primary}>
-                  <span>dev1stud</span>
+                  <span>DEV1L</span>
                   <strong>short.view:news</strong>
                 </div>
                 <div className={styles.secondary}>데브런닷스튜디오 숏뷰뉴스</div>
