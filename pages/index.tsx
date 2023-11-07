@@ -15,16 +15,24 @@ const Splash = styled.div({
 export default function Home() {
   const router = useRouter();
   const [splash, setSplash] = useState(true);
+  const timestamp = Date.now();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const splashTimer = setTimeout(() => {
       setSplash(false);
-      router.push('/dev1studio');
     }, 3700);
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(splashTimer);
+  }, []);
+
+  useEffect(() => {
+    const cardTimer = setTimeout(() => {
+      router.push('/dev1studio');
+    }, 3900);
+
+    return () => clearTimeout(cardTimer);
   }, [router]);
-  const timestamp = Date.now();
+
   return (
     <>
       <Seo
