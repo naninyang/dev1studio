@@ -19,6 +19,7 @@ export const hex: { [key: string]: string } = {
   rise: '#BD9295',
   daylight: '#A1999A',
   dayrise: '#958378',
+  groomysky: '#BED2D9',
 };
 export const rgba: { [key: string]: string } = {
   black20: `${hexToRgb(hex.black)}, .2`,

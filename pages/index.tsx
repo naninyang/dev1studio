@@ -4,23 +4,26 @@ import Seo from '@/components/Seo';
 import styles from '@/styles/home.module.sass';
 import styled from '@emotion/styled';
 import { images } from '@/images';
+import { useRouter } from 'next/router';
 
 const Splash = styled.div({
   '&::before': {
-    background: `url(${images.logo.dev1studio.mix}) no-repeat 50% 50%/contain`,
+    background: `url(${images.logo.dev1studio.logo}) no-repeat 50% 50%/contain`,
   },
 });
 
 export default function Home() {
+  const router = useRouter();
   const [splash, setSplash] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setSplash(false);
+      router.push('/dev1studio');
     }, 3700);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [router]);
   const timestamp = Date.now();
   return (
     <>

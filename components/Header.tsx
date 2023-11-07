@@ -19,7 +19,7 @@ const Container = styled.header({
     display: 'block',
     width: rem(132),
     height: rem(17),
-    background: `url(${images.logo.dev1studio.mix}) no-repeat 50% 50%/contain`,
+    background: `url(${images.logo.dev1studio.logo}) no-repeat 50% 50%/contain`,
     '& span': {
       ...mixIn.screenReaderOnly,
     },

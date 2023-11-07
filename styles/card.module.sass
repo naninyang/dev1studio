@@ -1,0 +1,174 @@
+@import './designSystem'
+
+.card
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100dvh
+  background: url(/images/home.webp) no-repeat 50% 50%/cover
+
+  .container
+    display: flex
+    justify-items: center
+    animation: card 1s cubic-bezier(.4,0,.2,1)
+
+    .content
+      display: flex
+      justify-items: center
+      gap: rem(77)
+
+      .pager
+        display: flex
+        justify-content: center
+        align-items: center
+        +coln
+
+        a
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: rem(5)
+          width: rem(80)
+          height: rem(80)
+          background-color: $rgba-black20
+          backdrop-filter: blur(rem(20))
+
+          span
+            +screen-reader-only
+
+          path
+            fill: $hex-groomysky
+
+      .item
+        +coln
+        position: relative
+        width: rem(370)
+        height: rem(584)
+        user-select: none
+
+        .item-front, .item-back
+          position: absolute
+          top: 0
+          left: 0
+          display: flex
+          justify-content: space-between
+          flex-direction: column
+          transition: transform .5s cubic-bezier(.4,0,.2,1)
+          backface-visibility: hidden
+          backdrop-filter: blur(rem(20))
+          background-color: $rgba-black70
+          border-radius: rem(20)
+          padding: rem(27)
+          width: rem(370)
+          height: rem(584)
+
+          &.active
+            z-index: 1
+
+        .item-front
+          &:not(.active)
+            transform: perspective(600px) rotateY(-180deg)
+
+          .logo-img i
+            display: block
+
+        .item-back
+          transform: rotateY(180deg)
+
+          &.active
+            transform: perspective(600px) rotateY(0deg)
+
+          header
+            display: flex
+            flex-direction: column
+            gap: rem(7)
+
+            .primary
+              display: flex
+              gap: rem(7)
+
+            .secondary
+              font-size: rem(16)
+              font-weight: 100
+              color: $rgba-white70
+
+          .logo-img i
+            display: block
+
+          footer
+            display: flex
+            flex-direction: column-reverse
+            gap: rem(7)
+            opacity: 1
+
+            .primary
+              opacity: .5
+
+            .secondary
+              opacity: .7
+              font-size: rem(14)
+              font-weight: 100
+              color: $hex-white
+
+        header
+          display: flex
+          gap: rem(7)
+          font-size: rem(24)
+          line-height: 1
+
+          span
+            font-weight: 100
+            color: $hex-dayrise
+
+          strong
+            font-weight: 900
+            color: $hex-rise
+
+        .logo
+          display: flex
+          flex-direction: column
+          align-items: center
+
+          .logo-img
+            display: flex
+            justify-content: center
+            align-items: center
+            width: rem(180)
+            height: rem(180)
+
+          .logo-btn
+            display: flex
+            justify-content: center
+
+            button
+              background-color: transparent
+              display: inline-flex
+              align-items: center
+              gap: rem(5)
+              border-radius: rem(20)
+              border: 1px solid $hex-accent
+              padding: 0 rem(25)
+              height: rem(30)
+
+              span
+                font-size: rem(14)
+                line-height: 1
+                color: $rgba-white70
+
+              svg
+                width: rem(14)
+                height: rem(14)
+
+        footer
+          opacity: .5
+          font-size: rem(16)
+          text-align: right
+          color: $hex-white
+          line-height: 1
+
+@keyframes card
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
