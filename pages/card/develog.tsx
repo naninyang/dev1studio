@@ -36,7 +36,7 @@ const CardDevelog = () => {
                   fill="black"
                 />
               </svg>
-              <span>숏뷰뉴스 카드보기</span>
+              <span>데브런닷스튜디오 카드보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -106,7 +106,7 @@ const CardDevelog = () => {
                   fill="black"
                 />
               </svg>
-              <span>디벨로그 카드보기</span>
+              <span>숏뷰뉴스 카드보기</span>
             </AnchorLink>
             di
           </div>
