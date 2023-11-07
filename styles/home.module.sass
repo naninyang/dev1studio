@@ -5,20 +5,26 @@
   background: url(/images/home.webp) no-repeat 50% 50%/cover
 
   .splash
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
     width: 100%
     height: 100dvh
-    animation: splash 5s cubic-bezier(.4,0,.2,1)
+    backdrop-filter: blur(rem(270))
+    animation: splash 3.7s cubic-bezier(.4,0,.2,1)
 
-    img
-      width: 100%
-      height: 100%
-      object-fit: cover
+    &::before
+      content: '',
+      display: block
+      width: rem(270)
+      height: rem(34)
 
 @keyframes splash
   0%
     opacity: 1
 
-  50.05%
+  70.07%
     opacity: 1
 
   100%

@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Seo from '@/components/Seo';
 import styles from '@/styles/home.module.sass';
+import styled from '@emotion/styled';
+import { images } from '@/images';
+
+const Splash = styled.div({
+  '&::before': {
+    background: `url(${images.logo.dev1studio.mix}) no-repeat 50% 50%/contain`,
+  },
+});
 
 export default function Home() {
   const [splash, setSplash] = useState(true);
@@ -9,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSplash(false);
-    }, 5000);
+    }, 3700);
 
     return () => clearTimeout(timer);
   }, []);
@@ -21,13 +29,7 @@ export default function Home() {
         pageDescription="UX 디자인 & 웹퍼블리싱 O612 고아리의 포트폴리오"
         pageImg={`https://dev1stud.io/og-image.png?ts=${timestamp}`}
       />
-      <main className={styles.home}>
-        {splash && (
-          <div className={styles.splash}>
-            <Image src="/images/splash.webp" alt="" width="1920" height="1080" />
-          </div>
-        )}
-      </main>
+      <main className={styles.home}>{splash && <Splash className={styles.splash} />}</main>
     </>
   );
 }
