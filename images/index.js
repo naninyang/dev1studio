@@ -16,4 +16,12 @@ export const images = {
       logo: require('./logo/news/logo.svg'),
     },
   },
+  portfolio: {
+    hero: require('./portfolio/hero.svg'),
+    primary: require('./portfolio/primary.svg'),
+    secondary: require('./portfolio/secondary.svg'),
+  },
+  misc: {
+    outlink: require('./misc/outlink.svg'),
+  },
 };

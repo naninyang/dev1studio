@@ -8,6 +8,7 @@ const Container = styled.header({
   position: 'fixed',
   top: 0,
   left: 0,
+  zIndex: 1080,
   padding: `env(safe-area-inset-top) calc(env(safe-area-inset-right) + ${rem(
     50,
   )}) 0 calc(env(safe-area-inset-left) + ${rem(50)})`,

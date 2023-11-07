@@ -1,0 +1,102 @@
+@import './designSystem'
+
+.dev1studio
+  background: url(/images/dev1studio.webp) no-repeat 50% 50%/cover
+  height: 100dvh
+  position: relative
+  overflow: hidden
+
+  p
+    position: absolute
+    top: calc(vh(-12, 1080) + rem(57))
+    left: vw(-10, 1920)
+    font-size: vw(170, 1920)
+    font-weight: 900
+    line-height: 1
+    color: $hex-white
+
+    strong
+      font-weight: 900
+      color: $hex-accent
+
+  .visual
+    position: absolute
+    right: 0
+    bottom: 0
+    width: vw(1601, 1920)
+    aspect-ratio: 1601 / 786
+
+    i
+      display: block
+      position: absolute
+
+    .primary
+      top: 0
+      right: 0
+      width: vw(1171, 1920)
+      aspect-ratio: 1171 / 312
+
+    .hero
+      right: 0
+      bottom: 0
+      width: vw(1073, 1920)
+      aspect-ratio: 1073 / 574
+
+    .secondary
+      right: vw(46, 1920)
+      bottom: 0
+      width: vw(1555, 1920)
+      aspect-ratio: 1555 / 276
+
+.preview
+  background-color: $hex-dark
+  padding: rem(107) rem(50) 0
+  min-height: 100dvh
+
+  .content
+    display: flex
+    flex-direction: column
+    +col
+    gap: vh(50, 1080)
+    position: relative
+    background-color: $hex-night
+    padding: rem(50)
+    border-radius: rem(20) rem(20) 0 0
+    min-height: calc(100dvh - rem(100))
+
+    h2
+      display: flex
+      align-items: center
+      gap: rem(17)
+      font-size: vw(96, 1920)
+      font-weight: 900
+      color: $hex-white
+      line-height: 1
+
+      i
+        display: block
+        width: vw(64, 1920)
+        aspect-ratio: 64 / 64
+
+    p
+      font-size: vw(36, 1090)
+      font-weight: 700
+      line-height: 1
+      color: $hex-daylight
+
+    img
+      position: absolute
+      bottom: 0
+      width: vw(700, 1920)
+      height: auto
+
+      &.left
+        left: 0
+
+      &.center
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 1
+
+      &.right
+        right: 0

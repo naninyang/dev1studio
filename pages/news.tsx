@@ -1,4 +1,5 @@
 import CardNews from './card/news';
+import PreviewNews from './preview/news';
 import SummaryNews from './summary/news';
 
 const Develog = () => {
@@ -6,6 +7,7 @@ const Develog = () => {
     <>
       <CardNews />
       <SummaryNews />
+      <PreviewNews />
     </>
   );
 };
