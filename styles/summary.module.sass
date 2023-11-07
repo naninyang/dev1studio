@@ -1,0 +1,103 @@
+@import './designSystem'
+
+.summary
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100dvh
+  background: url(/images/summary.webp) no-repeat 50% 50%/cover
+
+  .container
+    display: flex
+    justify-items: center
+    animation: card 1s cubic-bezier(.4,0,.2,1)
+
+    .content
+      display: flex
+      justify-items: center
+      gap: rem(37)
+
+      .pager
+        display: flex
+        justify-content: center
+        align-items: center
+        +coln
+
+        a
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: rem(5)
+          width: rem(80)
+          height: rem(80)
+          background-color: $rgba-white20
+          backdrop-filter: blur(rem(20))
+
+          span
+            +screen-reader-only
+
+          path
+            fill: $hex-deep
+
+      .item
+        display: flex
+        gap: rem(27)
+        width: rem(767)
+
+        .thumbnail, .info
+          backdrop-filter: blur(rem(20))
+          border-radius: rem(20)
+          +col
+
+        .thumbnail
+          display: flex
+          justify-content: center
+          align-items: center
+          background-color: $rgba-black70
+          height: rem(320)
+
+        .info
+          display: flex
+          flex-direction: column
+          gap: rem(25)
+          background-color: $rgba-white70
+          padding: rem(50)
+
+          header
+            display: flex
+            flex-direction: column
+            gap: rem(7)
+
+            h2
+              font-size: rem(32)
+              font-weight: 900
+              line-height: 1
+              color: $hex-accent
+
+            span, a
+              font-size: rem(16)
+              line-height: 1
+              color: $hex-gloomy
+
+            a
+              text-decoration: underline
+
+          ul
+            list-style-type: disc
+            margin-left: rem(16)
+            padding-left: rem(8)
+
+            li
+              font-size: rem(16)
+              line-height: 1.375
+              color: $hex-night
+
+          .description
+            display: flex
+            flex-direction: column
+            gap: rem(22)
+
+            p
+              font-size: rem(16)
+              line-height: 1.375
+              color: $hex-deepnight
