@@ -28,7 +28,7 @@ export default function Home() {
   useEffect(() => {
     const cardTimer = setTimeout(() => {
       router.push('/dev1studio');
-    }, 3900);
+    }, 10000);
 
     return () => clearTimeout(cardTimer);
   }, [router]);
