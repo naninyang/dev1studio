@@ -108,7 +108,6 @@ const CardDevelog = () => {
               </svg>
               <span>숏뷰뉴스 카드보기</span>
             </AnchorLink>
-            di
           </div>
         </div>
       </div>

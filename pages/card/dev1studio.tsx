@@ -108,7 +108,6 @@ const CardDev1studio = () => {
               </svg>
               <span>디벨로그 카드보기</span>
             </AnchorLink>
-            di
           </div>
         </div>
       </div>

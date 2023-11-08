@@ -107,7 +107,6 @@ const CardNews = () => {
               </svg>
               <span>데브런닷스튜디오 카드보기</span>
             </AnchorLink>
-            di
           </div>
         </div>
       </div>
