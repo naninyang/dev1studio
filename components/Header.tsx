@@ -1,5 +1,5 @@
 import { images } from '@/images';
-import { rem, mixIn, rgba } from '@/styles/designSystem';
+import { rem, mixIn, rgba, mq } from '@/styles/designSystem';
 import styled from '@emotion/styled';
 
 const Container = styled.header({
@@ -10,12 +10,17 @@ const Container = styled.header({
   left: 0,
   zIndex: 1080,
   padding: `env(safe-area-inset-top) calc(env(safe-area-inset-right) + ${rem(
-    50,
-  )}) 0 calc(env(safe-area-inset-left) + ${rem(50)})`,
+    25,
+  )}) 0 calc(env(safe-area-inset-left) + ${rem(25)})`,
   backgroundColor: `rgba(${rgba.black70})`,
   backdropFilter: `blur(${rem(20)})`,
   width: '100%',
   height: rem(57),
+  [mq.minLarge]: {
+    padding: `env(safe-area-inset-top) calc(env(safe-area-inset-right) + ${rem(
+      50,
+    )}) 0 calc(env(safe-area-inset-left) + ${rem(50)})`,
+  },
   '& h1': {
     display: 'block',
     width: rem(132),

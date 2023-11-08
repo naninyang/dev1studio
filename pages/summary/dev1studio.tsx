@@ -1,13 +1,21 @@
 import styled from '@emotion/styled';
 import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
-import { rem } from '@/styles/designSystem';
+import { mq, rem } from '@/styles/designSystem';
 import styles from '@/styles/summary.module.sass';
 
 const Logo = styled.i({
   background: `url(${images.logo.dev1studio.logo}) no-repeat 50% 50%/contain`,
-  width: rem(270),
-  height: rem(34),
+  width: '100%',
+  [mq.maxMedium]: {
+    aspectRatio: '270 / 34',
+    margin: rem(5),
+    maxHeight: rem(35),
+  },
+  [mq.minLarge]: {
+    width: rem(270),
+    height: rem(34),
+  },
 });
 
 const SummaryDev1studio = () => {
@@ -28,24 +36,28 @@ const SummaryDev1studio = () => {
           </div>
           <div className={styles.item}>
             <div className={styles.thumbnail}>
-              <Logo />
+              <div className={styles['thumbnail-content']}>
+                <Logo />
+              </div>
             </div>
             <div className={styles.info}>
-              <header>
-                <h2>DEV1L.studio</h2>
-                <span>https://dev1stud.io</span>
-              </header>
-              <ul>
-                <li>Next.js</li>
-              </ul>
-              <div className={styles.description}>
-                <p>
-                  DEV1L.studio 도메인에서 관리하는 개인 마이크로 프로젝트 소개하는 웹사이트. O612가 작업했던
-                  포트폴리오도 확인할 수 있습니다.
-                </p>
-                <p>
-                  <strong>작업물 캡쳐를 유실해서 일부만 올렸습니다.</strong>
-                </p>
+              <div className={styles['info-content']}>
+                <header>
+                  <h2>DEV1L.studio</h2>
+                  <span>https://dev1stud.io</span>
+                </header>
+                <ul>
+                  <li>Next.js</li>
+                </ul>
+                <div className={styles.description}>
+                  <p>
+                    DEV1L.studio 도메인에서 관리하는 개인 마이크로 프로젝트 소개하는 웹사이트. O612가 작업했던
+                    포트폴리오도 확인할 수 있습니다.
+                  </p>
+                  <p>
+                    <strong>작업물 캡쳐를 유실해서 일부만 올렸습니다.</strong>
+                  </p>
+                </div>
               </div>
             </div>
           </div>

@@ -1,28 +1,62 @@
 @import './designSystem'
 
 .card
-  display: flex
-  justify-content: center
-  align-items: center
-  padding: rem(104) rem(50) rem(50)
+  padding: rem(79) rem(25) rem(25)
   min-height: 100dvh
   background: url(/images/home.webp) fixed no-repeat 50% 50%/cover
 
-  .container
+  +mq(maxMedium)
+    position: relative
+
+  +mq(minLarge)
     display: flex
-    justify-items: center
+    justify-content: center
+    align-items: center
+    padding: rem(104) rem(50) rem(50)
+
+  .container
     animation: card 1s cubic-bezier(.4,0,.2,1)
 
-    .content
+    +mq(maxMedium)
+      position: relative
+      height: calc(100vh - rem(104))
+
+    +mq(minLarge)
       display: flex
       justify-items: center
-      gap: rem(77)
+
+    .content
+      +mq(maxMedium)
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        padding: 0 rem(52)
+        width: 100%
+        max-width: rem(474)
+
+      +mq(minLarge)
+        display: flex
+        justify-items: center
+        gap: rem(77)
 
       .pager
-        display: flex
-        justify-content: center
-        align-items: center
-        +coln
+        +mq(maxMedium)
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+
+          &:nth-of-type(1)
+            left: 0
+
+          &:nth-of-type(3)
+            right: 0
+
+        +mq(minLarge)
+          display: flex
+          justify-content: center
+          align-items: center
+          +coln
 
         a
           display: flex
@@ -34,6 +68,14 @@
           background-color: $rgba-black20
           backdrop-filter: blur(rem(20))
 
+          +mq(maxMedium)
+            width: rem(40)
+            height: rem(40)
+
+            svg
+              width: rem(25)
+              height: rem(25)
+
           span
             +screen-reader-only
 
@@ -41,11 +83,18 @@
             fill: $hex-groomysky
 
       .item
-        +coln
-        position: relative
-        width: rem(370)
-        height: rem(584)
         user-select: none
+        position: relative
+
+        +mq(maxMedium)
+          width: 100%
+          max-width: rem(370)
+          aspect-ratio: 370 / 584
+
+        +mq(minLarge)
+          +coln
+          width: rem(370)
+          height: rem(584)
 
         .item-front, .item-back
           position: absolute
@@ -59,9 +108,14 @@
           backdrop-filter: blur(rem(20))
           background-color: $rgba-black70
           border-radius: rem(20)
-          padding: rem(27)
-          width: rem(370)
-          height: rem(584)
+          padding: rem(17)
+          width: 100%
+          height: 100%
+
+          +mq(minLarge)
+            padding: rem(27)
+            width: rem(370)
+            height: rem(584)
 
           &.active
             z-index: 1
@@ -89,9 +143,12 @@
               gap: rem(7)
 
             .secondary
-              font-size: rem(16)
+              font-size: rem(14)
               font-weight: 100
               color: $rgba-white70
+
+              +mq(minLarge)
+                font-size: rem(16)
 
           .logo-img i
             display: block
@@ -107,15 +164,21 @@
 
             .secondary
               opacity: .7
-              font-size: rem(14)
+              font-size: rem(12)
               font-weight: 100
               color: $hex-white
+
+              +mq(minLarge)
+                font-size: rem(14)
 
         header
           display: flex
           gap: rem(7)
-          font-size: rem(24)
+          font-size: rem(16)
           line-height: 1
+
+          +mq(minLarge)
+            font-ize: rem(24)
 
           span
             font-weight: 100
@@ -134,8 +197,15 @@
             display: flex
             justify-content: center
             align-items: center
-            width: rem(180)
-            height: rem(180)
+
+            +mq(maxMedium)
+              aspect-ratio: 1 / 1
+              width: 100%
+              max-width: rem(180)
+
+            +mq(minLarge)
+              width: rem(180)
+              height: rem(180)
 
           .logo-btn
             display: flex
@@ -162,10 +232,13 @@
 
         footer
           opacity: .5
-          font-size: rem(16)
+          font-size: rem(14)
           text-align: right
           color: $hex-white
           line-height: 1
+
+          +mq(minLarge)
+            font-size: rem(16)
 
 @keyframes card
   0%

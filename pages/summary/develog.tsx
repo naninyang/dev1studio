@@ -1,13 +1,21 @@
 import styled from '@emotion/styled';
 import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
-import { rem } from '@/styles/designSystem';
+import { mq, rem } from '@/styles/designSystem';
 import styles from '@/styles/summary.module.sass';
 
 const Logo = styled.i({
   background: `url(${images.logo.develog.logo}) no-repeat 50% 50%/contain`,
-  width: rem(270),
-  height: rem(70),
+  width: '100%',
+  [mq.maxMedium]: {
+    aspectRatio: '270 / 70',
+    margin: rem(5),
+    maxHeight: rem(35),
+  },
+  [mq.minLarge]: {
+    width: rem(270),
+    height: rem(70),
+  },
 });
 
 const SummaryDevelog = () => {
@@ -28,31 +36,35 @@ const SummaryDevelog = () => {
           </div>
           <div className={styles.item}>
             <div className={styles.thumbnail}>
-              <Logo />
+              <div className={styles['thumbnail-content']}>
+                <Logo />
+              </div>
             </div>
             <div className={styles.info}>
-              <header>
-                <h2>O612 develog</h2>
-                <span>
-                  <AnchorLink href="https://develog.dev1stud.io">https://develog.dev1stud.io</AnchorLink>
-                </span>
-              </header>
-              <ul>
-                <li>react</li>
-                <li>gatsby</li>
-                <li>netlify-cms-app</li>
-                <li>react-helmet</li>
-                <li>emotion</li>
-                <li>lodash</li>
-                <li>prop-types</li>
-                <li>highlight-code</li>
-                <li>SASS</li>
-                <li>UUID</li>
-              </ul>
-              <div className={styles.description}>
-                <p>O612의 개발 블로그.</p>
-                <p>웹퍼블리셔로서 프론트엔드 개발하면서 힘들었던 부분들에 대해서 글과 코드로 풀어봅니다.</p>
-                <p>현재 포스타입Postype에 올린 글들을 옮기는 작업을 진행하고 있습니다.</p>
+              <div className={styles['info-content']}>
+                <header>
+                  <h2>O612 develog</h2>
+                  <span>
+                    <AnchorLink href="https://develog.dev1stud.io">https://develog.dev1stud.io</AnchorLink>
+                  </span>
+                </header>
+                <ul>
+                  <li>react</li>
+                  <li>gatsby</li>
+                  <li>netlify-cms-app</li>
+                  <li>react-helmet</li>
+                  <li>emotion</li>
+                  <li>lodash</li>
+                  <li>prop-types</li>
+                  <li>highlight-code</li>
+                  <li>SASS</li>
+                  <li>UUID</li>
+                </ul>
+                <div className={styles.description}>
+                  <p>O612의 개발 블로그.</p>
+                  <p>웹퍼블리셔로서 프론트엔드 개발하면서 힘들었던 부분들에 대해서 글과 코드로 풀어봅니다.</p>
+                  <p>현재 포스타입Postype에 올린 글들을 옮기는 작업을 진행하고 있습니다.</p>
+                </div>
               </div>
             </div>
           </div>

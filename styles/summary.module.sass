@@ -4,19 +4,26 @@
   display: flex
   justify-content: center
   align-items: center
-  padding: rem(104) rem(50) rem(50)
+  padding: rem(79) rem(25) rem(25)
   min-height: 100dvh
   background: url(/images/summary.webp) fixed no-repeat 50% 50%/cover
 
+  +mq(minLarge)
+    padding: rem(104) rem(50) rem(50)
+
   .container
     display: flex
-    justify-items: center
-    animation: card 1s cubic-bezier(.4,0,.2,1)
+
+    +mq(minLarge)
+      justify-items: center
 
     .content
       display: flex
       justify-items: center
-      gap: rem(37)
+      gap: rem(12)
+
+      +mq(minLarge)
+        gap: rem(37)
 
       .pager
         display: flex
@@ -34,6 +41,14 @@
           background-color: $rgba-white20
           backdrop-filter: blur(rem(20))
 
+          +mq(maxMedium)
+            width: rem(40)
+            height: rem(40)
+
+            svg
+              width: rem(25)
+              height: rem(25)
+
           span
             +screen-reader-only
 
@@ -42,27 +57,46 @@
 
       .item
         display: flex
-        gap: rem(27)
-        width: rem(767)
+        gap: rem(17)
+
+        +mq(maxMedium)
+          flex-direction: column
+
+        +mq(minLarge)
+          max-width: rem(767)
+          gap: rem(27)
 
         .thumbnail, .info
-          backdrop-filter: blur(rem(20))
-          border-radius: rem(20)
           +col
 
         .thumbnail
-          display: flex
-          justify-content: center
-          align-items: center
-          background-color: $rgba-black70
-          height: rem(320)
+          .thumbnail-content
+            display: flex
+            justify-content: center
+            align-items: center
+            background-color: $rgba-black70
+            border-radius: rem(20)
+            width: 100%
+
+            +mq(maxMedium)
+              padding: rem(25)
+
+            +mq(minLarge)
+              aspect-ratio: 1 / 1
 
         .info
-          display: flex
-          flex-direction: column
-          gap: rem(25)
+          backdrop-filter: blur(rem(20))
+          border-radius: rem(20)
           background-color: $rgba-white70
-          padding: rem(50)
+
+          .info-content
+            display: flex
+            flex-direction: column
+            gap: rem(25)
+            padding: rem(17)
+
+            +mq(minLarge)
+              padding: rem(37) rem(17) rem(37) rem(37)
 
           header
             display: flex
@@ -70,15 +104,22 @@
             gap: rem(7)
 
             h2
-              font-size: rem(32)
+              font-size: rem(26)
               font-weight: 900
+              letter-spacing: -0.05em
               line-height: 1
               color: $hex-accent
 
+              +mq(minLarge)
+                font-size: rem(32)
+
             span, a
-              font-size: rem(16)
+              font-size: rem(12)
               line-height: 1
               color: $hex-gloomy
+
+              +mq(minLarge)
+                font-size: rem(16)
 
             a
               text-decoration: underline
@@ -89,16 +130,25 @@
             padding-left: rem(8)
 
             li
-              font-size: rem(16)
+              font-size: rem(12)
               line-height: 1.375
-              color: $hex-night
+              color: $hex-dayrise
+
+              +mq(minLarge)
+                font-size: rem(14)
 
           .description
             display: flex
             flex-direction: column
-            gap: rem(22)
+            gap: rem(17)
+
+            +mq(minLarge)
+              gap: rem(22)
 
             p
-              font-size: rem(16)
+              font-size: rem(14)
               line-height: 1.375
               color: $hex-deepnight
+
+              +mq(minLarge)
+                font-size: rem(16)
