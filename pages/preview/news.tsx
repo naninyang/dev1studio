@@ -13,15 +13,19 @@ const PreviewNews = () => {
     <div className={styles.preview}>
       <div className={styles.content}>
         <h2>
-          short.view.news
-          <AnchorLink href="https://news.dev1stud.io">
-            <Icon />
-          </AnchorLink>
+          <span>
+            short.view.news
+            <AnchorLink href="https://news.dev1stud.io">
+              <Icon />
+            </AnchorLink>
+          </span>
         </h2>
         <p>미리보기 Preview</p>
-        <Image src="/images/news1.webp" alt="" width="614" height="1030" className={styles.left} />
-        <Image src="/images/news2.webp" alt="" width="740" height="848" className={styles.center} />
-        <Image src="/images/news3.webp" alt="" width="603" height="739" className={styles.right} />
+        <div className={styles.images}>
+          <Image src="/images/news1.webp" alt="" width="614" height="1030" className={styles.left} />
+          <Image src="/images/news2.webp" alt="" width="740" height="848" className={styles.center} />
+          <Image src="/images/news3.webp" alt="" width="603" height="739" className={styles.right} />
+        </div>
       </div>
     </div>
   );

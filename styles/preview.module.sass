@@ -6,6 +6,16 @@
   position: relative
   overflow: hidden
 
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: $rgba-black70
+
   p
     position: absolute
     top: calc(vh(-12, 1080) + rem(57))
@@ -22,7 +32,8 @@
   .visual
     position: absolute
     right: 0
-    bottom: 0
+    top: 50%
+    transform: translateY(-50%)
     width: vw(1601, 1920)
     aspect-ratio: 1601 / 786
 
@@ -51,52 +62,72 @@
 .preview
   background-color: $hex-dark
   padding: rem(107) rem(50) 0
-  min-height: 100dvh
+  max-height: 100dvh
+  overflow: hidden
 
   .content
     display: flex
     flex-direction: column
     +col
-    gap: vh(50, 1080)
     position: relative
+    overflow: hidden
     background-color: $hex-night
-    padding: rem(50)
     border-radius: rem(20) rem(20) 0 0
-    min-height: calc(100dvh - rem(100))
+    aspect-ratio: 1820 / 1030
 
     h2
-      display: flex
-      align-items: center
-      gap: rem(17)
-      font-size: vw(96, 1920)
+      position: relative
+      z-index: 1
+      display: inline-block
+      padding: vh(25, 1030)
+      font-size: vh(96, 1030)
       font-weight: 900
       color: $hex-white
       line-height: 1
 
+      span
+        backdrop-filter: blur(rem(20))
+        background-color: $rgba-black20
+        border-radius: rem(20)
+        display: inline-flex
+        gap: vh(17, 1030)
+        padding: vh(25, 1030)
+
       i
-        display: block
-        width: vw(64, 1920)
+        margin-left: rem(17)
+        display: inline-block
+        width: vh(64, 1030)
         aspect-ratio: 64 / 64
 
     p
-      font-size: vw(36, 1090)
+      padding-left: vh(50, 1030)
+      font-size: vh(36, 1030)
       font-weight: 700
       line-height: 1
       color: $hex-daylight
 
-    img
+    .images
       position: absolute
-      bottom: 0
-      width: vw(700, 1920)
-      height: auto
+      top: 0
+      left: 0
+      width: 100%
+      aspect-ratio: 1820 / 1030
 
-      &.left
-        left: 0
+      img
+        position: absolute
+        width: vw(700, 1820)
+        height: auto
 
-      &.center
-        left: 50%
-        transform: translateX(-50%)
-        z-index: 1
+        &.left
+          top: vh(282, 1030)
+          left: 0
 
-      &.right
-        right: 0
+        &.center
+          top: vh(200, 1030)
+          left: 50%
+          transform: translateX(-50%)
+          z-index: 1
+
+        &.right
+          top: 0
+          right: 0
