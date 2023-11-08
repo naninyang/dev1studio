@@ -2,9 +2,12 @@
 
 .dev1studio
   background: url(/images/dev1studio.webp) no-repeat 50% 50%/cover
-  min-height: rem(1080)
+  min-height: 100dvh
   position: relative
   overflow: hidden
+
+  +mq(minLarge)
+    min-height: rem(1080)
 
   &::before
     content: ''
@@ -19,12 +22,15 @@
   p
     position: absolute
     z-index: 1
-    top: calc(vh(-12, 1080) + rem(57))
+    top: calc(vh(-4, 1080) + rem(57))
     left: vw(-10, 1920)
     font-size: vw(170, 1920)
     font-weight: 900
     line-height: 1
     color: $hex-white
+
+    +mq(minLarge)
+      top: calc(vh(-12, 1080) + rem(57))
 
     strong
       font-weight: 900
@@ -62,9 +68,12 @@
 
 .preview
   background-color: $hex-dark
-  padding: rem(107) rem(50) 0
-  max-height: 100dvh
+  padding: rem(107) rem(15) 0
   overflow: hidden
+
+  +mq(minLarge)
+    padding: rem(107) rem(50) 0
+    max-height: 100dvh
 
   .content
     display: flex
@@ -74,61 +83,97 @@
     overflow: hidden
     background-color: $hex-night
     border-radius: rem(20) rem(20) 0 0
-    aspect-ratio: 1820 / 1030
+
+    +mq(minLarge)
+      aspect-ratio: 1820 / 1030
 
     h2
       position: relative
       z-index: 1
       display: inline-block
-      padding: vh(25, 1030) 0 vh(25, 1030)
-      font-size: vh(96, 1030)
+      padding: rem(15) 0
+      font-size: rem(24)
       font-weight: 900
       color: $hex-white
       line-height: 1
+
+      +mq(minLarge)
+        padding: vh(25, 1030) 0
+        font-size: vh(96, 1030)
 
       span
         backdrop-filter: blur(rem(20))
         background-color: $rgba-black20
         border-radius: 0 rem(20) rem(20) 0
         display: inline-flex
-        gap: vh(17, 1030)
-        padding: vh(25, 1030) vh(50, 1030)
+        gap: rem(7)
+        padding: rem(15) rem(15)
+
+        +mq(minLarge)
+          gap: vh(17, 1030)
+          padding: vh(25, 1030) vh(50, 1030)
 
       i
-        margin-left: rem(17)
         display: inline-block
-        width: vh(64, 1030)
-        aspect-ratio: 64 / 64
+        margin-left: rem(17)
+        width: rem(20)
+        height: rem(20)
+
+        +mq(minLarge)
+          width: vh(64, 1030)
+          aspect-ratio: 64 / 64
 
     p
-      padding-left: vh(50, 1030)
-      font-size: vh(36, 1030)
+      padding-left: rem(15)
+      font-size: rem(20)
       font-weight: 700
       line-height: 1
       color: $hex-daylight
 
+      +mq(minLarge)
+        padding-left: vh(50, 1030)
+        font-size: vh(36, 1030)
+
     .images
-      position: absolute
-      top: 0
-      left: 0
       width: 100%
-      aspect-ratio: 1820 / 1030
+
+      +mq(maxMedium)
+        display: flex
+        flex-direction: column
+        gap: rem(25)
+        margin-top: rem(50)
+
+      +mq(minLarge)
+        position: absolute
+        top: 0
+        left: 0
+        aspect-ratio: 1820 / 1030
 
       img
-        position: absolute
-        width: vw(700, 1820)
+        width: 100%
         height: auto
 
+        +mq(maxMedium)
+          margin: 0 auto
+          max-width: rem(400)
+
+        +mq(minLarge)
+          position: absolute
+          width: vw(700, 1820)
+
         &.left
-          top: vh(282, 1030)
-          left: 0
+          +mq(minLarge)
+            top: vh(282, 1030)
+            left: 0
 
         &.center
-          top: vh(200, 1030)
-          left: 50%
-          transform: translateX(-50%)
-          z-index: 1
+          +mq(minLarge)
+            top: vh(200, 1030)
+            left: 50%
+            transform: translateX(-50%)
+            z-index: 1
 
         &.right
-          top: 0
-          right: 0
+          +mq(minLarge)
+            top: 0
+            right: 0
