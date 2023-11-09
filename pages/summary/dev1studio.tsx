@@ -56,12 +56,15 @@ const SummaryDev1studio = () => {
                 </header>
                 <ul>
                   <li>Next.js</li>
+                  <li>React</li>
+                  <li>next-images</li>
+                  <li>react-responsive</li>
+                  <li>emotion</li>
+                  <li>Pretendard font</li>
                 </ul>
                 <div className={styles.description}>
-                  <p>
-                    DEV1L.studio 도메인에서 관리하는 개인 마이크로 프로젝트 소개하는 웹사이트. O612가 작업했던
-                    포트폴리오도 확인할 수 있습니다.
-                  </p>
+                  <p>DEV1L.studio 도메인에서 관리하는 개인 마이크로 프로젝트 소개하는 웹사이트.</p>
+                  <p>O612가 작업했던 포트폴리오도 확인할 수 있습니다.</p>
                   <p>
                     <strong>작업물 캡쳐를 유실해서 일부만 올렸습니다.</strong>
                   </p>
