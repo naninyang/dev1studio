@@ -15,6 +15,9 @@ export const images = {
       typo: require('./logo/news/typo.svg'),
       logo: require('./logo/news/logo.svg'),
     },
+    github: require('./logo/github.svg'),
+    postype: require('./logo/postype.svg'),
+    velog: require('./logo/velog.svg'),
   },
   portfolio: {
     hero: require('./portfolio/hero.svg'),

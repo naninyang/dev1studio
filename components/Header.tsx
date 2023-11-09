@@ -1,9 +1,11 @@
 import { images } from '@/images';
 import { rem, mixIn, rgba, mq } from '@/styles/designSystem';
 import styled from '@emotion/styled';
+import AnchorLink from './AnchorLink';
 
 const Container = styled.header({
   display: 'flex',
+  justifyContent: 'space-between',
   alignItems: 'center',
   position: 'fixed',
   top: 0,
@@ -30,6 +32,46 @@ const Container = styled.header({
       ...mixIn.screenReaderOnly,
     },
   },
+  '& ul': {
+    display: 'flex',
+    gap: rem(5),
+  },
+  '& li a': {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: rem(17),
+    height: rem(17),
+    '& span': {
+      ...mixIn.screenReaderOnly,
+    },
+    '& i': {
+      display: 'block',
+      width: rem(15),
+      height: rem(15),
+      opacity: '0.5',
+    },
+  },
+});
+
+const Develog = styled.i({
+  background: `url(${images.logo.develog.icon}) no-repeat 50% 50%/contain`,
+});
+
+const News = styled.i({
+  background: `url(${images.logo.news.icon}) no-repeat 50% 50%/contain`,
+});
+
+const Postype = styled.i({
+  background: `url(${images.logo.postype}) no-repeat 50% 50%/contain`,
+});
+
+const Velog = styled.i({
+  background: `url(${images.logo.velog}) no-repeat 50% 50%/contain`,
+});
+
+const Github = styled.i({
+  background: `url(${images.logo.github}) no-repeat 50% 50%/contain`,
 });
 
 const Header = () => {
@@ -38,6 +80,38 @@ const Header = () => {
       <h1>
         <span>DEV1L.studio</span>
       </h1>
+      <ul>
+        <li>
+          <AnchorLink href="https://develog.dev1stud.io">
+            <span>Develog</span>
+            <Develog />
+          </AnchorLink>
+        </li>
+        <li>
+          <AnchorLink href="https://news.dev1stud.io">
+            <span>Short View News</span>
+            <News />
+          </AnchorLink>
+        </li>
+        <li>
+          <AnchorLink href="https://dev-il-studio.postype.com">
+            <span>Postype</span>
+            <Postype />
+          </AnchorLink>
+        </li>
+        <li>
+          <AnchorLink href="https://velog.io/@naninyang">
+            <span>Velog</span>
+            <Velog />
+          </AnchorLink>
+        </li>
+        <li>
+          <AnchorLink href="https://github.com/naninyang">
+            <span>Gibhub</span>
+            <Github />
+          </AnchorLink>
+        </li>
+      </ul>
     </Container>
   );
 };
