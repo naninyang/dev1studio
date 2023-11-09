@@ -34,7 +34,7 @@ const Container = styled.header({
   },
   '& ul': {
     display: 'flex',
-    gap: rem(5),
+    gap: rem(10),
   },
   '& li a': {
     display: 'flex',
@@ -47,8 +47,8 @@ const Container = styled.header({
     },
     '& i': {
       display: 'block',
-      width: rem(15),
-      height: rem(15),
+      width: rem(17),
+      height: rem(17),
       opacity: '0.5',
     },
   },
