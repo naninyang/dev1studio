@@ -15,9 +15,9 @@ const Seo = ({ pageTitle, pageDescription, pageImg, pageImgWidth, pageImgHeight,
   const pagePath = router.asPath;
   const domain = 'https://dev1stud.io';
 
-  const title = pageTitle;
   const defaultTitle = '데브런닷스튜디오 DEV1L.studio';
   const defaultDescription = 'UX 디자이너 & 웹퍼블리셔 "O612 고아리"의 포트폴리오';
+  const title = `${pageTitle} - ${defaultTitle}`;
   const finTitle = title || defaultTitle;
   const description = pageDescription || defaultDescription;
   const url = `${domain}${pagePath}`;
@@ -35,7 +35,7 @@ const Seo = ({ pageTitle, pageDescription, pageImg, pageImgWidth, pageImgHeight,
       <meta name="description" content={description} />
       <meta property="og:locale" content="ko_KR" />
       <meta property="og:url" content={url} />
-      <meta property="og:title" content={finTitle} />
+      <meta property="og:title" content={pageTitle} />
       <meta property="og:site_name" content={defaultTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
