@@ -1,4 +1,5 @@
 import { images } from '@/images';
+import { scrollRefs } from '@/components/ScrollLink';
 import styled from '@emotion/styled';
 import styles from '@/styles/preview.module.sass';
 
@@ -16,7 +17,7 @@ const Secondary = styled.i({
 
 const PreviewDev1studio = () => {
   return (
-    <div className={styles.dev1studio}>
+    <div className={styles.dev1studio} ref={scrollRefs.preview} id="preview">
       <p>
         포트폴리오는 <strong>준비중</strong>
       </p>

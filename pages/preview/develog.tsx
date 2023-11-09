@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
-import AnchorLink from '@/components/AnchorLink';
-import { images } from '@/images';
-import styles from '@/styles/preview.module.sass';
-import styled from '@emotion/styled';
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
+import { images } from '@/images';
+import AnchorLink from '@/components/AnchorLink';
+import { scrollRefs } from '@/components/ScrollLink';
+import styled from '@emotion/styled';
+import styles from '@/styles/preview.module.sass';
 
 const Icon = styled.i({
   background: `url(${images.misc.outlink}) no-repeat 50% 50%/contain`,
@@ -22,7 +23,7 @@ export function useDesktop() {
 const PreviewDevelog = () => {
   const isDesktop = useDesktop();
   return (
-    <div className={styles.preview}>
+    <div className={styles.preview} ref={scrollRefs.preview} id="preview">
       <div className={styles.content}>
         <h2>
           <span>
