@@ -17,12 +17,13 @@ const Seo = ({ pageTitle, pageDescription, pageImg, pageImgWidth, pageImgHeight,
 
   const defaultTitle = '데브런닷스튜디오 DEV1L.studio';
   const defaultDescription = 'UX 디자이너 & 웹퍼블리셔 "O612 고아리"의 포트폴리오';
-  const title = `${pageTitle} - ${defaultTitle}`;
+  const title = pageTitle ? `${pageTitle} - ${defaultTitle}` : null;
   const finTitle = title || defaultTitle;
+  const ogTitle = pageTitle || defaultTitle;
   const description = pageDescription || defaultDescription;
   const url = `${domain}${pagePath}`;
   const defaultImg = `${domain}/images/og-image.png`;
-  const imgUrl = `${pageImg}` || defaultImg;
+  const imgUrl = pageImg || defaultImg;
   const imgWidth = pageImgWidth || 1280;
   const imgHeight = pageImgHeight || 630;
   const ogType = pageOgType || 'website';
@@ -35,7 +36,7 @@ const Seo = ({ pageTitle, pageDescription, pageImg, pageImgWidth, pageImgHeight,
       <meta name="description" content={description} />
       <meta property="og:locale" content="ko_KR" />
       <meta property="og:url" content={url} />
-      <meta property="og:title" content={pageTitle} />
+      <meta property="og:title" content={ogTitle} />
       <meta property="og:site_name" content={defaultTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
