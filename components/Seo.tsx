@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 interface Props {
-  pageTitle: string;
-  pageDescription: string;
+  pageTitle?: string;
+  pageDescription?: string;
   pageImg?: string;
   pageImgWidth?: number;
   pageImgHeight?: number;
@@ -17,10 +17,12 @@ const Seo = ({ pageTitle, pageDescription, pageImg, pageImgWidth, pageImgHeight,
 
   const title = pageTitle;
   const defaultTitle = '데브런닷스튜디오 DEV1L.studio';
+  const defaultDescription = 'UX 디자이너 & 웹퍼블리셔 "O612 고아리"의 포트폴리오';
   const finTitle = `${title} - ${defaultTitle}` || defaultTitle;
-  const description = pageDescription;
+  const description = pageDescription || defaultDescription;
   const url = `${domain}${pagePath}`;
-  const imgUrl = `${pageImg}`;
+  const defaultImg = `${domain}/images/og-image.png`;
+  const imgUrl = `${pageImg}` || defaultImg;
   const imgWidth = pageImgWidth || 1280;
   const imgHeight = pageImgHeight || 630;
   const ogType = pageOgType || 'website';

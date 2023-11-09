@@ -36,7 +36,6 @@ export default function Home() {
   return (
     <>
       <Seo
-        pageTitle="데브런닷스튜디오 DEV1L.studio"
         pageDescription="UX 디자인 & 웹퍼블리싱 O612 고아리의 포트폴리오"
         pageImg={`https://dev1stud.io/og-image.png?ts=${timestamp}`}
       />
