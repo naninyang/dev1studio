@@ -5,17 +5,22 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 >
 <url>
-  <loc>https://www.dev1stud.io/dev1studio</loc>
+  <loc>https://dev1stud.io/dev1studio</loc>
   <lastmod>2023-11-09T11:47:44+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.dev1stud.io/news</loc>
+  <loc>https://dev1stud.io/news</loc>
   <lastmod>2023-11-09T11:47:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.dev1stud.io/develog</loc>
+  <loc>https://dev1stud.io/develog</loc>
+  <lastmod>2023-11-09T11:47:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://dev1stud.io</loc>
   <lastmod>2023-11-09T11:47:44+00:00</lastmod>
   <priority>0.80</priority>
 </url>
