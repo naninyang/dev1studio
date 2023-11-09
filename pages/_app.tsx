@@ -1,8 +1,8 @@
 import { AppProps } from 'next/app';
 import Script from 'next/script';
 import { GA_TRACKING_ID, pageview } from '@/lib/gtag';
-import '@/styles/global.sass';
 import Header from '@/components/Header';
+import '@/styles/global.sass';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
