@@ -57,9 +57,10 @@ const SummaryDevelog = () => {
                   </span>
                 </header>
                 <ul>
-                  <li>react</li>
-                  <li>gatsby</li>
-                  <li>netlify-cms-app</li>
+                  <li>React</li>
+                  <li>Gatsby</li>
+                  <li>Netlify CMS</li>
+                  <li>fontsource (Fira Code, Gowun Batang, Lato, Noto Sans KR)</li>
                   <li>react-helmet</li>
                   <li>emotion</li>
                   <li>lodash</li>

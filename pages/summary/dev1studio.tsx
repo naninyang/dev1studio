@@ -57,10 +57,11 @@ const SummaryDev1studio = () => {
                 <ul>
                   <li>Next.js</li>
                   <li>React</li>
+                  <li>TypeScript</li>
                   <li>next-images</li>
                   <li>react-responsive</li>
                   <li>emotion</li>
-                  <li>Pretendard font</li>
+                  <li>Pretendard (Pretendard font)</li>
                 </ul>
                 <div className={styles.description}>
                   <p>DEV1L.studio 도메인에서 관리하는 개인 마이크로 프로젝트 소개하는 웹사이트.</p>

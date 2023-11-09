@@ -58,10 +58,12 @@ const SummaryNews = () => {
                 </header>
                 <ul>
                   <li>Next.js</li>
+                  <li>next/font/google (Lato, Noto Sans KR)</li>
+                  <li>React</li>
+                  <li>TypeScript</li>
                   <li>react-device-detect</li>
                   <li>react-modal (Route As Modal)</li>
-                  <li>TypeScript</li>
-                  <li>Emotion</li>
+                  <li>emotion</li>
                   <li>SASS</li>
                   <li>Google YouTube iframe API</li>
                   <li>Masonry (Masonic)</li>
