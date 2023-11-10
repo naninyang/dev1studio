@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import Seo from '@/components/Seo';
 import styles from '@/styles/home.module.sass';
 import styled from '@emotion/styled';
