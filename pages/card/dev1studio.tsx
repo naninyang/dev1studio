@@ -69,7 +69,6 @@ const CardDev1studio = () => {
                       </g>
                     </svg>
                   </button>
-                  I
                 </div>
               </div>
               <footer>https://dev1stud.io</footer>

@@ -69,7 +69,6 @@ const CardDevelog = () => {
                       </g>
                     </svg>
                   </button>
-                  I
                 </div>
               </div>
               <footer>https://develog.dev1stud.io</footer>
