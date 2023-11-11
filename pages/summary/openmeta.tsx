@@ -8,7 +8,7 @@ import { mq, rem } from '@/styles/designSystem';
 import styles from '@/styles/summary.module.sass';
 
 const Logo = styled.i({
-  background: `url(${images.logo.news.logo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.openmeta.logo}) no-repeat 50% 50%/contain`,
   width: '100%',
   [mq.maxMedium]: {
     aspectRatio: '270 / 33',
@@ -21,7 +21,7 @@ const Logo = styled.i({
   },
 });
 
-const SummaryNews = () => {
+const SummaryOpenmeta = () => {
   const handleScroll = useCallback((section: ScrollRefKeys) => {
     const ref = scrollRefs[section];
     if (ref) {
@@ -38,14 +38,14 @@ const SummaryNews = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/develog#summary">
+            <AnchorLink href="/news#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>디벨로그 써머리보기</span>
+              <span>숏뷰 뉴스 써머리보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -57,49 +57,46 @@ const SummaryNews = () => {
             <div className={styles.info}>
               <div className={styles['info-content']}>
                 <header>
-                  <h2>short.view:news</h2>
+                  <h2>openmeta</h2>
                   <span>
-                    <AnchorLink href="https://news.dev1stud.io">https://news.dev1stud.io</AnchorLink>
+                    <AnchorLink href="https://openmeta.dev1stud.io">https://openmeta.dev1stud.io</AnchorLink>
                   </span>
                 </header>
                 <ul>
                   <li>Next.js</li>
-                  <li>next/font/google (Lato, Noto Sans KR)</li>
                   <li>React</li>
                   <li>TypeScript</li>
-                  <li>react-device-detect</li>
-                  <li>react-modal (Route As Modal)</li>
+                  <li>next-images</li>
+                  <li>react-responsive</li>
+                  <li>axios</li>
+                  <li>cheerio</li>
+                  <li>iconv</li>
                   <li>emotion</li>
-                  <li>SASS</li>
-                  <li>Google YouTube iframe API</li>
-                  <li>Masonry (Masonic)</li>
-                  <li>Perfect Scrollbar</li>
-                  <li>pull-to-refresh</li>
-                  <li>PWA</li>
-                  <li>SWR (useSWRInfinite)</li>
-                  <li>Vercel serverless</li>
-                  <li>jsonwebtoken</li>
-                  <li>Notion Client</li>
-                  <li>baselime.io</li>
-                  <li>Github API</li>
+                  <li>Pretendard (Pretendard font)</li>
                 </ul>
                 <div className={styles.description}>
                   <p>
-                    YouTube 및 NAVER 뉴스에 업로드 된 뉴스를 요약하고 큐레이터 본인의 생각을 짧게 보여주는 서비스입니다.
+                    검색하고자 하는 웹페이지의 SEO(Search Engine Optimization)에 필요한 meta 태그와 OpenGraph에 필요한
+                    값들을 Raw Data로 보여주고, 미리보기를 지원하는 웹서비스입니다.
+                  </p>
+                  <p>개발자가 아닌 일반인들에게는 &apos;링크 미리보기&apos;로 알려져 있는 기능이기도 합니다.</p>
+                  <p>
+                    이 기능은 Line과 카카오톡 그리고 Slack 같은 메신저, Twitter, Facebook 등의 소셜 미디어 서비스 등에서
+                    링크를 입력하면 링크의 내용을 미리보여주는 바로 그 기능입니다.
                   </p>
                 </div>
               </div>
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/openmeta#summary">
+            <AnchorLink href="/dev1studio#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>오픈메타 써머리보기</span>
+              <span>데브런닷스튜디오 써머리보기</span>
             </AnchorLink>
           </div>
         </div>
@@ -117,4 +114,4 @@ const SummaryNews = () => {
   );
 };
 
-export default SummaryNews;
+export default SummaryOpenmeta;

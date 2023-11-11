@@ -38,14 +38,14 @@ const SummaryDev1studio = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/news#summary">
+            <AnchorLink href="/openmeta#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>숏뷰뉴스 써머리보기</span>
+              <span>오픈메타 써머리보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
