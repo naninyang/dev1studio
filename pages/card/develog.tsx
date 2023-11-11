@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react';
+import { isSafari } from 'react-device-detect';
 import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
@@ -33,7 +34,7 @@ const CardDevelog = () => {
   }, []);
 
   return (
-    <div className={styles.card}>
+    <div className={styles.card} style={isSafari ? { backgroundAttachment: 'scroll' } : {}}>
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
