@@ -20,6 +20,33 @@
       width: rem(270)
       height: rem(34)
 
+  .enterance
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100dvh
+
+    a
+      display: flex
+      align-items: center
+      gap: rem(5)
+      background-color: $hex-white
+      border-radius: rem(50)
+      padding: 0 rem(37)
+      height: rem(50)
+
+      span
+        font-size: rem(24)
+        font-weight: 700
+        color: $hex-black
+
+      i
+        transform: translateX(rem(-2))
+        display: inline-block
+        width: rem(20)
+        height: rem(20)
+        animation: enterance 1.2s cubic-bezier(.4,0,.2,1) infinite
+
 @keyframes splash
   0%
     opacity: 1
@@ -29,3 +56,16 @@
 
   100%
     opacity: 0
+
+@keyframes enterance
+  0%
+    transform: translateX(rem(-2))
+
+  22.22%
+    transform: translateX(rem(2))
+
+  77.77%
+    transform: translateX(rem(2))
+
+  100%
+    transform: translateX(rem(-2))

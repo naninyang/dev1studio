@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import Seo from '@/components/Seo';
-import styles from '@/styles/home.module.sass';
 import styled from '@emotion/styled';
+import Seo from '@/components/Seo';
+import AnchorLink from '@/components/AnchorLink';
 import { images } from '@/images';
-import { useRouter } from 'next/router';
+import styles from '@/styles/home.module.sass';
 
 const Splash = styled.div({
   '&::before': {
@@ -11,8 +11,11 @@ const Splash = styled.div({
   },
 });
 
+const Enterance = styled.i({
+  background: `url(${images.misc.right}) no-repeat 50% 50%/contain`,
+});
+
 export default function Home() {
-  const router = useRouter();
   const [splash, setSplash] = useState(true);
   const timestamp = Date.now();
 
@@ -24,21 +27,24 @@ export default function Home() {
     return () => clearTimeout(splashTimer);
   }, []);
 
-  useEffect(() => {
-    const cardTimer = setTimeout(() => {
-      router.push('/dev1studio');
-    }, 3900);
-
-    return () => clearTimeout(cardTimer);
-  }, [router]);
-
   return (
     <>
       <Seo
         pageDescription="UX 디자인 & 웹퍼블리싱 O612 고아리의 포트폴리오"
         pageImg={`https://dev1stud.io/images/og-image.png?ts=${timestamp}`}
       />
-      <main className={styles.home}>{splash && <Splash className={styles.splash} />}</main>
+      <main className={styles.home}>
+        {splash ? (
+          <Splash className={styles.splash} />
+        ) : (
+          <div className={styles.enterance}>
+            <AnchorLink href="/dev1studio">
+              <span>입장하기</span>
+              <Enterance />
+            </AnchorLink>
+          </div>
+        )}
+      </main>
     </>
   );
 }
