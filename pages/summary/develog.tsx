@@ -78,7 +78,6 @@ const SummaryDevelog = () => {
                 <div className={styles.description}>
                   <p>O612의 개발 블로그.</p>
                   <p>웹퍼블리셔로서 프론트엔드 개발하면서 힘들었던 부분들에 대해서 글과 코드로 풀어봅니다.</p>
-                  <p>현재 포스타입Postype에 올린 글들을 옮기는 작업을 진행하고 있습니다.</p>
                 </div>
               </div>
             </div>
