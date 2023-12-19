@@ -69,6 +69,7 @@ const SummaryKomponent = () => {
                   <li>SASS</li>
                   <li>date-fns</li>
                   <li>Prism.js</li>
+                  <li>vercel serverless</li>
                   <li>AWS EC2</li>
                   <li>MariaDB</li>
                   <li>PM2</li>
