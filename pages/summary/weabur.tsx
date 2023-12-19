@@ -8,20 +8,20 @@ import { mq, rem } from '@/styles/designSystem';
 import styles from '@/styles/summary.module.sass';
 
 const Logo = styled.i({
-  background: `url(${images.logo.dev1studio.logo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.weabur.logo}) no-repeat 50% 50%/contain`,
   width: '100%',
   [mq.maxMedium]: {
-    aspectRatio: '270 / 34',
+    aspectRatio: '270 / 33',
     margin: rem(5),
     maxHeight: rem(35),
   },
   [mq.minLarge]: {
     width: rem(270),
-    height: rem(34),
+    height: rem(33),
   },
 });
 
-const SummaryDev1studio = () => {
+const SummaryWeabur = () => {
   const handleScroll = useCallback((section: ScrollRefKeys) => {
     const ref = scrollRefs[section];
     if (ref) {
@@ -38,14 +38,14 @@ const SummaryDev1studio = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/weabur#summary">
+            <AnchorLink href="/openmeta#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>웨버 써머리보기</span>
+              <span>오픈메타 써머리보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -57,37 +57,39 @@ const SummaryDev1studio = () => {
             <div className={styles.info}>
               <div className={styles['info-content']}>
                 <header>
-                  <h2>DEV1L.studio</h2>
-                  <span>https://dev1stud.io</span>
+                  <h2>weabur</h2>
+                  <span>
+                    <AnchorLink href="https://weabur.dev1stud.io">https://weabur.dev1stud.io</AnchorLink>
+                  </span>
                 </header>
                 <ul>
                   <li>Next.js</li>
-                  <li>React</li>
                   <li>TypeScript</li>
-                  <li>next-images</li>
-                  <li>react-responsive</li>
                   <li>emotion</li>
-                  <li>Pretendard (Pretendard font)</li>
+                  <li>SASS</li>
+                  <li>PWA</li>
+                  <li>AWS EC2</li>
+                  <li>PM2</li>
+                  <li>Sentry</li>
+                  <li>Github Actions</li>
                 </ul>
                 <div className={styles.description}>
-                  <p>DEV1L.studio 도메인에서 관리하는 개인 마이크로 프로젝트 소개하는 웹사이트.</p>
-                  <p>O612가 작업했던 포트폴리오도 확인할 수 있습니다.</p>
-                  <p>
-                    <strong>작업물 캡쳐를 유실해서 일부만 올렸습니다.</strong>
-                  </p>
+                  <p>버스 정보와 날씨 정보를 함께 보여주는 서비스입니다.</p>
+                  <p>버스 정보와 날씨 정보는 Open API를 이용해 데이터를 가져옵니다.</p>
+                  <p>UX는 LED의 느낌으로 보여주고, 지도는 사용되지 않습니다.</p>
                 </div>
               </div>
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/develog#summary">
+            <AnchorLink href="/dev1studio#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>디벨로그 써머리보기</span>
+              <span>데브런닷스튜디오 써머리보기</span>
             </AnchorLink>
           </div>
         </div>
@@ -105,4 +107,4 @@ const SummaryDev1studio = () => {
   );
 };
 
-export default SummaryDev1studio;
+export default SummaryWeabur;

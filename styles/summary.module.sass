@@ -15,13 +15,19 @@
   .container
     display: flex
 
+    +mq(maxMedium)
+      justify-content: center
+
     +mq(minLarge)
-      justify-items: center
+      justify-content: center
 
     .content
       display: flex
-      justify-items: center
+      justify-content: center
       gap: rem(12)
+
+      +mq(maxMedium)
+        width: calc(100vw - rem(50))
 
       +mq(minLarge)
         gap: rem(37)
@@ -61,6 +67,7 @@
         gap: rem(17)
 
         +mq(maxMedium)
+          +col
           flex-direction: column
 
         +mq(minLarge)

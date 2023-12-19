@@ -88,12 +88,6 @@ const Header = () => {
           </AnchorLink>
         </li>
         <li>
-          <AnchorLink href="https://news.dev1stud.io">
-            <span>Short View News</span>
-            <News />
-          </AnchorLink>
-        </li>
-        <li>
           <AnchorLink href="https://dev-il-studio.postype.com">
             <span>Postype</span>
             <Postype />
