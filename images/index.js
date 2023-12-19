@@ -10,6 +10,11 @@ export const images = {
       typo: require('./logo/develog/typo.svg'),
       logo: require('./logo/develog/logo.svg'),
     },
+    komponent: {
+      icon: require('./logo/komponent/icon.svg'),
+      typo: require('./logo/komponent/typo.svg'),
+      logo: require('./logo/komponent/logo.svg'),
+    },
     news: {
       icon: require('./logo/news/icon.svg'),
       typo: require('./logo/news/typo.svg'),

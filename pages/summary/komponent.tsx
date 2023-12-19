@@ -8,7 +8,7 @@ import { mq, rem } from '@/styles/designSystem';
 import styles from '@/styles/summary.module.sass';
 
 const Logo = styled.i({
-  background: `url(${images.logo.weabur.logo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.komponent.logo}) no-repeat 50% 50%/contain`,
   width: '100%',
   [mq.maxMedium]: {
     aspectRatio: '270 / 33',
@@ -17,11 +17,11 @@ const Logo = styled.i({
   },
   [mq.minLarge]: {
     width: rem(270),
-    height: rem(96),
+    height: rem(63),
   },
 });
 
-const SummaryWeabur = () => {
+const SummaryKomponent = () => {
   const handleScroll = useCallback((section: ScrollRefKeys) => {
     const ref = scrollRefs[section];
     if (ref) {
@@ -38,14 +38,14 @@ const SummaryWeabur = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/openmeta#summary">
+            <AnchorLink href="/weabur#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>오픈메타 써머리보기</span>
+              <span>웨버 써머리보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -57,9 +57,9 @@ const SummaryWeabur = () => {
             <div className={styles.info}>
               <div className={styles['info-content']}>
                 <header>
-                  <h2>weabur</h2>
+                  <h2>komponent</h2>
                   <span>
-                    <AnchorLink href="https://weabur.dev1stud.io">https://weabur.dev1stud.io</AnchorLink>
+                    <AnchorLink href="https://komponent.dev1stud.io">https://komponent.dev1stud.io</AnchorLink>
                   </span>
                 </header>
                 <ul>
@@ -67,29 +67,31 @@ const SummaryWeabur = () => {
                   <li>TypeScript</li>
                   <li>emotion</li>
                   <li>SASS</li>
-                  <li>PWA</li>
+                  <li>date-fns</li>
+                  <li>Prism.js</li>
                   <li>AWS EC2</li>
+                  <li>MariaDB</li>
                   <li>PM2</li>
                   <li>Sentry</li>
                   <li>Github Actions</li>
                 </ul>
                 <div className={styles.description}>
-                  <p>버스 정보와 날씨 정보를 함께 보여주는 서비스입니다.</p>
-                  <p>버스 정보와 날씨 정보는 Open API를 이용해 데이터를 가져옵니다.</p>
-                  <p>UX는 LED의 느낌으로 보여주고, 지도는 사용되지 않습니다.</p>
+                  <p>K-components</p>
+                  <p>컴포넌트를 국문, 영문으로 코드 작성하고 사용하는 방법을 보여드립니다.</p>
+                  <p>현재는 1인 체제로 등록하고 있고, 추후에 초대 방식의 서비스로 업데이트할 계획이 있습니다.</p>
                 </div>
               </div>
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/komponent#summary">
+            <AnchorLink href="/dev1studio#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>콤포넌트 써머리보기</span>
+              <span>데브런닷스튜디오 써머리보기</span>
             </AnchorLink>
           </div>
         </div>
@@ -107,4 +109,4 @@ const SummaryWeabur = () => {
   );
 };
 
-export default SummaryWeabur;
+export default SummaryKomponent;
