@@ -34,10 +34,15 @@ export const images = {
     postype: require('./logo/postype.svg'),
     velog: require('./logo/velog.svg'),
   },
-  portfolio: {
-    hero: require('./portfolio/hero.svg'),
-    primary: require('./portfolio/primary.svg'),
-    secondary: require('./portfolio/secondary.svg'),
+  profile: {
+    portfolio: {
+      korean: require('./profile/portfolioKor.svg'),
+      english: require('./profile/portfolioEng.svg'),
+    },
+    resume: {
+      korean: require('./profile/resumeKor.svg'),
+      english: require('./profile/resumeEng.svg'),
+    },
   },
   misc: {
     outlink: require('./misc/outlink.svg'),
