@@ -29,15 +29,21 @@
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: rem(77)
+    gap: rem(27)
     position: relative
+
+    +mq(minLarge)
+      gap: rem(77)
 
     button, a
       background-color: transparent
       display: flex
       align-items: flex-end
-      gap: rem(27)
+      gap: rem(7)
       transition: all .4s cubic-bezier(.4,0,.2,1)
+
+      +mq(minLarge)
+        gap: rem(27)
 
       span
         +screen-reader-only
@@ -45,28 +51,30 @@
       i
         display: block
 
-      i:nth-of-type(1)
-        opacity: .5
-        transition: all .4s cubic-bezier(.4,0,.2,1)
+      +mq(minLarge)
+        i:nth-of-type(1)
+          opacity: .5
+          transition: all .4s cubic-bezier(.4,0,.2,1)
 
-      i:nth-of-type(2)
-        opacity: 0
-        width: 0
-        transition: all .4s cubic-bezier(.4,0,.2,1)
-
-      &:hover, &:focus
-        i
-          opacity: 1
-
-    button
-      &:hover, &:focus
         i:nth-of-type(2)
-          width: rem(289)
+          opacity: 0
+          width: 0
+          transition: all .4s cubic-bezier(.4,0,.2,1)
 
-    a
-      &:hover, &:focus
-        i:nth-of-type(2)
-          width: rem(162)
+        &:hover, &:focus
+          i
+            opacity: 1
+
+    +mq(minLarge)
+      button
+        &:hover, &:focus
+          i:nth-of-type(2)
+            width: rem(289)
+
+      a
+        &:hover, &:focus
+          i:nth-of-type(2)
+            width: rem(162)
 
 .preview
   background-color: $hex-dark
