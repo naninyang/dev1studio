@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import Script from 'next/script';
-import { GA_TRACKING_ID, pageview } from '@/lib/gtag';
+import { GA_TRACKING_ID } from '@/lib/gtag';
 import Header from '@/components/Header';
 import '@/styles/global.sass';
 
