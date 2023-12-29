@@ -611,7 +611,7 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               <span>이메일</span>
             </dt>
             <dd>
-              <AnchorLink href="1157iamari@gmail.com">1157iamari@gmail.com</AnchorLink>
+              <AnchorLink href="mailto:1157iamari@gmail.com">1157iamari@gmail.com</AnchorLink>
             </dd>
           </div>
           <div>
