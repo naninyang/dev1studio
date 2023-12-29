@@ -2,6 +2,7 @@ import Image from 'next/image';
 import styled from '@emotion/styled';
 import { hex, rem, mixIn, mq } from '@/styles/designSystem';
 import { images } from '@/images';
+import AnchorLink from '@/components/AnchorLink';
 
 const Container = styled.div({
   display: 'flex',
@@ -176,6 +177,59 @@ const Container = styled.div({
       },
     },
   },
+  '& footer': {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: rem(32),
+    background: `radial-gradient(farthest-side at 100% 100%, rgb(41, 8, 83), rgb(218, 53, 85))`,
+    borderRadius: rem(17),
+    padding: `${rem(67)} ${rem(47)}`,
+    width: '100%',
+    minHeight: `calc(100dvh - ${rem(107)})`,
+    color: hex.white,
+    [mq.maxSmall]: {
+      padding: `${rem(67)} ${rem(27)}`,
+    },
+    '& p': {
+      fontSize: rem(32),
+      fontWeight: 900,
+      lineHeight: 1,
+      [mq.maxSmall]: {
+        fontSize: rem(20),
+      },
+    },
+    '& ul': {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: rem(7),
+      textAlign: 'center',
+      '& a': {
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: rem(7),
+        backgroundColor: hex.dark,
+        borderRadius: rem(7),
+        padding: `${rem(5)} ${rem(15)}`,
+        fontSize: rem(20),
+        lineHeight: 1,
+        color: hex.white,
+        [mq.maxSmall]: {
+          fontSize: rem(14),
+        },
+      },
+      '& i': {
+        display: 'inline-block',
+        width: rem(17),
+        height: rem(17),
+        [mq.maxSmall]: {
+          width: rem(10),
+          height: rem(10),
+        },
+      },
+    },
+  },
 });
 
 const Content = styled.div({
@@ -216,6 +270,10 @@ const Content = styled.div({
 
 const BackwardIcon = styled.i({
   background: `url(${images.misc.left}) no-repeat 50% 50%/contain`,
+});
+
+const DownIcon = styled.i({
+  background: `url(${images.misc.outlink}) no-repeat 50% 50%/contain`,
 });
 
 const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
@@ -497,6 +555,23 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           </div>
         </section>
       </Content>
+      <footer>
+        <p>1157iamari@gmail.com</p>
+        <ul>
+          <li>
+            <AnchorLink href="/pdf/portfolio_chloe.pdf">
+              <span>포트폴리오 PDF 파일 받기</span>
+              <DownIcon />
+            </AnchorLink>
+          </li>
+          <li>
+            <AnchorLink href="/pdf/portfolio_print_chloe.pdf">
+              <span>포트폴리오 프린트용 PDF 파일 받기</span>
+              <DownIcon />
+            </AnchorLink>
+          </li>
+        </ul>
+      </footer>
     </Container>
   );
 };
