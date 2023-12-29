@@ -482,7 +482,7 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             <dl>
               <div>
                 <dt>클라이언트</dt>
-                <dd>모빌리프</dd>
+                <dd>코드크레인</dd>
               </div>
               <div>
                 <dt>소속사</dt>
@@ -595,9 +595,9 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </div>
               <div className="detail">
                 <dt>프로젝트명 및 기간</dt>
-                <dd>디비파이어 2022.12</dd>
+                <dd>누비랩 웹사이트 리뉴얼 2023.09</dd>
                 <dt>상세내용</dt>
-                <dd>PM, UX Design</dd>
+                <dd>NextJS Web publishing (JavaScript & Styled Emotion & SASS)</dd>
               </div>
             </dl>
           </div>
