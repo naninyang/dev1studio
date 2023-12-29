@@ -11,6 +11,22 @@ export const ServicePage = styled.div({
 
 export const Container = styled.main({
   backgroundColor: hex.black,
+  '& > button': {
+    display: 'flex',
+    gap: rem(7),
+    background: 'none',
+    '& i': {
+      display: 'inline-block',
+      width: rem(16),
+      height: rem(16),
+    },
+    '& span': {
+      fontSize: rem(16),
+      fontWeight: 700,
+      lineHeight: 1,
+      color: hex.white,
+    },
+  },
   '&.css-0': {
     display: 'flex',
     flexDirection: 'column',

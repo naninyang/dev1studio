@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { hex, rem, mixIn, mq } from '@/styles/designSystem';
+import { images } from '@/images';
 
 const Container = styled.div({
   display: 'flex',
@@ -33,6 +34,22 @@ const Container = styled.div({
         display: 'flex',
         flexDirection: 'column',
         gap: rem(27),
+        '& button': {
+          display: 'flex',
+          gap: rem(7),
+          background: 'none',
+          '& i': {
+            display: 'inline-block',
+            width: rem(16),
+            height: rem(16),
+          },
+          '& span': {
+            fontSize: rem(16),
+            fontWeight: 700,
+            lineHeight: 1,
+            color: hex.white,
+          },
+        },
         '& .summary': {
           display: 'flex',
           alignItems: 'flex-end',
@@ -188,6 +205,7 @@ const Content = styled.div({
     '& span': {
       fontSize: rem(24),
       fontWeight: 300,
+      textTransform: 'lowercase',
       lineHeight: 1,
       [mq.maxSmall]: {
         fontSize: rem(16),
@@ -196,12 +214,20 @@ const Content = styled.div({
   },
 });
 
-export default function Portfolio() {
+const BackwardIcon = styled.i({
+  background: `url(${images.misc.left}) no-repeat 50% 50%/contain`,
+});
+
+const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   return (
     <Container>
       <header>
         <div className="cover">
           <div lang="en">
+            <button type="button" onClick={onClose}>
+              <BackwardIcon />
+              <span>이전화면으로</span>
+            </button>
             <div className="summary">
               <p>
                 Figma UX/UI Designer <span>& NextJS Frontend Developer</span>
@@ -473,4 +499,6 @@ export default function Portfolio() {
       </Content>
     </Container>
   );
-}
+};
+
+export default Portfolio;

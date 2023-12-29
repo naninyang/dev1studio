@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
 import { images } from '@/images';
 import { scrollRefs } from '@/components/ScrollLink';
-import styles from '@/styles/preview.module.sass';
+import AnchorLink from '@/components/AnchorLink';
+import Portfolio from '../profile/portfolio';
 import { rem } from '@/styles/designSystem';
+import styles from '@/styles/preview.module.sass';
 
 const PortfolioNormal = styled.i({
   background: `url(${images.profile.portfolio.english}) no-repeat 50% 50%/contain`,
@@ -29,21 +32,32 @@ const ResumeHover = styled.i({
 });
 
 const PreviewDev1studio = () => {
+  const [isPortfolio, setIsPortfolio] = useState(false);
+
+  const handlePortfolio = () => {
+    setIsPortfolio(true);
+  };
+
   return (
-    <div className={styles.dev1studio} ref={scrollRefs.preview} id="preview">
-      <div className={styles.profile}>
-        <button type="button">
-          <span>포트폴리오</span>
-          <PortfolioNormal />
-          <PortfolioHover />
-        </button>
-        <button type="button">
-          <span>이력서</span>
-          <ResumeNormal />
-          <ResumeHover />
-        </button>
-      </div>
-    </div>
+    <>
+      {!isPortfolio && (
+        <div className={styles.dev1studio} ref={scrollRefs.preview} id="preview">
+          <div className={styles.profile}>
+            <button type="button" onClick={handlePortfolio}>
+              <span>포트폴리오</span>
+              <PortfolioNormal />
+              <PortfolioHover />
+            </button>
+            <AnchorLink href="/profile/resume" target="_blank">
+              <span>이력서</span>
+              <ResumeNormal />
+              <ResumeHover />
+            </AnchorLink>
+          </div>
+        </div>
+      )}
+      {isPortfolio && <Portfolio onClose={() => setIsPortfolio(false)} />}
+    </>
   );
 };
 

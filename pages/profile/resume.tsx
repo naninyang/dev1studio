@@ -6,10 +6,15 @@ import styled from '@emotion/styled';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { DateProps, DescriptionProps, ResumeData } from '@/types';
+import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
 import { rem } from '@/styles/designSystem';
 import { Container, ServicePage } from '@/styles/serviceSystem';
 import styles from '@/styles/print.module.sass';
+
+type PrintProps = {
+  mdx?: MDXRemoteSerializeResult;
+};
 
 const Avatar = styled.div({
   width: rem(100),
@@ -18,11 +23,11 @@ const Avatar = styled.div({
   overflow: 'hidden',
 });
 
-type PrintProps = {
-  mdx?: MDXRemoteSerializeResult;
-};
+const BackwardIcon = styled.i({
+  background: `url(${images.misc.left}) no-repeat 50% 50%/contain`,
+});
 
-const Print: NextPage<PrintProps> = ({ mdx }) => {
+const Resume: NextPage<PrintProps> = ({ mdx }) => {
   const [resumeData, setResumeData] = useState<ResumeData>({});
 
   useEffect(() => {
@@ -126,18 +131,28 @@ const Print: NextPage<PrintProps> = ({ mdx }) => {
     );
   }
 
+  const handleClose = () => {
+    if (typeof window !== 'undefined') {
+      window.close();
+    }
+  };
+
   return (
     <ServicePage>
       <Container className={styles['print-only']}>
         <Head>{resumeData.username_show ? <title>{resumeData.username} 이력서</title> : <title>이력서</title>}</Head>
+        <button type="button" className="close-button" onClick={handleClose}>
+          <BackwardIcon />
+          <span>이전화면으로</span>
+        </button>
         <h1>이력서</h1>
         <blockquote>
           <p>
-            사용하실 때는 웹브라우저의 <code>인쇄</code> 기능을 사용해 주세요.{' '}
-            <pre>
-              <code>Mac: command + p / Win: ctrl + p</code>
-            </pre>
+            사용하실 때는 웹브라우저의 <code>인쇄</code> 기능을 사용해 주세요.
           </p>
+          <pre>
+            <code>Mac: command + p / Win: ctrl + p</code>
+          </pre>
           <AnchorLink href="/dev1studio">이전 화면으로 이동</AnchorLink>
         </blockquote>
         {(resumeData?.essays?.length ?? 0) > 0 &&
@@ -624,6 +639,8 @@ const Print: NextPage<PrintProps> = ({ mdx }) => {
   );
 };
 
+export default Resume;
+
 export const getServerSideProps: GetServerSideProps<PrintProps> = async (context) => {
   const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`);
   const data = await response.json();
@@ -637,5 +654,3 @@ export const getServerSideProps: GetServerSideProps<PrintProps> = async (context
 
   return { props: { mdx } };
 };
-
-export default Print;
