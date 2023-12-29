@@ -253,6 +253,22 @@ const Container = styled.div({
         },
       },
     },
+    '& button': {
+      display: 'flex',
+      gap: rem(7),
+      background: 'none',
+      '& i': {
+        display: 'inline-block',
+        width: rem(16),
+        height: rem(16),
+      },
+      '& span': {
+        fontSize: rem(16),
+        fontWeight: 700,
+        lineHeight: 1,
+        color: hex.white,
+      },
+    },
   },
 });
 
@@ -622,6 +638,10 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             </AnchorLink>
           </li>
         </ul>
+        <button type="button" onClick={onClose}>
+          <BackwardIcon />
+          <span>이전화면으로</span>
+        </button>
       </footer>
     </Container>
   );
