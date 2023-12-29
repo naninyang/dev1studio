@@ -2,7 +2,7 @@
 
 @media print
   @page
-    margin: 32px 0
+    margin: 64px 0
 
 .print-only
   padding-top: rem(75)
@@ -697,3 +697,50 @@
     &:last-of-type
       padding-bottom: 15px
       border-bottom: 5px solid
+
+.loading
+  display: flex
+  justify-content: center
+  align-items: center
+  flex: 1
+
+  span
+    +screen-reader-only
+
+  i
+    display: block
+    width: rem(50)
+    height: rem(50)
+    border: rem(5) solid transparent
+    border-radius: 50%
+    animation: spin 4s cubic-bezier(.4,0,.2,1) infinite
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+    border-right-color: $hex-dayrise
+    border-bottom-color: $hex-dayrise
+
+  25%
+    transform: rotate(360deg)
+    border: rem(5) solid transparent
+    border-bottom-color: $hex-dayrise
+    border-left-color: $hex-dayrise
+
+  50%
+    transform: rotate(720deg)
+    border: rem(5) solid transparent
+    border-top-color: $hex-dayrise
+    border-left-color: $hex-dayrise
+
+  75%
+    transform: rotate(1080deg)
+    border: rem(5) solid transparent
+    border-top-color: $hex-dayrise
+    border-right-color: $hex-dayrise
+
+  100%
+    transform: rotate(1440deg)
+    border: rem(5) solid transparent
+    border-right-color: $hex-dayrise
+    border-bottom-color: $hex-dayrise

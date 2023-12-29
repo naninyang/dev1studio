@@ -1,22 +1,50 @@
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+
+export interface PrintProps {
+  mdx?: MDXRemoteSerializeResult;
+  resume: {
+    username?: string;
+    username_show?: boolean;
+    email?: string;
+    email_show?: boolean;
+    address?: string;
+    telephone?: string;
+    veteran?: string;
+    disability?: string;
+    references?: Reference[];
+    military_services?: military_service[];
+    educations?: education[];
+    certificates?: certificate[];
+    languages?: language[];
+    awards?: award[];
+    skills?: skill[];
+    activities?: activity[];
+    careers?: career[];
+    essays?: essay[];
+  };
+}
+
 export type ResumeData = {
-  username?: string;
-  username_show?: boolean;
-  email?: string;
-  email_show?: boolean;
-  address?: string;
-  telephone?: string;
-  veteran?: string;
-  disability?: string;
-  references?: Reference[];
-  military_services?: military_service[];
-  educations?: education[];
-  certificates?: certificate[];
-  languages?: language[];
-  awards?: award[];
-  skills?: skill[];
-  activities?: activity[];
-  careers?: career[];
-  essays?: essay[];
+  data: {
+    username?: string;
+    username_show?: boolean;
+    email?: string;
+    email_show?: boolean;
+    address?: string;
+    telephone?: string;
+    veteran?: string;
+    disability?: string;
+    references?: Reference[];
+    military_services?: military_service[];
+    educations?: education[];
+    certificates?: certificate[];
+    languages?: language[];
+    awards?: award[];
+    skills?: skill[];
+    activities?: activity[];
+    careers?: career[];
+    essays?: essay[];
+  };
 };
 
 export type Reference = {
