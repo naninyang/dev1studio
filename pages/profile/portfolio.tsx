@@ -192,12 +192,36 @@ const Container = styled.div({
     [mq.maxSmall]: {
       padding: `${rem(67)} ${rem(27)}`,
     },
-    '& p': {
+    '& dl': {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: rem(22),
       fontSize: rem(32),
       fontWeight: 900,
       lineHeight: 1,
       [mq.maxSmall]: {
         fontSize: rem(20),
+      },
+      '& div': {
+        display: 'flex',
+        gap: rem(7),
+        '& dt span': {
+          ...mixIn.screenReaderOnly,
+        },
+        '& i': {
+          display: 'inline-block',
+          width: rem(32),
+          height: rem(32),
+          [mq.maxSmall]: {
+            fontSize: rem(20),
+          },
+        },
+        '& a': {
+          color: hex.white,
+          '&:hover, &:focus': {
+            textDecoration: 'underline',
+          },
+        },
       },
     },
     '& ul': {
@@ -274,6 +298,14 @@ const BackwardIcon = styled.i({
 
 const DownIcon = styled.i({
   background: `url(${images.misc.outlink}) no-repeat 50% 50%/contain`,
+});
+
+const EmailIcon = styled.i({
+  background: `url(${images.misc.email}) no-repeat 50% 50%/contain`,
+});
+
+const SlackIcon = styled.i({
+  background: `url(${images.misc.slack}) no-repeat 50% 50%/contain`,
 });
 
 const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
@@ -556,7 +588,26 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         </section>
       </Content>
       <footer>
-        <p>1157iamari@gmail.com</p>
+        <dl>
+          <div>
+            <dt>
+              <EmailIcon />
+              <span>이메일</span>
+            </dt>
+            <dd>
+              <AnchorLink href="1157iamari@gmail.com">1157iamari@gmail.com</AnchorLink>
+            </dd>
+          </div>
+          <div>
+            <dt>
+              <SlackIcon />
+              <span>슬랙</span>
+            </dt>
+            <dd>
+              <AnchorLink href="https://arisdevelop.slack.com">https://arisdevelop.slack.com</AnchorLink>
+            </dd>
+          </div>
+        </dl>
         <ul>
           <li>
             <AnchorLink href="/pdf/portfolio_chloe.pdf">

@@ -45,8 +45,9 @@ export const images = {
     },
   },
   misc: {
+    email: require('./misc/email.svg'),
     left: require('./misc/left.svg'),
     outlink: require('./misc/outlink.svg'),
-    right: require('./misc/right.svg'),
+    slack: require('./misc/slack.svg'),
   },
 };
