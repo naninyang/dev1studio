@@ -38,14 +38,14 @@ const SummaryDev1studio = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/komponent#summary">
+            <AnchorLink href="/condition#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>콤포넌트 써머리보기</span>
+              <span>컨디션스튜디오 써머리보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>

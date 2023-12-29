@@ -1,5 +1,10 @@
 export const images = {
   logo: {
+    condition: {
+      icon: require('./logo/condition/icon.svg'),
+      typo: require('./logo/condition/typo.svg'),
+      logo: require('./logo/condition/logo.svg'),
+    },
     dev1studio: {
       icon: require('./logo/dev1studio/icon.svg'),
       typo: require('./logo/dev1studio/typo.svg'),
@@ -49,5 +54,6 @@ export const images = {
     left: require('./misc/left.svg'),
     outlink: require('./misc/outlink.svg'),
     slack: require('./misc/slack.svg'),
+    right: require('./misc/right.svg'),
   },
 };
