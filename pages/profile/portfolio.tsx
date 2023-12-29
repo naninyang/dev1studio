@@ -429,7 +429,7 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 <dt>프로젝트명 및 기간</dt>
                 <dd>리걸팀톡 신규 2020.03 ~ 2020.06</dd>
                 <dt>상세내용</dt>
-                <dd>HTML5 & CSS3 & jQuery</dd>
+                <dd>UX Design, HTML5 & CSS3 & jQuery</dd>
               </div>
             </dl>
           </div>
