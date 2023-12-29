@@ -153,7 +153,6 @@ const Resume: NextPage<PrintProps> = ({ mdx }) => {
           <pre>
             <code>Mac: command + p / Win: ctrl + p</code>
           </pre>
-          <AnchorLink href="/dev1studio">이전 화면으로 이동</AnchorLink>
         </blockquote>
         {(resumeData?.essays?.length ?? 0) > 0 &&
           resumeData.essays &&
