@@ -1,13 +1,14 @@
 @import './designSystem'
 
 .dev1studio
-  background: url(/images/dev1studio.webp) no-repeat 50% 50%/cover
-  height: 100dvh
+  background-color: $hex-black
+  display: flex
+  justify-content: center
+  align-items: center
   position: relative
   overflow: hidden
-
-  +mq(minLarge)
-    min-height: rem(800)
+  width: 100%
+  height: 100dvh
 
   &::before
     content: ''
@@ -17,54 +18,55 @@
     left: 0
     width: 100%
     height: 100%
-    background-color: $rgba-black70
+    opacity: .3
+    background: url(/images/dev1studio.webp) no-repeat 50% 50%/cover
 
-  p
-    position: absolute
-    z-index: 1
-    top: calc(vh(-4, 1080) + rem(57))
-    left: vw(-10, 1920)
-    font-size: vw(170, 1920)
-    font-weight: 900
-    line-height: 1
-    color: $hex-white
+  +mq(minLarge)
+    min-height: rem(800)
 
-    +mq(minLarge)
-      top: calc(vh(-12, 1080) + rem(57))
+  .profile
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: rem(77)
+    position: relative
 
-    strong
-      font-weight: 900
-      color: $hex-accent
+    button
+      background-color: transparent
+      display: flex
+      align-items: flex-end
+      gap: rem(27)
+      transition: all .4s cubic-bezier(.4,0,.2,1)
 
-  .visual
-    position: absolute
-    right: 0
-    top: 50%
-    transform: translateY(-50%)
-    width: vw(1601, 1920)
-    aspect-ratio: 1601 / 786
+      span
+        +screen-reader-only
 
-    i
-      display: block
-      position: absolute
+      i
+        display: block
 
-    .primary
-      top: 0
-      right: 0
-      width: vw(1171, 1920)
-      aspect-ratio: 1171 / 312
+      i:nth-of-type(1)
+        opacity: .5
+        transition: all .4s cubic-bezier(.4,0,.2,1)
 
-    .hero
-      right: 0
-      bottom: 0
-      width: vw(1073, 1920)
-      aspect-ratio: 1073 / 574
+      i:nth-of-type(2)
+        opacity: 0
+        width: 0
+        transition: all .4s cubic-bezier(.4,0,.2,1)
 
-    .secondary
-      right: vw(46, 1920)
-      bottom: 0
-      width: vw(1555, 1920)
-      aspect-ratio: 1555 / 276
+      &:hover, &:focus
+        i
+          opacity: 1
+
+      &:nth-of-type(1)
+        &:hover, &:focus
+          i:nth-of-type(2)
+            width: rem(289)
+
+      &:nth-of-type(2)
+        &:hover, &:focus
+          i:nth-of-type(2)
+            width: rem(162)
 
 .preview
   background-color: $hex-dark

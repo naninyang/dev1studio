@@ -45,6 +45,7 @@ export const images = {
     },
   },
   misc: {
+    down: require('./misc/down.svg'),
     outlink: require('./misc/outlink.svg'),
     right: require('./misc/right.svg'),
   },
