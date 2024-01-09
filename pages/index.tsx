@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     const splashTimer = setTimeout(() => {
       setSplash(false);
-    }, 3200);
+    }, 3700);
 
     return () => clearTimeout(splashTimer);
   }, []);
