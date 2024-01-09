@@ -72,7 +72,7 @@ const CardNews = () => {
                   </button>
                 </div>
               </div>
-              <footer>https://news.dev1stud.io</footer>
+              <footer>https://shorts.dev1stud.io</footer>
             </div>
             <div className={`${styles['item-back']} ${!isActive ? styles.active : ''}`}>
               <header>
@@ -101,8 +101,8 @@ const CardNews = () => {
                 </div>
               </div>
               <footer>
-                <div className={styles.primary}>https://news.dev1stud.io</div>
-                <div className={styles.secondary}>뉴스닷데브원스튜드닷아이오</div>
+                <div className={styles.primary}>https://shorts.dev1stud.io</div>
+                <div className={styles.secondary}>쇼츠닷데브원스튜드닷아이오</div>
               </footer>
             </div>
           </div>
