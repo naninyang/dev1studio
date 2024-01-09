@@ -124,6 +124,7 @@ const Container = styled.div({
         gap: rem(27),
       },
       '& img': {
+        boxShadow: `0px ${rem(22)} ${rem(70)} ${rem(4)} rgba(0,0,0,0.56)`,
         [mq.maxSmall]: {
           width: '100%',
           height: 'auto',
