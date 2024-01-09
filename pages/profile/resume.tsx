@@ -646,7 +646,7 @@ const Resume: NextPage<PrintProps> = ({ mdx, resume }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/profile`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/resume`);
   const resume = await response.json();
   const mdxSource = resume.essays?.[0]?.bio;
 

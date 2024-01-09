@@ -2,12 +2,12 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { getAuth } from '@/utils/getAuth';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  let token = await getAuth();
+  let authToken = await getAuth();
   try {
-    const response = await fetch(`${process.env.USER_API}/resume`, {
+    const response = await fetch(`${process.env.RESUME_DATA_API}`, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${token.token}`,
+        Authorization: `Bearer ${authToken.token}`,
       },
     });
     const data = await response.json();

@@ -1,14 +1,11 @@
 export const getAuth = async () => {
   try {
-    const response = await fetch(
-      `${process.env.USER_API}/auth?userid=${process.env.USER_IDX}&password=${process.env.USER_PWD}`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+    const response = await fetch(`${process.env.RESUME_AUTH_API}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    );
+    });
 
     if (!response.ok) {
       console.error('Response Error:', response);
