@@ -52,7 +52,7 @@ const CardNews = () => {
             <div className={`${styles['item-front']} ${isActive ? styles.active : ''}`}>
               <header>
                 <span>DEV1L</span>
-                <strong>short.view:news</strong>
+                <strong>short.view.news</strong>
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
@@ -78,7 +78,7 @@ const CardNews = () => {
               <header>
                 <div className={styles.primary}>
                   <span>DEV1L</span>
-                  <strong>short.view:news</strong>
+                  <strong>short.view.news</strong>
                 </div>
                 <div className={styles.secondary}>데브런닷스튜디오 숏뷰뉴스</div>
               </header>
