@@ -30,7 +30,3 @@
 - NextJS
 - React
 - TypeScript
-
-## TODO
-
-- 포트폴리오
