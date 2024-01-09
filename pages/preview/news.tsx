@@ -28,7 +28,7 @@ const PreviewNews = () => {
         <h2>
           <span>
             short.view.news
-            <AnchorLink href="https://news.dev1stud.io">
+            <AnchorLink href="https://shorts.dev1stud.io">
               <Icon />
             </AnchorLink>
           </span>

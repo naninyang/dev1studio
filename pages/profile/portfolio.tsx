@@ -553,7 +553,7 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               </div>
               <div className="detail">
                 <dt>프로젝트명 및 기간</dt>
-                <dd>유리아워터 2023.12</dd>
+                <dd>유리아워터 2022.12</dd>
                 <dt>상세내용</dt>
                 <dd>PM, UX Design</dd>
               </div>

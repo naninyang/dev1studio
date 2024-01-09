@@ -57,9 +57,9 @@ const SummaryNews = () => {
             <div className={styles.info}>
               <div className={styles['info-content']}>
                 <header>
-                  <h2>short.view:news</h2>
+                  <h2>short.view.news</h2>
                   <span>
-                    <AnchorLink href="https://news.dev1stud.io">https://news.dev1stud.io</AnchorLink>
+                    <AnchorLink href="https://shorts.dev1stud.io">https://shorts.dev1stud.io</AnchorLink>
                   </span>
                 </header>
                 <ul>
@@ -73,20 +73,22 @@ const SummaryNews = () => {
                   <li>SASS</li>
                   <li>Google YouTube iframe API</li>
                   <li>Masonry (Masonic)</li>
-                  <li>Perfect Scrollbar</li>
-                  <li>pull-to-refresh</li>
                   <li>PWA</li>
                   <li>SWR (useSWRInfinite)</li>
-                  <li>Vercel serverless</li>
-                  <li>jsonwebtoken</li>
                   <li>Notion Client</li>
                   <li>baselime.io</li>
-                  <li>Github API</li>
+                  <li>AWS EC2</li>
+                  <li>Nginx</li>
+                  <li>MariaDB</li>
+                  <li>Strapi</li>
+                  <li>Github Actions</li>
                 </ul>
                 <div className={styles.description}>
                   <p>
                     YouTube 및 NAVER 뉴스에 업로드 된 뉴스를 요약하고 큐레이터 본인의 생각을 짧게 보여주는 서비스입니다.
                   </p>
+                  <p>Netlify CMS에서 Strapi로 백엔드를 옮기면서 마이그레이션 하지 않고 새로 시작했습니다.</p>
+                  <p>숏뷰뉴스 시즌2 시작합니다.</p>
                 </div>
               </div>
             </div>
