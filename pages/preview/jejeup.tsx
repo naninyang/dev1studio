@@ -20,15 +20,15 @@ export function useDesktop() {
   return isDesktop;
 }
 
-const PreviewWeabur = () => {
+const PreviewJejeup = () => {
   const isDesktop = useDesktop();
   return (
     <div className={styles.preview} ref={scrollRefs.preview} id="preview">
       <div className={styles.content}>
         <h2>
           <span>
-            weabur
-            <AnchorLink href="https://openmeta.dev1stud.io">
+            jejeup
+            <AnchorLink href="https://jejeup.dev1stud.io">
               <Icon />
             </AnchorLink>
           </span>
@@ -37,15 +37,15 @@ const PreviewWeabur = () => {
         <div className={styles.images}>
           {isDesktop ? (
             <>
-              <Image src="/images/weabur1.webp" alt="" width="768" height="1080" />
-              <Image src="/images/weabur2.webp" alt="" width="768" height="1080" />
-              <Image src="/images/weabur3.webp" alt="" width="768" height="1080" />
+              <Image src="/images/jejeup1.webp" alt="" width="768" height="1080" />
+              <Image src="/images/jejeup2.webp" alt="" width="768" height="1080" />
+              <Image src="/images/jejeup3.webp" alt="" width="768" height="1080" />
             </>
           ) : (
             <>
-              <Image src="/images/weabur1a.webp" alt="" width="375" height="667" />
-              <Image src="/images/weabur2a.webp" alt="" width="375" height="667" />
-              <Image src="/images/weabur3a.webp" alt="" width="375" height="667" />
+              <Image src="/images/jejeup1a.webp" alt="" width="375" height="667" />
+              <Image src="/images/jejeup2a.webp" alt="" width="375" height="667" />
+              <Image src="/images/jejeup3a.webp" alt="" width="375" height="667" />
             </>
           )}
         </div>
@@ -54,4 +54,4 @@ const PreviewWeabur = () => {
   );
 };
 
-export default PreviewWeabur;
+export default PreviewJejeup;

@@ -38,14 +38,14 @@ const SummaryOpenmeta = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/news#summary">
+            <AnchorLink href="/jejeup#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>숏뷰 뉴스 요약 보기</span>
+              <span>제제없 요약 보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -89,14 +89,14 @@ const SummaryOpenmeta = () => {
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/memorial#summary">
+            <AnchorLink href="/komponent#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>웨버 요약 보기</span>
+              <span>콤포넌트 요약 보기</span>
             </AnchorLink>
           </div>
         </div>

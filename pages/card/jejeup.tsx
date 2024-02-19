@@ -8,18 +8,18 @@ import { rem } from '@/styles/designSystem';
 import styles from '@/styles/card.module.sass';
 
 const Icon = styled.i({
-  background: `url(${images.logo.weabur.icon}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.jejeup.icon}) no-repeat 50% 50%/contain`,
   width: rem(150),
   height: rem(150),
 });
 
 const Typo = styled.i({
-  background: `url(${images.logo.weabur.typo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.jejeup.typo}) no-repeat 50% 50%/contain`,
   width: rem(180),
   height: rem(111),
 });
 
-const CardWeabur = () => {
+const CardJejeup = () => {
   const [isActive, setIsActive] = useState(true);
 
   const toggleActive = () => {
@@ -38,21 +38,21 @@ const CardWeabur = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/openmeta">
+            <AnchorLink href="/nol2tr">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>오픈메타 카드보기</span>
+              <span>놀이터뷰 카드보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
             <div className={`${styles['item-front']} ${isActive ? styles.active : ''}`}>
               <header>
                 <span>DEV1L</span>
-                <strong>weabur</strong>
+                <strong>jejeup</strong>
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
@@ -72,15 +72,15 @@ const CardWeabur = () => {
                   </button>
                 </div>
               </div>
-              <footer>https://weabur.dev1stud.io</footer>
+              <footer>https://jejeup.dev1stud.io</footer>
             </div>
             <div className={`${styles['item-back']} ${!isActive ? styles.active : ''}`}>
               <header>
                 <div className={styles.primary}>
                   <span>DEV1L</span>
-                  <strong>weabur</strong>
+                  <strong>jejeup</strong>
                 </div>
-                <div className={styles.secondary}>데브런닷스튜디오 웨버</div>
+                <div className={styles.secondary}>데브런닷스튜디오 제제없</div>
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
@@ -101,20 +101,20 @@ const CardWeabur = () => {
                 </div>
               </div>
               <footer>
-                <div className={styles.primary}>https://weabur.dev1stud.io</div>
-                <div className={styles.secondary}>웨버닷데브원스튜드닷아이오</div>
+                <div className={styles.primary}>https://jejeup.dev1stud.io</div>
+                <div className={styles.secondary}>제제없닷데브원스튜드닷아이오</div>
               </footer>
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/komponent">
+            <AnchorLink href="/openmeta">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>콤포넌트 카드보기</span>
+              <span>오픈메타 카드보기</span>
             </AnchorLink>
           </div>
         </div>
@@ -132,4 +132,4 @@ const CardWeabur = () => {
   );
 };
 
-export default CardWeabur;
+export default CardJejeup;
