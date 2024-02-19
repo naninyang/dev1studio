@@ -59,7 +59,7 @@ const Develog = styled.i({
 });
 
 const News = styled.i({
-  background: `url(${images.logo.news.icon}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.shorts.icon}) no-repeat 50% 50%/contain`,
 });
 
 const Postype = styled.i({

@@ -8,7 +8,7 @@ import { mq, rem } from '@/styles/designSystem';
 import styles from '@/styles/summary.module.sass';
 
 const Logo = styled.i({
-  background: `url(${images.logo.news.logo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.shorts.logo}) no-repeat 50% 50%/contain`,
   width: '100%',
   [mq.maxMedium]: {
     aspectRatio: '270 / 33',
@@ -84,11 +84,8 @@ const SummaryShorts = () => {
                   <li>Github Actions</li>
                 </ul>
                 <div className={styles.description}>
-                  <p>
-                    YouTube 및 NAVER 뉴스에 업로드 된 뉴스를 요약하고 큐레이터 본인의 생각을 짧게 보여주는 서비스입니다.
-                  </p>
-                  <p>Netlify CMS에서 Strapi로 백엔드를 옮기면서 마이그레이션 하지 않고 새로 시작했습니다.</p>
-                  <p>숏뷰뉴스 시즌2 시작합니다.</p>
+                  <p>유튜브 및 네이버 뉴스의 기사를 요약하고 큐레이터의 코멘트를 보여주는 서비스입니다.</p>
+                  <p>Netlify CMS에서 Strapi로 백엔드를 옮기면서 마이그레이션 하지않고 새로 작업했습니다.</p>
                 </div>
               </div>
             </div>

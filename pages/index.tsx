@@ -31,7 +31,7 @@ export default function Home() {
     <>
       <Seo
         pageDescription="UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리의 포트폴리오"
-        pageImg={`https://dev1stud.io/images/og-image.png?ts=${timestamp}`}
+        pageImg={`https://dev1stud.io/images/og-image.webp?ts=${timestamp}`}
       />
       <main className={styles.home}>
         {splash ? (

@@ -8,13 +8,13 @@ import { rem } from '@/styles/designSystem';
 import styles from '@/styles/card.module.sass';
 
 const Icon = styled.i({
-  background: `url(${images.logo.news.icon}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.shorts.icon}) no-repeat 50% 50%/contain`,
   width: rem(60),
   height: rem(70),
 });
 
 const Typo = styled.i({
-  background: `url(${images.logo.news.typo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.shorts.typo}) no-repeat 50% 50%/contain`,
   width: rem(127),
   height: rem(15),
 });

@@ -20,10 +20,10 @@ export const images = {
       typo: require('./logo/komponent/typo.svg'),
       logo: require('./logo/komponent/logo.svg'),
     },
-    news: {
-      icon: require('./logo/news/icon.svg'),
-      typo: require('./logo/news/typo.svg'),
-      logo: require('./logo/news/logo.svg'),
+    shorts: {
+      icon: require('./logo/shorts/icon.svg'),
+      typo: require('./logo/shorts/typo.svg'),
+      logo: require('./logo/shorts/logo.svg'),
     },
     openmeta: {
       icon: require('./logo/openmeta/icon.svg'),

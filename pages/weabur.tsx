@@ -10,7 +10,7 @@ const Weabur = () => {
       <Seo
         pageTitle="데브런닷스튜디오 웨버 DEV1L.studio weabur"
         pageDescription="버스정보와 날씨정보를 알려드려요"
-        pageImg={`https://dev1stud.io/images/og-weabur.png?ts=${timestamp}`}
+        pageImg={`https://dev1stud.io/images/og-weabur.webp?ts=${timestamp}`}
       />
       <CardWeabur />
       <SummaryWeabur />
