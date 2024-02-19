@@ -18,7 +18,6 @@
 ### Frontend (This repo)
 
 - NextJS
-- React
 - TypeScript
 - next-images
 - react-responsive
