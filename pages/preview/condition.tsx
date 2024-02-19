@@ -28,7 +28,7 @@ const PreviewCondition = () => {
         <h2>
           <span>
             condition studio
-            <AnchorLink href="https://develog.dev1stud.io">
+            <AnchorLink href="https://condition.dev1stud.io">
               <Icon />
             </AnchorLink>
           </span>
@@ -37,15 +37,15 @@ const PreviewCondition = () => {
         <div className={styles.images}>
           {isDesktop ? (
             <>
-              <Image src="/images/condition1.webp" alt="" width="614" height="1030" className={styles.left} />
-              <Image src="/images/condition2.webp" alt="" width="740" height="848" className={styles.center} />
-              <Image src="/images/condition3.webp" alt="" width="603" height="739" className={styles.right} />
+              <Image src="/images/condition1.webp" alt="" width="768" height="1080" />
+              <Image src="/images/condition2.webp" alt="" width="768" height="1080" />
+              <Image src="/images/condition3.webp" alt="" width="768" height="1080" />
             </>
           ) : (
             <>
-              <Image src="/images/condition1a.webp" alt="" width="990" height="2145" />
-              <Image src="/images/condition2a.webp" alt="" width="990" height="2145" />
-              <Image src="/images/condition3a.webp" alt="" width="990" height="2145" />
+              <Image src="/images/condition1a.webp" alt="" width="375" height="667" />
+              <Image src="/images/condition2a.webp" alt="" width="375" height="667" />
+              <Image src="/images/condition3a.webp" alt="" width="375" height="667" />
             </>
           )}
         </div>

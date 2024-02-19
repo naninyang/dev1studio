@@ -37,15 +37,15 @@ const PreviewWeabur = () => {
         <div className={styles.images}>
           {isDesktop ? (
             <>
-              <Image src="/images/weabur1.webp" alt="" width="614" height="1030" className={styles.left} />
-              <Image src="/images/weabur2.webp" alt="" width="740" height="848" className={styles.center} />
-              <Image src="/images/weabur3.webp" alt="" width="603" height="739" className={styles.right} />
+              <Image src="/images/weabur1.webp" alt="" width="768" height="1080" />
+              <Image src="/images/weabur2.webp" alt="" width="768" height="1080" />
+              <Image src="/images/weabur3.webp" alt="" width="768" height="1080" />
             </>
           ) : (
             <>
-              <Image src="/images/weabur1a.webp" alt="" width="990" height="2145" />
-              <Image src="/images/weabur2a.webp" alt="" width="990" height="2145" />
-              <Image src="/images/weabur3a.webp" alt="" width="990" height="2145" />
+              <Image src="/images/weabur1a.webp" alt="" width="375" height="667" />
+              <Image src="/images/weabur2a.webp" alt="" width="375" height="667" />
+              <Image src="/images/weabur3a.webp" alt="" width="375" height="667" />
             </>
           )}
         </div>

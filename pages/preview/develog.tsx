@@ -37,15 +37,15 @@ const PreviewDevelog = () => {
         <div className={styles.images}>
           {isDesktop ? (
             <>
-              <Image src="/images/develog1.webp" alt="" width="614" height="1030" className={styles.left} />
-              <Image src="/images/develog2.webp" alt="" width="740" height="848" className={styles.center} />
-              <Image src="/images/develog3.webp" alt="" width="603" height="739" className={styles.right} />
+              <Image src="/images/develog1.webp" alt="" width="768" height="1080" />
+              <Image src="/images/develog2.webp" alt="" width="768" height="1080" />
+              <Image src="/images/develog3.webp" alt="" width="768" height="1080" />
             </>
           ) : (
             <>
-              <Image src="/images/develog1a.webp" alt="" width="990" height="2145" />
-              <Image src="/images/develog2a.webp" alt="" width="990" height="2145" />
-              <Image src="/images/develog3a.webp" alt="" width="990" height="2145" />
+              <Image src="/images/develog1a.webp" alt="" width="375" height="667" />
+              <Image src="/images/develog2a.webp" alt="" width="375" height="667" />
+              <Image src="/images/develog3a.webp" alt="" width="375" height="667" />
             </>
           )}
         </div>

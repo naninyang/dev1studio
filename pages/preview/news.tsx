@@ -37,15 +37,15 @@ const PreviewNews = () => {
         <div className={styles.images}>
           {isDesktop ? (
             <>
-              <Image src="/images/news1.webp" alt="" width="614" height="1030" className={styles.left} />
-              <Image src="/images/news2.webp" alt="" width="740" height="848" className={styles.center} />
-              <Image src="/images/news3.webp" alt="" width="603" height="739" className={styles.right} />
+              <Image src="/images/shorts1.webp" alt="" width="768" height="1080" />
+              <Image src="/images/shorts2.webp" alt="" width="768" height="1080" />
+              <Image src="/images/shorts3.webp" alt="" width="768" height="1080" />
             </>
           ) : (
             <>
-              <Image src="/images/news1a.webp" alt="" width="990" height="2145" />
-              <Image src="/images/news2a.webp" alt="" width="990" height="2145" />
-              <Image src="/images/news3a.webp" alt="" width="990" height="2145" />
+              <Image src="/images/shorts1a.webp" alt="" width="375" height="667" />
+              <Image src="/images/shorts2a.webp" alt="" width="375" height="667" />
+              <Image src="/images/shorts3a.webp" alt="" width="375" height="667" />
             </>
           )}
         </div>

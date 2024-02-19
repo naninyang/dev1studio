@@ -95,9 +95,6 @@
     background-color: $hex-night
     border-radius: rem(20) rem(20) 0 0
 
-    +mq(minLarge)
-      aspect-ratio: 1820 / 1030
-
     h2
       position: relative
       z-index: 1
@@ -136,6 +133,7 @@
           aspect-ratio: 64 / 64
 
     p
+      padding-bottom: rem(55)
       padding-left: rem(15)
       font-size: rem(20)
       font-weight: 700
@@ -147,19 +145,13 @@
         font-size: vh(36, 1030)
 
     .images
+      display: flex
       width: 100%
 
       +mq(maxMedium)
-        display: flex
         flex-direction: column
         gap: rem(25)
         margin-top: rem(50)
-
-      +mq(minLarge)
-        position: absolute
-        top: 0
-        left: 0
-        aspect-ratio: 1820 / 1030
 
       img
         width: 100%
@@ -170,22 +162,4 @@
           max-width: rem(400)
 
         +mq(minLarge)
-          position: absolute
-          width: vw(700, 1820)
-
-        &.left
-          +mq(minLarge)
-            top: vh(282, 1030)
-            left: 0
-
-        &.center
-          +mq(minLarge)
-            top: vh(200, 1030)
-            left: 50%
-            transform: translateX(-50%)
-            z-index: 1
-
-        &.right
-          +mq(minLarge)
-            top: 0
-            right: 0
+          +col
