@@ -35,6 +35,11 @@ export const images = {
       typo: require('./logo/memorial/typo.svg'),
       logo: require('./logo/memorial/logo.svg'),
     },
+    nol2tr: {
+      icon: require('./logo/nol2tr/icon.svg'),
+      typo: require('./logo/nol2tr/typo.svg'),
+      logo: require('./logo/nol2tr/logo.svg'),
+    },
     github: require('./logo/github.svg'),
     postype: require('./logo/postype.svg'),
     velog: require('./logo/velog.svg'),

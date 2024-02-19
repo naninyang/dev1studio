@@ -8,18 +8,18 @@ import { rem } from '@/styles/designSystem';
 import styles from '@/styles/card.module.sass';
 
 const Icon = styled.i({
-  background: `url(${images.logo.komponent.icon}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.nol2tr.icon}) no-repeat 50% 50%/contain`,
   width: rem(150),
   height: rem(150),
 });
 
 const Typo = styled.i({
-  background: `url(${images.logo.komponent.typo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.nol2tr.typo}) no-repeat 50% 50%/contain`,
   width: rem(180),
-  height: rem(42),
+  height: rem(111),
 });
 
-const CardKomponent = () => {
+const CardNol2tr = () => {
   const [isActive, setIsActive] = useState(true);
 
   const toggleActive = () => {
@@ -38,21 +38,21 @@ const CardKomponent = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/nol2tr">
+            <AnchorLink href="/memorial">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>웨버 카드보기</span>
+              <span>기억뉴스상자 카드보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
             <div className={`${styles['item-front']} ${isActive ? styles.active : ''}`}>
               <header>
                 <span>DEV1L</span>
-                <strong>komponent</strong>
+                <strong>nol2tr_view</strong>
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
@@ -72,15 +72,15 @@ const CardKomponent = () => {
                   </button>
                 </div>
               </div>
-              <footer>https://komponent.dev1stud.io</footer>
+              <footer>https://nol2tr.dev1stud.io</footer>
             </div>
             <div className={`${styles['item-back']} ${!isActive ? styles.active : ''}`}>
               <header>
                 <div className={styles.primary}>
                   <span>DEV1L</span>
-                  <strong>komponent</strong>
+                  <strong>nol2tr_view</strong>
                 </div>
-                <div className={styles.secondary}>데브런닷스튜디오 콤포넌트</div>
+                <div className={styles.secondary}>데브런닷스튜디오 놀이터뷰</div>
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
@@ -101,20 +101,20 @@ const CardKomponent = () => {
                 </div>
               </div>
               <footer>
-                <div className={styles.primary}>https://komponent.dev1stud.io</div>
-                <div className={styles.secondary}>콤포넌트닷데브원스튜드닷아이오</div>
+                <div className={styles.primary}>https://nol2tr.dev1stud.io</div>
+                <div className={styles.secondary}>놀이터닷데브원스튜드닷아이오</div>
               </footer>
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/condition">
+            <AnchorLink href="/jejeup">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>컨디션스튜디오 카드보기</span>
+              <span>제제없 카드보기</span>
             </AnchorLink>
           </div>
         </div>
@@ -132,4 +132,4 @@ const CardKomponent = () => {
   );
 };
 
-export default CardKomponent;
+export default CardNol2tr;
