@@ -19,7 +19,7 @@ const Typo = styled.i({
   height: rem(15),
 });
 
-const CardNews = () => {
+const CardShorts = () => {
   const [isActive, setIsActive] = useState(true);
 
   const toggleActive = () => {
@@ -132,4 +132,4 @@ const CardNews = () => {
   );
 };
 
-export default CardNews;
+export default CardShorts;

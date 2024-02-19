@@ -21,7 +21,7 @@ const Logo = styled.i({
   },
 });
 
-const SummaryNews = () => {
+const SummaryShorts = () => {
   const handleScroll = useCallback((section: ScrollRefKeys) => {
     const ref = scrollRefs[section];
     if (ref) {
@@ -119,4 +119,4 @@ const SummaryNews = () => {
   );
 };
 
-export default SummaryNews;
+export default SummaryShorts;

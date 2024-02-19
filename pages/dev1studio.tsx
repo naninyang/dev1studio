@@ -1,7 +1,7 @@
 import Seo from '@/components/Seo';
 import CardDev1studio from './card/dev1studio';
-import PreviewDev1studio from './preview/dev1studio';
 import SummaryDev1studio from './summary/dev1studio';
+import PreviewDev1studio from './preview/dev1studio';
 
 const Dev1studio = () => {
   const timestamp = Date.now();

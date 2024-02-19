@@ -9,7 +9,7 @@ const Komponent = () => {
     <>
       <Seo
         pageTitle="데브런닷스튜디오 콤포넌트 DEV1L.studio komponent"
-        pageDescription="K-components ! O612의 ‘국문’으로 작성하는 컴포넌트"
+        pageDescription="K-components ! O612의 ‘한글’으로 작성하는 컴포넌트"
         pageImg={`https://dev1stud.io/images/og-komponent.webp?ts=${timestamp}`}
       />
       <CardKomponent />

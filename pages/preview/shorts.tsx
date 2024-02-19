@@ -20,7 +20,7 @@ export function useDesktop() {
   return isDesktop;
 }
 
-const PreviewNews = () => {
+const PreviewShorts = () => {
   const isDesktop = useDesktop();
   return (
     <div className={styles.preview} ref={scrollRefs.preview} id="preview">
@@ -54,4 +54,4 @@ const PreviewNews = () => {
   );
 };
 
-export default PreviewNews;
+export default PreviewShorts;

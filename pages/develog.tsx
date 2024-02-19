@@ -1,7 +1,7 @@
 import Seo from '@/components/Seo';
 import CardDevelog from './card/develog';
-import PreviewDevelog from './preview/develog';
 import SummaryDevelog from './summary/develog';
+import PreviewDevelog from './preview/develog';
 
 const Develog = () => {
   const timestamp = Date.now();

@@ -1,6 +1,6 @@
 import Seo from '@/components/Seo';
-import SummaryCondition from './summary/condition';
 import CardCondition from './card/condition';
+import SummaryCondition from './summary/condition';
 import PreviewCondition from './preview/condition';
 
 const Condition = () => {

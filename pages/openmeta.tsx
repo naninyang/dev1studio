@@ -3,7 +3,7 @@ import CardOpenmeta from './card/openmeta';
 import SummaryOpenmeta from './summary/openmeta';
 import PreviewOpenmeta from './preview/openmeta';
 
-const Develog = () => {
+const Openmeta = () => {
   const timestamp = Date.now();
   return (
     <>
@@ -19,4 +19,4 @@ const Develog = () => {
   );
 };
 
-export default Develog;
+export default Openmeta;
