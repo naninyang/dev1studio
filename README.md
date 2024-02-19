@@ -8,7 +8,7 @@
 - 오픈메타 - openmeta
 - 콤포넌트 - komponent
 - 숏뷰뉴스 - short.view.news season2 (PWA App.)
-- 웨버 - weabur (PWA App.)
+- 웨버 - memorial (PWA App.)
 - 컨디션스튜디오 - condition studio (PWA App.)
 
 ## 사용된 기술

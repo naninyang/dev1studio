@@ -30,10 +30,10 @@ export const images = {
       typo: require('./logo/openmeta/typo.svg'),
       logo: require('./logo/openmeta/logo.svg'),
     },
-    weabur: {
-      icon: require('./logo/weabur/icon.svg'),
-      typo: require('./logo/weabur/typo.svg'),
-      logo: require('./logo/weabur/logo.svg'),
+    memorial: {
+      icon: require('./logo/memorial/icon.svg'),
+      typo: require('./logo/memorial/typo.svg'),
+      logo: require('./logo/memorial/logo.svg'),
     },
     github: require('./logo/github.svg'),
     postype: require('./logo/postype.svg'),

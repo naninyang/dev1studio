@@ -45,7 +45,7 @@ const SummaryCondition = () => {
                   fill="black"
                 />
               </svg>
-              <span>콤포넌트 써머리보기</span>
+              <span>콤포넌트 요약 보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -88,7 +88,7 @@ const SummaryCondition = () => {
                   fill="black"
                 />
               </svg>
-              <span>데브런닷스튜디오 써머리보기</span>
+              <span>데브런닷스튜디오 요약 보기</span>
             </AnchorLink>
           </div>
         </div>

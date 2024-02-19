@@ -45,7 +45,7 @@ const SummaryDev1studio = () => {
                   fill="black"
                 />
               </svg>
-              <span>컨디션스튜디오 써머리보기</span>
+              <span>컨디션스튜디오 요약 보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -87,7 +87,7 @@ const SummaryDev1studio = () => {
                   fill="black"
                 />
               </svg>
-              <span>디벨로그 써머리보기</span>
+              <span>디벨로그 요약 보기</span>
             </AnchorLink>
           </div>
         </div>

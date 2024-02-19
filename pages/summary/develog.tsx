@@ -45,7 +45,7 @@ const SummaryDevelog = () => {
                   fill="black"
                 />
               </svg>
-              <span>데브런닷스튜디오 써머리보기</span>
+              <span>데브런닷스튜디오 요약 보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -90,7 +90,7 @@ const SummaryDevelog = () => {
                   fill="black"
                 />
               </svg>
-              <span>숏뷰뉴스 써머리보기</span>
+              <span>숏뷰뉴스 요약 보기</span>
             </AnchorLink>
           </div>
         </div>

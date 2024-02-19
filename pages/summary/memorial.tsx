@@ -8,20 +8,20 @@ import { mq, rem } from '@/styles/designSystem';
 import styles from '@/styles/summary.module.sass';
 
 const Logo = styled.i({
-  background: `url(${images.logo.komponent.logo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.memorial.logo}) no-repeat 50% 50%/contain`,
   width: '100%',
   [mq.maxMedium]: {
-    aspectRatio: '270 / 63',
+    aspectRatio: '270 / 96',
     margin: rem(5),
     maxHeight: rem(35),
   },
   [mq.minLarge]: {
     width: rem(270),
-    height: rem(63),
+    height: rem(96),
   },
 });
 
-const SummaryKomponent = () => {
+const SummaryMemorial = () => {
   const handleScroll = useCallback((section: ScrollRefKeys) => {
     const ref = scrollRefs[section];
     if (ref) {
@@ -38,14 +38,14 @@ const SummaryKomponent = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/memorial#summary">
+            <AnchorLink href="/shorts#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
                   fill="black"
                 />
               </svg>
-              <span>웨버 요약 보기</span>
+              <span>숏뷰뉴스 요약 보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -57,42 +57,47 @@ const SummaryKomponent = () => {
             <div className={styles.info}>
               <div className={styles['info-content']}>
                 <header>
-                  <h2>komponent</h2>
+                  <h2>memorial</h2>
                   <span>
-                    <AnchorLink href="https://komponent.dev1stud.io">https://komponent.dev1stud.io</AnchorLink>
+                    <AnchorLink href="https://memorial.dev1stud.io">https://memorial.dev1stud.io</AnchorLink>
                   </span>
                 </header>
                 <ul>
                   <li>Next.js</li>
+                  <li>next/font/google (Lato, Noto Sans KR)</li>
+                  <li>React</li>
                   <li>TypeScript</li>
+                  <li>react-device-detect</li>
+                  <li>react-modal (Route As Modal)</li>
                   <li>emotion</li>
                   <li>SASS</li>
-                  <li>date-fns</li>
-                  <li>Prism.js</li>
-                  <li>vercel serverless</li>
+                  <li>Google YouTube iframe API</li>
+                  <li>Masonry (Masonic)</li>
+                  <li>PWA</li>
+                  <li>SWR (useSWRInfinite)</li>
+                  <li>Notion Client</li>
+                  <li>baselime.io</li>
                   <li>AWS EC2</li>
+                  <li>Nginx</li>
                   <li>MariaDB</li>
-                  <li>PM2</li>
-                  <li>Sentry</li>
+                  <li>Strapi</li>
                   <li>Github Actions</li>
                 </ul>
                 <div className={styles.description}>
-                  <p>K-components</p>
-                  <p>컴포넌트를 국문, 영문으로 코드 작성하고 사용하는 방법을 보여드립니다.</p>
-                  <p>현재는 1인 체제로 등록하고 있고, 추후에 초대 방식의 서비스로 업데이트할 계획이 있습니다.</p>
+                  <p>유튜브 및 네이버 뉴스의 긴 기사를 요약하고 큐레이터의 코멘트를 보여주는 서비스입니다.</p>
                 </div>
               </div>
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/condition#summary">
+            <AnchorLink href="/nol2tr#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>컨디션스튜디오 요약 보기</span>
+              <span>놀이터뷰 요약 보기</span>
             </AnchorLink>
           </div>
         </div>
@@ -110,4 +115,4 @@ const SummaryKomponent = () => {
   );
 };
 
-export default SummaryKomponent;
+export default SummaryMemorial;
