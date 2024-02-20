@@ -77,7 +77,7 @@ const CardNol2tr = () => {
             <div className={`${styles['item-back']} ${!isActive ? styles.active : ''}`}>
               <header>
                 <div className={styles.primary}>
-                  <span>DEV1L</span>
+                  <span>DEV1L.studio</span>
                   <strong>nol2tr_view</strong>
                 </div>
                 <div className={styles.secondary}>데브런닷스튜디오 놀이터뷰</div>

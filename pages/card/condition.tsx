@@ -51,7 +51,7 @@ const CardCondition = () => {
           <div className={styles.item}>
             <div className={`${styles['item-front']} ${isActive ? styles.active : ''}`}>
               <header>
-                <span>DEV1L</span>
+                <span>DEV1L.studio</span>
                 <strong>condition studio</strong>
               </header>
               <div className={styles.logo}>

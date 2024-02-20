@@ -77,7 +77,7 @@ const CardOpenmeta = () => {
             <div className={`${styles['item-back']} ${!isActive ? styles.active : ''}`}>
               <header>
                 <div className={styles.primary}>
-                  <span>DEV1L</span>
+                  <span>DEV1L.studio</span>
                   <strong>openmeta</strong>
                 </div>
                 <div className={styles.secondary}>데브런닷스튜디오 오픈메타</div>
