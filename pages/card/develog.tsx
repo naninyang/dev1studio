@@ -107,14 +107,14 @@ const CardDevelog = () => {
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/shorts">
+            <AnchorLink href="/nol2tr">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>숏뷰뉴스 카드보기</span>
+              <span>놀이터뷰 카드보기</span>
             </AnchorLink>
           </div>
         </div>

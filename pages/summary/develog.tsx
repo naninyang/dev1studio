@@ -45,7 +45,7 @@ const SummaryDevelog = () => {
                   fill="black"
                 />
               </svg>
-              <span>데브런닷스튜디오 요약 보기</span>
+              <span>데브런닷스튜디오 요약보기</span>
             </AnchorLink>
           </div>
           <div className={styles.item}>
@@ -83,14 +83,14 @@ const SummaryDevelog = () => {
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/shorts#summary">
+            <AnchorLink href="/nol2tr#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>숏뷰뉴스 요약 보기</span>
+              <span>놀이터뷰 요약보기</span>
             </AnchorLink>
           </div>
         </div>
