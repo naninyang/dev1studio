@@ -8,7 +8,7 @@ import { mq, rem } from '@/styles/designSystem';
 import styles from '@/styles/summary.module.sass';
 
 const Logo = styled.i({
-  background: `url(${images.logo.jejeup.logo}) no-repeat 50% 50%/contain`,
+  background: `url(${images.logo.semoview.logo}) no-repeat 50% 50%/contain`,
   width: '100%',
   [mq.maxMedium]: {
     aspectRatio: '270 / 96',
@@ -21,7 +21,7 @@ const Logo = styled.i({
   },
 });
 
-const SummaryJejeup = () => {
+const SummarySemoview = () => {
   const handleScroll = useCallback((section: ScrollRefKeys) => {
     const ref = scrollRefs[section];
     if (ref) {
@@ -57,9 +57,9 @@ const SummaryJejeup = () => {
             <div className={styles.info}>
               <div className={styles['info-content']}>
                 <header>
-                  <h2>jejeup</h2>
+                  <h2>semoview</h2>
                   <span>
-                    <AnchorLink href="https://jejeup.dev1stud.io">https://jejeup.dev1stud.io</AnchorLink>
+                    <AnchorLink href="https://semo.dev1stud.io">https://semo.dev1stud.io</AnchorLink>
                   </span>
                 </header>
                 <ul>
@@ -70,10 +70,7 @@ const SummaryJejeup = () => {
                   <li>emotion</li>
                   <li>SASS</li>
                   <li>Google YouTube iframe API</li>
-                  <li>Masonry (Masonic)</li>
                   <li>PWA</li>
-                  <li>SWR (useSWRInfinite)</li>
-                  <li>baselime.io</li>
                   <li>AWS EC2</li>
                   <li>Nginx</li>
                   <li>MariaDB</li>
@@ -89,14 +86,14 @@ const SummaryJejeup = () => {
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/openmeta#summary">
+            <AnchorLink href="/komponent#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>오픈메타 써머리보기</span>
+              <span>콤포넌트 요약 보기</span>
             </AnchorLink>
           </div>
         </div>
@@ -114,4 +111,4 @@ const SummaryJejeup = () => {
   );
 };
 
-export default SummaryJejeup;
+export default SummarySemoview;

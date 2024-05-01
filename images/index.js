@@ -40,10 +40,10 @@ export const images = {
       typo: require('./logo/nol2tr/typo.svg'),
       logo: require('./logo/nol2tr/logo.svg'),
     },
-    jejeup: {
-      icon: require('./logo/jejeup/icon.svg'),
-      typo: require('./logo/jejeup/typo.svg'),
-      logo: require('./logo/jejeup/logo.svg'),
+    semoview: {
+      icon: require('./logo/semoview/icon.svg'),
+      typo: require('./logo/semoview/typo.svg'),
+      logo: require('./logo/semoview/logo.svg'),
     },
     github: require('./logo/github.svg'),
     postype: require('./logo/postype.svg'),

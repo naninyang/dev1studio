@@ -21,7 +21,7 @@ export function useDesktop() {
   return isDesktop;
 }
 
-const PreviewOpenmeta = () => {
+const PreviewSemoview = () => {
   const isDesktop = useDesktop();
   return (
     <>
@@ -29,8 +29,8 @@ const PreviewOpenmeta = () => {
         <div className={styles.content}>
           <h2>
             <span>
-              openmeta
-              <AnchorLink href="https://openmeta.dev1stud.io">
+              semoview
+              <AnchorLink href="https://semo.dev1stud.io">
                 <Icon />
               </AnchorLink>
             </span>
@@ -39,15 +39,15 @@ const PreviewOpenmeta = () => {
           <div className={styles.images}>
             {isDesktop ? (
               <>
-                <Image src="/images/openmeta1.webp" alt="" width="768" height="1080" />
-                <Image src="/images/openmeta2.webp" alt="" width="768" height="1080" />
-                <Image src="/images/openmeta3.webp" alt="" width="768" height="1080" />
+                <Image src="/images/semoview1.webp" alt="" width="768" height="1080" />
+                <Image src="/images/semoview2.webp" alt="" width="768" height="1080" />
+                <Image src="/images/semoview3.webp" alt="" width="768" height="1080" />
               </>
             ) : (
               <>
-                <Image src="/images/openmeta1a.webp" alt="" width="375" height="667" />
-                <Image src="/images/openmeta2a.webp" alt="" width="375" height="667" />
-                <Image src="/images/openmeta3a.webp" alt="" width="375" height="667" />
+                <Image src="/images/semoview1a.webp" alt="" width="375" height="667" />
+                <Image src="/images/semoview2a.webp" alt="" width="375" height="667" />
+                <Image src="/images/semoview3a.webp" alt="" width="375" height="667" />
               </>
             )}
           </div>
@@ -58,4 +58,4 @@ const PreviewOpenmeta = () => {
   );
 };
 
-export default PreviewOpenmeta;
+export default PreviewSemoview;

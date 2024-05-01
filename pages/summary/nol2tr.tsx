@@ -67,20 +67,14 @@ const SummaryNol2tr = () => {
                   <li>React</li>
                   <li>TypeScript</li>
                   <li>react-device-detect</li>
-                  <li>react-modal (Route As Modal)</li>
                   <li>emotion</li>
                   <li>SASS</li>
                   <li>Google YouTube iframe API</li>
-                  <li>Masonry (Masonic)</li>
                   <li>PWA</li>
-                  <li>SWR (useSWRInfinite)</li>
-                  <li>Notion Client</li>
-                  <li>baselime.io</li>
                   <li>AWS EC2</li>
                   <li>Nginx</li>
                   <li>MariaDB</li>
                   <li>Strapi</li>
-                  <li>Github Actions</li>
                 </ul>
                 <div className={styles.description}>
                   <p>유튜브와 네이버 뉴스의 기사에 맞는 곡을 추천해드립니다.</p>
@@ -89,14 +83,14 @@ const SummaryNol2tr = () => {
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/jejeup#summary">
+            <AnchorLink href="/semoview#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
                   fill="black"
                 />
               </svg>
-              <span>제제없 써머리보기</span>
+              <span>세모뷰 써머리보기</span>
             </AnchorLink>
           </div>
         </div>
