@@ -57,7 +57,7 @@ const PreviewDev1studio = () => {
   return (
     <>
       {!isPortfolio && (
-        <div className={styles.dev1studio} ref={scrollRefs.preview} id="preview">
+        <div className={styles.dev1studio} ref={scrollRefs.profile} id="profile">
           <div className={styles.profile}>
             <button type="button" onClick={handlePortfolio}>
               <span>포트폴리오</span>

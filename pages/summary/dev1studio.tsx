@@ -92,7 +92,7 @@ const SummaryDev1studio = () => {
           </div>
         </div>
       </div>
-      <button className="scroll-button" type="button" onClick={() => handleScroll('preview')}>
+      <button className="scroll-button" type="button" onClick={() => handleScroll('profile')}>
         <span>스크롤을 이동하세요</span>
         <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
