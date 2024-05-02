@@ -17,7 +17,7 @@ const Logo = styled.i({
   },
   [mq.minLarge]: {
     width: rem(270),
-    height: rem(96),
+    height: rem(270),
   },
 });
 

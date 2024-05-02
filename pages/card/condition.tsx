@@ -16,7 +16,7 @@ const Icon = styled.i({
 const Typo = styled.i({
   background: `url(${images.logo.condition.typo}) no-repeat 50% 50%/contain`,
   width: rem(403),
-  height: rem(87),
+  height: rem(403),
 });
 
 const CardCondition = () => {

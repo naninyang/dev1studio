@@ -10,13 +10,13 @@ import styles from '@/styles/card.module.sass';
 const Icon = styled.i({
   background: `url(${images.logo.dev1studio.icon}) no-repeat 50% 50%/contain`,
   width: rem(168),
-  height: rem(84),
+  height: rem(168),
 });
 
 const Typo = styled.i({
   background: `url(${images.logo.dev1studio.typo}) no-repeat 50% 50%/contain`,
   width: rem(180),
-  height: rem(24),
+  height: rem(180),
 });
 
 const CardDev1studio = () => {

@@ -16,7 +16,7 @@ const Icon = styled.i({
 const Typo = styled.i({
   background: `url(${images.logo.komponent.typo}) no-repeat 50% 50%/contain`,
   width: rem(180),
-  height: rem(42),
+  height: rem(180),
 });
 
 const CardKomponent = () => {

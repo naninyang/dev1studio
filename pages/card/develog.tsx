@@ -16,7 +16,7 @@ const Icon = styled.i({
 const Typo = styled.i({
   background: `url(${images.logo.develog.typo}) no-repeat 50% 50%/contain`,
   width: rem(154),
-  height: rem(47),
+  height: rem(154),
 });
 
 const CardDevelog = () => {
