@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { isSafari } from 'react-device-detect';
 import styled from '@emotion/styled';
 import { images } from '@/images';
 import { scrollRefs } from '@/components/ScrollLink';
@@ -57,7 +58,11 @@ const PreviewDev1studio = () => {
   return (
     <>
       {!isPortfolio && (
-        <div className={styles.dev1studio} ref={scrollRefs.profile} id="profile">
+        <div
+          className={`${styles.dev1studio} ${isSafari ? styles.safar1studio : ''}`}
+          ref={scrollRefs.profile}
+          id="profile"
+        >
           <div className={styles.profile}>
             <button type="button" onClick={handlePortfolio}>
               <span>포트폴리오</span>
