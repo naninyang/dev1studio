@@ -6,6 +6,7 @@ import AnchorLink from '@/components/AnchorLink';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import PreviewDev1studio from './dev1studio';
 import styled from '@emotion/styled';
+import { rem } from '@/styles/designSystem';
 import styles from '@/styles/preview.module.sass';
 
 const Icon = styled.i({
@@ -14,7 +15,7 @@ const Icon = styled.i({
 
 export function useDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
-  const desktop = useMediaQuery({ query: '(min-width: 992px)' });
+  const desktop = useMediaQuery({ query: `(min-width: ${rem(992)})` });
   useEffect(() => {
     setIsDesktop(desktop);
   }, [desktop]);
