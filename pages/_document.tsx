@@ -10,7 +10,7 @@ interface DocumentProps extends DocumentInitialProps {
 
 const AppDocument: React.FC<DocumentProps> & {
   getInitialProps: (ctx: DocumentContext) => Promise<DocumentProps>;
-} = ({ css, ids, ...props }) => {
+} = ({ css, ids }) => {
   return (
     <Html lang="ko-KR">
       <Head>

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { isSafari } from 'react-device-detect';
 import { useMediaQuery } from 'react-responsive';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/Anchor';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';
 import styles from '@/styles/summary.module.sass';

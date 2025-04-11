@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { DateProps, DescriptionProps, PrintProps, ResumeData } from '@/types';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/Anchor';
 import { rem } from '@/styles/designSystem';
 import { Container, ServicePage } from '@/styles/serviceSystem';
 import MiscLeft from '@/images/misc/MiscLeft';

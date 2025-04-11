@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { hex, rem, mixIn, mq } from '@/styles/designSystem';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/Anchor';
 import MiscLeft from '@/images/misc/MiscLeft';
 import MiscOutlink from '@/images/misc/MiscOutlink';
 import MiscEmail from '@/images/misc/MiscEmail';

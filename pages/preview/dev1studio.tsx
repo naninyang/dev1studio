@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { isSafari } from 'react-device-detect';
 import { useMediaQuery } from 'react-responsive';
 import { scrollRefs } from '@/components/ScrollLink';
-import AnchorLink from '@/components/AnchorLink';
+import Link from 'next/link';
 import Portfolio from '../profile/portfolio';
 import ProfilePortfolioEng from '@/images/profile/ProfilePortfolioEng';
 import ProfilePortfolioKor from '@/images/profile/ProfilePortfolioKor';
@@ -51,7 +51,7 @@ const PreviewDev1studio = () => {
                 }}
               />
             </button>
-            <AnchorLink href="/profile/resume" target="_blank">
+            <Link href="/profile/resume" target="_blank">
               <span>이력서</span>
               <ProfileResumeEng
                 style={{
@@ -65,7 +65,7 @@ const PreviewDev1studio = () => {
                   height: isDesktop ? `${59 / 16}rem` : `${20 / 16}rem`,
                 }}
               />
-            </AnchorLink>
+            </Link>
           </div>
         </div>
       )}

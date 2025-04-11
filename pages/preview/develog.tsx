@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/Anchor';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import PreviewDev1studio from './dev1studio';
 import MiscOutlink from '@/images/misc/MiscOutlink';

@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/Anchor';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import LogoConditionIcon from '@/images/logo/condition/LogoConditionIcon';
 import LogoConditionTypo from '@/images/logo/condition/LogoConditionTypo';

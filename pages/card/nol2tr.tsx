@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/Anchor';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import LogoNol2trIcon from '@/images/logo/nol2tr/LogoNol2trIcon';
 import LogoNol2trTypo from '@/images/logo/nol2tr/LogoNol2trTypo';

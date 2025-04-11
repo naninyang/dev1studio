@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Seo from '@/components/Seo';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/Anchor';
 import styles from '@/styles/home.module.sass';
 import MiscRight from '@/images/misc/MiscRight';
 import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';

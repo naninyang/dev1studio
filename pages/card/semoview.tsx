@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import AnchorLink from '@/components/AnchorLink';
+import AnchorLink from '@/components/Anchor';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import LogoSemoviewIcon from '@/images/logo/semoview/LogoSemoviewIcon';
 import LogoSemoviewTypo from '@/images/logo/semoview/LogoSemoviewTypo';

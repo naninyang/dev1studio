@@ -1,6 +1,6 @@
 import { rem, mixIn, rgba, mq } from '@/styles/designSystem';
 import styled from '@emotion/styled';
-import AnchorLink from './AnchorLink';
+import AnchorLink from './Anchor';
 import LogoDev1StudioIcon from '@/images/logo/dev1studio/LogoDev1StudioIcon';
 import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';
 import LogoPostype from '@/images/logo/LogoPostype';
