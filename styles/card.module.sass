@@ -1,45 +1,43 @@
-@import './designSystem'
-
 .card
-  padding: rem(79) rem(25) rem(25)
+  padding: ds.rem(79) ds.rem(25) ds.rem(25)
   min-height: 100dvh
   background: url(/images/home.webp) fixed no-repeat 50% 50%/cover
   position: relative
 
-  +mq(minLarge)
+  +ds.mq(minLarge)
     display: flex
     justify-content: center
     align-items: center
-    padding: rem(104) rem(50) rem(50)
+    padding: ds.rem(104) ds.rem(50) ds.rem(50)
 
   .container
     animation: card 1s cubic-bezier(.4,0,.2,1)
 
-    +mq(maxMedium)
+    +ds.mq(maxMedium)
       position: relative
-      height: calc(100vh - rem(104))
+      height: calc(100vh - ds.rem(104))
 
-    +mq(minLarge)
+    +ds.mq(minLarge)
       display: flex
       justify-items: center
 
     .content
-      +mq(maxMedium)
+      +ds.mq(maxMedium)
         position: absolute
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
-        padding: 0 rem(52)
+        padding: 0 ds.rem(52)
         width: 100%
-        max-width: rem(474)
+        max-width: ds.rem(474)
 
-      +mq(minLarge)
+      +ds.mq(minLarge)
         display: flex
         justify-items: center
-        gap: rem(77)
+        gap: ds.rem(77)
 
       .pager
-        +mq(maxMedium)
+        +ds.mq(maxMedium)
           position: absolute
           top: 50%
           transform: translateY(-50%)
@@ -50,49 +48,49 @@
           &:nth-of-type(3)
             right: 0
 
-        +mq(minLarge)
+        +ds.mq(minLarge)
           display: flex
           justify-content: center
           align-items: center
-          +coln
+          +ds.coln
 
         a
           display: flex
           justify-content: center
           align-items: center
-          border-radius: rem(5)
-          width: rem(80)
-          height: rem(80)
-          background-color: $rgba-black20
-          backdrop-filter: blur(rem(20))
+          border-radius: ds.rem(5)
+          width: ds.rem(80)
+          height: ds.rem(80)
+          background-color: ds.$rgba-black20
+          backdrop-filter: blur(ds.rem(20))
 
-          +mq(maxMedium)
-            width: rem(40)
-            height: rem(40)
+          +ds.mq(maxMedium)
+            width: ds.rem(40)
+            height: ds.rem(40)
 
             svg
-              width: rem(25)
-              height: rem(25)
+              width: ds.rem(25)
+              height: ds.rem(25)
 
           span
-            +screen-reader-only
+            +ds.screen-reader-only
 
           path
-            fill: $hex-groomysky
+            fill: ds.$hex-groomysky
 
       .item
         user-select: none
         position: relative
 
-        +mq(maxMedium)
+        +ds.mq(maxMedium)
           width: 100%
-          max-width: rem(370)
+          max-width: ds.rem(370)
           aspect-ratio: 370 / 584
 
-        +mq(minLarge)
-          +coln
-          width: rem(370)
-          height: rem(584)
+        +ds.mq(minLarge)
+          +ds.coln
+          width: ds.rem(370)
+          height: ds.rem(584)
 
         .item-front, .item-back
           position: absolute
@@ -103,17 +101,17 @@
           flex-direction: column
           transition: transform .5s cubic-bezier(.4,0,.2,1)
           backface-visibility: hidden
-          backdrop-filter: blur(rem(20))
-          background-color: $rgba-black70
-          border-radius: rem(20)
-          padding: rem(17)
+          backdrop-filter: blur(ds.rem(20))
+          background-color: ds.$rgba-black70
+          border-radius: ds.rem(20)
+          padding: ds.rem(17)
           width: 100%
           height: 100%
 
-          +mq(minLarge)
-            padding: rem(27)
-            width: rem(370)
-            height: rem(584)
+          +ds.mq(minLarge)
+            padding: ds.rem(27)
+            width: ds.rem(370)
+            height: ds.rem(584)
 
           &.active
             z-index: 1
@@ -134,19 +132,19 @@
           header
             display: flex
             flex-direction: column
-            gap: rem(7)
+            gap: ds.rem(7)
 
             .primary
               display: flex
-              gap: rem(7)
+              gap: ds.rem(7)
 
             .secondary
-              font-size: rem(14)
+              font-size: ds.rem(14)
               font-weight: 100
-              color: $rgba-white70
+              color: ds.$rgba-white70
 
-              +mq(minLarge)
-                font-size: rem(16)
+              +ds.mq(minLarge)
+                font-size: ds.rem(16)
 
           .logo-img i
             display: block
@@ -154,7 +152,7 @@
           footer
             display: flex
             flex-direction: column-reverse
-            gap: rem(7)
+            gap: ds.rem(7)
             opacity: 1
 
             .primary
@@ -162,49 +160,49 @@
 
             .secondary
               opacity: .7
-              font-size: rem(12)
+              font-size: ds.rem(12)
               font-weight: 100
-              color: $hex-white
+              color: ds.$hex-white
 
-              +mq(minLarge)
-                font-size: rem(14)
+              +ds.mq(minLarge)
+                font-size: ds.rem(14)
 
         header
           display: flex
-          gap: rem(7)
-          font-size: rem(16)
+          gap: ds.rem(7)
+          font-size: ds.rem(16)
           line-height: 1
 
-          +mq(minLarge)
-            font-ize: rem(24)
+          +ds.mq(minLarge)
+            font-ize: ds.rem(24)
 
           span
             font-weight: 100
-            color: $hex-dayrise
+            color: ds.$hex-dayrise
 
           strong
             font-weight: 900
-            color: $hex-rise
+            color: ds.$hex-rise
 
         .logo
           display: flex
           flex-direction: column
           align-items: center
-          gap: rem(23)
+          gap: ds.rem(23)
 
           .logo-img
             display: flex
             justify-content: center
             align-items: center
 
-            +mq(maxMedium)
+            +ds.mq(maxMedium)
               aspect-ratio: 1 / 1
               width: 100%
-              max-width: rem(180)
+              max-width: ds.rem(180)
 
-            +mq(minLarge)
-              width: rem(180)
-              height: rem(180)
+            +ds.mq(minLarge)
+              width: ds.rem(180)
+              height: ds.rem(180)
 
           .logo-btn
             display: flex
@@ -214,30 +212,30 @@
               background-color: transparent
               display: inline-flex
               align-items: center
-              gap: rem(5)
-              border-radius: rem(20)
-              border: 1px solid $hex-accent
-              padding: 0 rem(25)
-              height: rem(30)
+              gap: ds.rem(5)
+              border-radius: ds.rem(20)
+              border: 1px solid ds.$hex-accent
+              padding: 0 ds.rem(25)
+              height: ds.rem(30)
 
               span
-                font-size: rem(14)
+                font-size: ds.rem(14)
                 line-height: 1
-                color: $rgba-white70
+                color: ds.$rgba-white70
 
               svg
-                width: rem(14)
-                height: rem(14)
+                width: ds.rem(14)
+                height: ds.rem(14)
 
         footer
           opacity: .5
-          font-size: rem(14)
+          font-size: ds.rem(14)
           text-align: right
-          color: $hex-white
+          color: ds.$hex-white
           line-height: 1
 
-          +mq(minLarge)
-            font-size: rem(16)
+          +ds.mq(minLarge)
+            font-size: ds.rem(16)
 
 @keyframes card
   0%

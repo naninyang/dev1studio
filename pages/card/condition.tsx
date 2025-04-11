@@ -1,23 +1,10 @@
 import { useCallback, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import styled from '@emotion/styled';
-import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
-import { rem } from '@/styles/designSystem';
+import LogoConditionIcon from '@/images/logo/condition/LogoConditionIcon';
+import LogoConditionTypo from '@/images/logo/condition/LogoConditionTypo';
 import styles from '@/styles/card.module.sass';
-
-const Icon = styled.i({
-  background: `url(${images.logo.condition.icon}) no-repeat 50% 50%/contain`,
-  width: rem(150),
-  height: rem(150),
-});
-
-const Typo = styled.i({
-  background: `url(${images.logo.condition.typo}) no-repeat 50% 50%/contain`,
-  width: rem(403),
-  height: rem(403),
-});
 
 const CardCondition = () => {
   const [isActive, setIsActive] = useState(true);
@@ -56,7 +43,7 @@ const CardCondition = () => {
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
-                  <Icon />
+                  <LogoConditionIcon style={{ width: `${150 / 16}rem`, height: `${150 / 16}rem` }} />
                 </div>
                 <div className={styles['logo-btn']}>
                   <button type="button" onClick={toggleActive} disabled={!isActive}>
@@ -84,7 +71,7 @@ const CardCondition = () => {
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
-                  <Typo />
+                  <LogoConditionTypo style={{ width: `${403 / 16}rem`, height: `${403 / 16}rem` }} />
                 </div>
                 <div className={styles['logo-btn']}>
                   <button type="button" onClick={toggleActive} disabled={isActive}>

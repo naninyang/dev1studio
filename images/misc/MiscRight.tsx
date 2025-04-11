@@ -1,0 +1,16 @@
+import { CSSProperties } from 'react';
+
+interface Props {
+  style: CSSProperties;
+}
+
+export default function MiscRight({ style }: Props) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" style={style} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M14 5.3418C13.7441 5.3418 13.488 5.44122 13.293 5.63672L13.207 5.72266C12.816 6.11366 12.816 6.74672 13.207 7.13672L17.0703 11H4C3.448 11 3 11.448 3 12C3 12.552 3.448 13 4 13H17.0703L13.207 16.8633C12.816 17.2543 12.816 17.8873 13.207 18.2773L13.293 18.3633C13.684 18.7543 14.317 18.7543 14.707 18.3633L20.3633 12.707C20.7543 12.316 20.7543 11.683 20.3633 11.293L14.707 5.63672C14.5115 5.44122 14.2559 5.3418 14 5.3418Z"
+        fill="black"
+      />
+    </svg>
+  );
+}

@@ -1,8 +1,22 @@
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { hex, rem, mixIn, mq } from '@/styles/designSystem';
-import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
+import MiscLeft from '@/images/misc/MiscLeft';
+import MiscOutlink from '@/images/misc/MiscOutlink';
+import MiscEmail from '@/images/misc/MiscEmail';
+import MiscSlack from '@/images/misc/MiscSlack';
+
+export function useDesktop() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const desktop = useMediaQuery({ query: '(min-width: 992px)' });
+  useEffect(() => {
+    setIsDesktop(desktop);
+  }, [desktop]);
+  return isDesktop;
+}
 
 const Container = styled.div({
   display: 'flex',
@@ -309,30 +323,15 @@ const Content = styled.div({
   },
 });
 
-const BackwardIcon = styled.i({
-  background: `url(${images.misc.left}) no-repeat 50% 50%/contain`,
-});
-
-const DownIcon = styled.i({
-  background: `url(${images.misc.outlink}) no-repeat 50% 50%/contain`,
-});
-
-const EmailIcon = styled.i({
-  background: `url(${images.misc.email}) no-repeat 50% 50%/contain`,
-});
-
-const SlackIcon = styled.i({
-  background: `url(${images.misc.slack}) no-repeat 50% 50%/contain`,
-});
-
 const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const isDesktop = useDesktop();
   return (
     <Container>
       <header>
         <div className="cover">
           <div lang="en">
             <button type="button" onClick={onClose}>
-              <BackwardIcon />
+              <MiscLeft style={{ width: `${16 / 16}rem`, height: `${16 / 16}rem` }} />
               <span>이전화면으로</span>
             </button>
             <div className="summary">
@@ -608,7 +607,12 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         <dl>
           <div>
             <dt>
-              <EmailIcon />
+              <MiscEmail
+                style={{
+                  width: isDesktop ? `${32 / 16}rem` : `${20 / 16}rem`,
+                  height: isDesktop ? `${16 / 16}rem` : `${20 / 16}rem`,
+                }}
+              />
               <span>이메일</span>
             </dt>
             <dd>
@@ -617,7 +621,12 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           </div>
           <div>
             <dt>
-              <SlackIcon />
+              <MiscSlack
+                style={{
+                  width: isDesktop ? `${32 / 16}rem` : `${20 / 16}rem`,
+                  height: isDesktop ? `${16 / 16}rem` : `${20 / 16}rem`,
+                }}
+              />
               <span>슬랙</span>
             </dt>
             <dd>
@@ -629,18 +638,28 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           <li>
             <AnchorLink href="/pdf/portfolio_chloe.pdf">
               <span>포트폴리오 PDF 파일 받기</span>
-              <DownIcon />
+              <MiscOutlink
+                style={{
+                  width: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
+                  height: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
+                }}
+              />
             </AnchorLink>
           </li>
           <li>
             <AnchorLink href="/pdf/portfolio_print_chloe.pdf">
               <span>포트폴리오 프린트용 PDF 파일 받기</span>
-              <DownIcon />
+              <MiscOutlink
+                style={{
+                  width: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
+                  height: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
+                }}
+              />
             </AnchorLink>
           </li>
         </ul>
         <button type="button" onClick={onClose}>
-          <BackwardIcon />
+          <MiscLeft style={{ width: `${16 / 16}rem`, height: `${16 / 16}rem` }} />
           <span>이전화면으로</span>
         </button>
       </footer>

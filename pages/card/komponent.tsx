@@ -1,23 +1,10 @@
 import { useCallback, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import styled from '@emotion/styled';
-import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
-import { rem } from '@/styles/designSystem';
+import LogoKomponentIcon from '@/images/logo/komponent/LogoKomponentIcon';
+import LogoKomponentTypo from '@/images/logo/komponent/LogoKomponentTypo';
 import styles from '@/styles/card.module.sass';
-
-const Icon = styled.i({
-  background: `url(${images.logo.komponent.icon}) no-repeat 50% 50%/contain`,
-  width: rem(150),
-  height: rem(150),
-});
-
-const Typo = styled.i({
-  background: `url(${images.logo.komponent.typo}) no-repeat 50% 50%/contain`,
-  width: rem(180),
-  height: rem(180),
-});
 
 const CardKomponent = () => {
   const [isActive, setIsActive] = useState(true);
@@ -56,7 +43,7 @@ const CardKomponent = () => {
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
-                  <Icon />
+                  <LogoKomponentIcon style={{ width: `${150 / 16}rem`, height: `${150 / 16}rem` }} />
                 </div>
                 <div className={styles['logo-btn']}>
                   <button type="button" onClick={toggleActive} disabled={!isActive}>
@@ -84,7 +71,7 @@ const CardKomponent = () => {
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
-                  <Typo />
+                  <LogoKomponentTypo style={{ width: `${180 / 16}rem`, height: `${180 / 16}rem` }} />
                 </div>
                 <div className={styles['logo-btn']}>
                   <button type="button" onClick={toggleActive} disabled={isActive}>

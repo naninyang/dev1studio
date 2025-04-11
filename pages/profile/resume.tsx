@@ -6,10 +6,10 @@ import styled from '@emotion/styled';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { DateProps, DescriptionProps, PrintProps, ResumeData } from '@/types';
-import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
 import { rem } from '@/styles/designSystem';
 import { Container, ServicePage } from '@/styles/serviceSystem';
+import MiscLeft from '@/images/misc/MiscLeft';
 import styles from '@/styles/print.module.sass';
 
 const Avatar = styled.div({
@@ -17,10 +17,6 @@ const Avatar = styled.div({
   height: rem(100),
   borderRadius: rem(100),
   overflow: 'hidden',
-});
-
-const BackwardIcon = styled.i({
-  background: `url(${images.misc.left}) no-repeat 50% 50%/contain`,
 });
 
 const Resume: NextPage<PrintProps> = ({ mdx, resume }) => {
@@ -131,7 +127,7 @@ const Resume: NextPage<PrintProps> = ({ mdx, resume }) => {
             {resumeData.data.username_show ? <title>{resumeData.data.username} 이력서</title> : <title>이력서</title>}
           </Head>
           <button type="button" className="close-button" onClick={handleClose}>
-            <BackwardIcon />
+            <MiscLeft style={{ width: `${16 / 16}rem`, height: `${16 / 16}rem` }} />
             <span>이전화면으로</span>
           </button>
           <h1>이력서</h1>

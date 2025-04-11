@@ -1,7 +1,11 @@
-import { images } from '@/images';
 import { rem, mixIn, rgba, mq } from '@/styles/designSystem';
 import styled from '@emotion/styled';
 import AnchorLink from './AnchorLink';
+import LogoDev1StudioIcon from '@/images/logo/dev1studio/LogoDev1StudioIcon';
+import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';
+import LogoPostype from '@/images/logo/LogoPostype';
+import LogoVelog from '@/images/logo/LogoVelog';
+import LogoGithub from '@/images/logo/LogoGithub';
 
 const Container = styled.header({
   display: 'flex',
@@ -27,7 +31,9 @@ const Container = styled.header({
     display: 'block',
     width: rem(132),
     height: rem(17),
-    background: `url(${images.logo.dev1studio.logo}) no-repeat 50% 50%/contain`,
+    '& svg': {
+      display: 'block',
+    },
     '& span': {
       ...mixIn.screenReaderOnly,
     },
@@ -54,55 +60,36 @@ const Container = styled.header({
   },
 });
 
-const Develog = styled.i({
-  background: `url(${images.logo.develog.icon}) no-repeat 50% 50%/contain`,
-});
-
-const News = styled.i({
-  background: `url(${images.logo.shorts.icon}) no-repeat 50% 50%/contain`,
-});
-
-const Postype = styled.i({
-  background: `url(${images.logo.postype}) no-repeat 50% 50%/contain`,
-});
-
-const Velog = styled.i({
-  background: `url(${images.logo.velog}) no-repeat 50% 50%/contain`,
-});
-
-const Github = styled.i({
-  background: `url(${images.logo.github}) no-repeat 50% 50%/contain`,
-});
-
 const Header = () => {
   return (
     <Container>
       <h1>
+        <LogoDev1StudioLogo style={{ width: `${132 / 16}rem`, height: `${17 / 16}rem` }} />
         <span>DEV1L.studio</span>
       </h1>
       <ul>
         <li>
           <AnchorLink href="https://develog.dev1stud.io">
             <span>Develog</span>
-            <Develog />
+            <LogoDev1StudioIcon style={{ width: `${17 / 16}rem`, height: `${17 / 16}rem` }} />
           </AnchorLink>
         </li>
         <li>
           <AnchorLink href="https://dev-il-studio.postype.com">
             <span>Postype</span>
-            <Postype />
+            <LogoPostype style={{ width: `${17 / 16}rem`, height: `${17 / 16}rem` }} />
           </AnchorLink>
         </li>
         <li>
           <AnchorLink href="https://velog.io/@naninyang">
             <span>Velog</span>
-            <Velog />
+            <LogoVelog style={{ width: `${17 / 16}rem`, height: `${17 / 16}rem` }} />
           </AnchorLink>
         </li>
         <li>
           <AnchorLink href="https://github.com/naninyang">
             <span>Gibhub</span>
-            <Github />
+            <LogoGithub style={{ width: `${17 / 16}rem`, height: `${17 / 16}rem` }} />
           </AnchorLink>
         </li>
       </ul>

@@ -1,23 +1,10 @@
 import { useCallback, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
-import styled from '@emotion/styled';
-import { rem } from '@/styles/designSystem';
+import LogoDevelogIcon from '@/images/logo/develog/LogoDevelogIcon';
+import LogoDevelogTypo from '@/images/logo/develog/LogoDevelogTypo';
 import styles from '@/styles/card.module.sass';
-
-const Icon = styled.i({
-  background: `url(${images.logo.develog.icon}) no-repeat 50% 50%/contain`,
-  width: rem(126),
-  height: rem(126),
-});
-
-const Typo = styled.i({
-  background: `url(${images.logo.develog.typo}) no-repeat 50% 50%/contain`,
-  width: rem(154),
-  height: rem(154),
-});
 
 const CardDevelog = () => {
   const [isActive, setIsActive] = useState(true);
@@ -56,7 +43,7 @@ const CardDevelog = () => {
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
-                  <Icon />
+                  <LogoDevelogIcon style={{ width: `${126 / 16}rem`, height: `${126 / 16}rem` }} />
                 </div>
                 <div className={styles['logo-btn']}>
                   <button type="button" onClick={toggleActive} disabled={!isActive}>
@@ -84,7 +71,7 @@ const CardDevelog = () => {
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
-                  <Typo />
+                  <LogoDevelogTypo style={{ width: `${154 / 16}rem`, height: `${154 / 16}rem` }} />
                 </div>
                 <div className={styles['logo-btn']}>
                   <button type="button" onClick={toggleActive} disabled={isActive}>

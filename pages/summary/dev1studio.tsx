@@ -1,27 +1,22 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import { images } from '@/images';
+import { useMediaQuery } from 'react-responsive';
 import AnchorLink from '@/components/AnchorLink';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
-import styled from '@emotion/styled';
-import { mq, rem } from '@/styles/designSystem';
+import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';
 import styles from '@/styles/summary.module.sass';
 
-const Logo = styled.i({
-  background: `url(${images.logo.dev1studio.logo}) no-repeat 50% 50%/contain`,
-  width: '100%',
-  [mq.maxMedium]: {
-    aspectRatio: '270 / 34',
-    margin: rem(5),
-    maxHeight: rem(35),
-  },
-  [mq.minLarge]: {
-    width: rem(270),
-    height: rem(270),
-  },
-});
+export function useMobile() {
+  const [isMobile, setIsMobile] = useState(false);
+  const mobile = useMediaQuery({ query: `(max-width: ${991 / 16}rem` });
+  useEffect(() => {
+    setIsMobile(mobile);
+  }, [mobile]);
+  return isMobile;
+}
 
 const SummaryDev1studio = () => {
+  const isMobile = useMobile();
   const handleScroll = useCallback((section: ScrollRefKeys) => {
     const ref = scrollRefs[section];
     if (ref) {
@@ -51,7 +46,13 @@ const SummaryDev1studio = () => {
           <div className={styles.item}>
             <div className={styles.thumbnail}>
               <div className={styles['thumbnail-content']}>
-                <Logo />
+                <LogoDev1StudioLogo
+                  style={{
+                    width: `${270 / 16}rem`,
+                    height: isMobile ? `${34 / 16}rem` : `${270 / 16}rem`,
+                    aspectRatio: isMobile ? '270 / 34' : undefined,
+                  }}
+                />
               </div>
             </div>
             <div className={styles.info}>

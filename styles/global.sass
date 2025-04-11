@@ -4,14 +4,12 @@
 @import 'pretendard/dist/web/static/Pretendard-Medium'
 @import 'pretendard/dist/web/static/Pretendard-Regular'
 @import 'pretendard/dist/web/static/Pretendard-Thin'
-@import './designSystem'
-
 *, ::before, ::after
   box-sizing: border-box
 
 \::selection
-  background-color: $hex-accent
-  color: $hex-white
+  background-color: ds.$hex-accent
+  color: ds.$hex-white
 
 html
   font-size: 16px
@@ -40,7 +38,7 @@ img
   overflow: hidden
   user-select: none
   -webkit-user-drag: none
-  +image-rendering
+  +ds.image-rendering
 
 a
   text-decoration: none
@@ -96,45 +94,45 @@ iframe
     display: none!important
 
 .scroll-button
-  background-color: $rgba-black20
-  backdrop-filter: blur(rem(20))
+  background-color: ds.$rgba-black20
+  backdrop-filter: blur(ds.rem(20))
   position: absolute
   bottom: 0
   left: 0
   padding: 0
   width: 100%
-  height: rem(50)
+  height: ds.rem(50)
 
-  +mq(minLarge)
-    height: rem(75)
+  +ds.mq(minLarge)
+    height: ds.rem(75)
 
   span
-    +screen-reader-only
+    +ds.screen-reader-only
 
   svg
-    width: rem(25)
-    height: rem(25)
+    width: ds.rem(25)
+    height: ds.rem(25)
     animation: button 1.7s cubic-bezier(.4,0,.2,1) infinite
 
-    +mq(minLarge)
-      width: rem(50)
-      height: rem(50)
+    +ds.mq(minLarge)
+      width: ds.rem(50)
+      height: ds.rem(50)
 
     path
       fill: #E5C3C3
 
 @keyframes button
   0%
-    transform: translateY(rem(-5))
+    transform: translateY(ds.rem(-5))
 
   7%
-    transform: translateY(rem(-5))
+    transform: translateY(ds.rem(-5))
 
   50%
-    transform: translateY(rem(5))
+    transform: translateY(ds.rem(5))
 
   97%
-    transform: translateY(rem(-5))
+    transform: translateY(ds.rem(-5))
 
   100%
-    transform: translateY(rem(-5))
+    transform: translateY(ds.rem(-5))

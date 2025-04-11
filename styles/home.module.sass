@@ -1,5 +1,3 @@
-@import './designSystem'
-
 .home
   height: 100dvh
   background: url(/images/home.webp) no-repeat 50% 50%/cover
@@ -11,15 +9,13 @@
     position: relative
     width: 100%
     height: 100dvh
-    backdrop-filter: blur(rem(270))
-    opacity: 0
-    animation: splash 3.7s cubic-bezier(.4,0,.2,1)
+    backdrop-filter: blur(ds.rem(270))
+    opacity: 1
+    animation: splash 7s cubic-bezier(.4,0,.2,1)
 
-    &::before
-      content: '',
-      display: block
-      width: rem(270)
-      height: rem(34)
+    svg
+      width: ds.rem(270)
+      height: ds.rem(34)
 
   .enterance
     display: flex
@@ -30,22 +26,19 @@
     a
       display: flex
       align-items: center
-      gap: rem(5)
-      background-color: $hex-white
-      border-radius: rem(50)
-      padding: 0 rem(37)
-      height: rem(50)
+      gap: ds.rem(5)
+      background-color: ds.$hex-white
+      border-radius: ds.rem(50)
+      padding: 0 ds.rem(37)
+      height: ds.rem(50)
 
       span
-        font-size: rem(24)
+        font-size: ds.rem(24)
         font-weight: 700
-        color: $hex-black
+        color: ds.$hex-black
 
       i
-        transform: translateX(rem(-2))
-        display: inline-block
-        width: rem(20)
-        height: rem(20)
+        transform: translateX(ds.rem(-2))
         animation: enterance 1.2s cubic-bezier(.4,0,.2,1) infinite
 
 @keyframes splash
@@ -60,13 +53,13 @@
 
 @keyframes enterance
   0%
-    transform: translateX(rem(-2))
+    transform: translateX(ds.rem(-2))
 
   22.22%
-    transform: translateX(rem(2))
+    transform: translateX(ds.rem(2))
 
   77.77%
-    transform: translateX(rem(2))
+    transform: translateX(ds.rem(2))
 
   100%
-    transform: translateX(rem(-2))
+    transform: translateX(ds.rem(-2))

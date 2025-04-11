@@ -1,16 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useMediaQuery } from 'react-responsive';
-import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import PreviewDev1studio from './dev1studio';
-import styled from '@emotion/styled';
+import MiscOutlink from '@/images/misc/MiscOutlink';
 import styles from '@/styles/preview.module.sass';
-
-const Icon = styled.i({
-  background: `url(${images.misc.outlink}) no-repeat 50% 50%/contain`,
-});
 
 export function useDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
@@ -37,7 +32,7 @@ const PreviewNol2tr = () => {
             <span>
               nol2tr_view
               <AnchorLink href="https://nol2tr.dev1stud.io">
-                <Icon />
+                <MiscOutlink style={{ width: `${64 / 16}rem`, height: `${64 / 16}rem` }} />
               </AnchorLink>
             </span>
           </h2>

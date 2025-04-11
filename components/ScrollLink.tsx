@@ -7,9 +7,9 @@ export interface ScrollRefs {
 export type ScrollRefKeys = keyof ScrollRefs;
 
 export const scrollRefs: ScrollRefs = {
-  summary: createRef<HTMLDivElement>(),
-  preview: createRef<HTMLDivElement>(),
-  profile: createRef<HTMLDivElement>(),
+  summary: createRef() as RefObject<HTMLDivElement>,
+  preview: createRef() as RefObject<HTMLDivElement>,
+  profile: createRef() as RefObject<HTMLDivElement>,
 };
 
 export const scrollToRef = (ref: RefObject<HTMLDivElement>) => {

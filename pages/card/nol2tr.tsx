@@ -1,23 +1,10 @@
 import { useCallback, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import styled from '@emotion/styled';
-import { images } from '@/images';
 import AnchorLink from '@/components/AnchorLink';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
-import { rem } from '@/styles/designSystem';
+import LogoNol2trIcon from '@/images/logo/nol2tr/LogoNol2trIcon';
+import LogoNol2trTypo from '@/images/logo/nol2tr/LogoNol2trTypo';
 import styles from '@/styles/card.module.sass';
-
-const Icon = styled.i({
-  background: `url(${images.logo.nol2tr.icon}) no-repeat 50% 50%/contain`,
-  width: rem(150),
-  height: rem(150),
-});
-
-const Typo = styled.i({
-  background: `url(${images.logo.nol2tr.typo}) no-repeat 50% 50%/contain`,
-  width: rem(180),
-  height: rem(180),
-});
 
 const CardNol2tr = () => {
   const [isActive, setIsActive] = useState(true);
@@ -56,7 +43,7 @@ const CardNol2tr = () => {
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
-                  <Icon />
+                  <LogoNol2trIcon style={{ width: `${150 / 16}rem`, height: `${150 / 16}rem` }} />
                 </div>
                 <div className={styles['logo-btn']}>
                   <button type="button" onClick={toggleActive} disabled={!isActive}>
@@ -84,7 +71,7 @@ const CardNol2tr = () => {
               </header>
               <div className={styles.logo}>
                 <div className={styles['logo-img']}>
-                  <Typo />
+                  <LogoNol2trTypo style={{ width: `${180 / 16}rem`, height: `${180 / 16}rem` }} />
                 </div>
                 <div className={styles['logo-btn']}>
                   <button type="button" onClick={toggleActive} disabled={isActive}>
