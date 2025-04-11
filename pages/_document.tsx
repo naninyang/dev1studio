@@ -1,5 +1,4 @@
 import Document, { Head, Main, NextScript, DocumentContext, DocumentInitialProps, Html } from 'next/document';
-import { AppType } from 'next/app';
 import { GA_TRACKING_ID } from '@/lib/gtag';
 import { extractCritical } from '@emotion/server';
 
