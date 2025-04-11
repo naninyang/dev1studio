@@ -13,6 +13,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const data = await response.json();
     res.status(200).json(data);
   } catch (error) {
-    res.status(401).json({ message: 'Invalid Token' });
+    res.status(401).json({ message: `Invalid Token: ${error}` });
   }
 }

@@ -1,6 +1,6 @@
 import Document, { Head, Main, NextScript, DocumentContext, DocumentInitialProps, Html } from 'next/document';
+import { AppType } from 'next/app';
 import { GA_TRACKING_ID } from '@/lib/gtag';
-
 import { extractCritical } from '@emotion/server';
 
 interface DocumentProps extends DocumentInitialProps {
@@ -42,11 +42,12 @@ const AppDocument: React.FC<DocumentProps> & {
 };
 
 AppDocument.getInitialProps = async (ctx) => {
-  const { renderPage } = ctx;
-  const page = await renderPage((App) => {
-    const Dev1StudioApp = (props: any) => <App {...props} />;
-    Dev1StudioApp.displayName = 'Dev1StudioApp';
-    return Dev1StudioApp;
+  const page = await ctx.renderPage({
+    enhanceApp: (App) => {
+      const EnhancedApp = (props: any) => <App {...props} />;
+      EnhancedApp.displayName = 'Dev1StudioApp';
+      return EnhancedApp;
+    },
   });
 
   const { css, ids } = extractCritical(page.html);
