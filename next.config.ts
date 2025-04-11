@@ -11,6 +11,12 @@ const nextConfig: NextConfig = {
     outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
     prependData: `
       @use 'designSystem.sass' as ds
+      @use 'pretendard/dist/web/static/Pretendard-Black'
+      @use 'pretendard/dist/web/static/Pretendard-Bold'
+      @use 'pretendard/dist/web/static/Pretendard-Light'
+      @use 'pretendard/dist/web/static/Pretendard-Medium'
+      @use 'pretendard/dist/web/static/Pretendard-Regular'
+      @use 'pretendard/dist/web/static/Pretendard-Thin'
     `,
   },
 };

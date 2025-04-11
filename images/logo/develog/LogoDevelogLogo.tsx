@@ -25,8 +25,8 @@ export default function LogoDevelogLogo({ style }: Props) {
           fill="#FFD800"
         />
         <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
+          fillRule="evenodd"
+          clipRule="evenodd"
           d="M56.5 56.946V70.9461H42.5V42.9461H28.5V70.9461H14.5V56.9461L0.5 56.9403V0.946106H70.5V56.9461L56.5 56.946ZM56.5 14.9461H14.5V28.9461H56.5V14.9461Z"
           fill="white"
         />

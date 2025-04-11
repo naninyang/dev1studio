@@ -113,7 +113,7 @@ $rgba-white70: rgba($hex-white, .7)
   @return math.div($pixelToRem, $defaultPixel) + rem
 
 @function vw($pixelToVw, $width)
-  @return (($pixelToVw * 100) / $width) + vw
+  @return math.div($pixelToVw * 100, $height) + vw
 
 @function vh($pixelToVh, $height)
-  @return (($pixelToVh * 100) / $height) + vh
+  @return math.div($pixelToVh * 100, $height) + vh
