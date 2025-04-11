@@ -43,7 +43,7 @@ const AppDocument: React.FC<DocumentProps> & {
 AppDocument.getInitialProps = async (ctx) => {
   const page = await ctx.renderPage({
     enhanceApp: (App) => {
-      const EnhancedApp = (props: any) => <App {...props} />;
+      const EnhancedApp = (props: React.ComponentProps<typeof App>) => <App {...props} />;
       EnhancedApp.displayName = 'Dev1StudioApp';
       return EnhancedApp;
     },
