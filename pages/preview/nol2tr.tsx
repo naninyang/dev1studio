@@ -9,7 +9,7 @@ import styles from '@/styles/preview.module.sass';
 
 export function useDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
-  const desktop = useMediaQuery({ query: '(min-width: 992px)' });
+  const desktop = useMediaQuery({ query: `(min-width: ${992 / 16}rem)` });
   useEffect(() => {
     setIsDesktop(desktop);
   }, [desktop]);
