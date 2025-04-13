@@ -1,0 +1,370 @@
+.main
+  padding: ds.rem(79) ds.rem(25) ds.rem(25)
+  min-height: 100dvh
+  background: url(/images/home.webp) fixed no-repeat 50% 50%/cover
+  position: relative
+
+  +ds.mq(minLarge)
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: ds.rem(104) ds.rem(50) ds.rem(50)
+
+  .container
+    animation: card 1s cubic-bezier(.4,0,.2,1)
+
+    +ds.mq(maxMedium)
+      position: relative
+      height: calc(100vh - ds.rem(104))
+
+    .content
+      > p
+        font-size: ds.rem(23)
+        font-weight: 700
+        color: ds.$hex-white
+
+      > div
+        animation: card 1s cubic-bezier(.4,0,.2,1)
+
+        +ds.mq(maxMedium)
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+          padding: 0 ds.rem(52)
+          width: 100%
+          max-width: ds.rem(474)
+
+        +ds.mq(minLarge)
+          display: flex
+          justify-items: center
+          gap: ds.rem(77)
+
+        > div
+          &:not(.pager)
+            +ds.mq(minLarge)
+              width: ds.rem(393)
+
+          > div
+            display: flex
+            gap: ds.rem(23)
+
+            > div
+              float: none
+
+      .pager
+        +ds.mq(maxMedium)
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+
+          &:nth-of-type(1)
+            left: 0
+
+          &:nth-of-type(3)
+            right: 0
+
+        +ds.mq(minLarge)
+          display: flex
+          justify-content: center
+          align-items: center
+          +ds.coln
+
+        button
+          display: flex
+          justify-content: center
+          align-items: center
+          border-radius: ds.rem(5)
+          width: ds.rem(80)
+          height: ds.rem(80)
+          background-color: ds.$rgba-black20
+          backdrop-filter: blur(ds.rem(20))
+
+          +ds.mq(maxMedium)
+            width: ds.rem(40)
+            height: ds.rem(40)
+
+            svg
+              width: ds.rem(25)
+              height: ds.rem(25)
+
+          span
+            +ds.screen-reader-only
+
+          path
+            fill: ds.$hex-groomysky
+
+      .item
+        user-select: none
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        overflow: hidden
+
+        +ds.mq(maxMedium)
+          width: 100%
+          height: ds.rem(570)
+          max-width: ds.rem(370)
+
+        +ds.mq(minLarge)
+          +ds.coln
+          width: ds.rem(370)
+          height: ds.rem(584)
+
+        .item-front, .item-back
+          position: absolute
+          top: 0
+          left: 0
+          display: flex
+          justify-content: space-between
+          flex-direction: column
+          transition: transform .5s cubic-bezier(.4,0,.2,1)
+          backface-visibility: hidden
+          backdrop-filter: blur(ds.rem(20))
+          background-color: ds.$rgba-black70
+          border-radius: ds.rem(20)
+          padding: ds.rem(17)
+          width: 100%
+          height: 100%
+
+          +ds.mq(minLarge)
+            padding: ds.rem(27)
+            width: ds.rem(370)
+            height: ds.rem(584)
+
+          &.active
+            z-index: 1
+
+        .item-front
+          &:not(.active)
+            transform: perspective(600px) rotateY(-180deg)
+
+          .logo
+            .logo-img
+              display: flex
+              justify-content: center
+              align-items: center
+
+              +ds.mq(maxMedium)
+                aspect-ratio: 1 / 1
+                width: 100%
+                max-width: ds.rem(180)
+
+              +ds.mq(minLarge)
+                width: ds.rem(180)
+                height: ds.rem(180)
+
+            i
+              display: block
+              background-position: 50% 50%
+              background-repeat: no-repeat
+              background-size: contain
+              width: 100%
+              height: 100%
+
+        .item-back
+          transform: rotateY(180deg)
+
+          &.active
+            transform: perspective(600px) rotateY(0deg)
+
+          header
+            display: flex
+            flex-direction: column
+            gap: ds.rem(7)
+
+            .primary
+              display: flex
+              gap: ds.rem(7)
+
+            .secondary
+              font-size: ds.rem(14)
+              font-weight: 100
+              color: ds.$rgba-white70
+
+              +ds.mq(minLarge)
+                font-size: ds.rem(16)
+
+          .logo
+            .logo-img
+              display: flex
+              flex-direction: column
+              justify-content: flex-start
+              gap: ds.rem(17)
+
+              ul
+                display: flex
+                flex-wrap: wrap
+                gap: ds.rem(7)
+                width: 100%
+
+                li
+                  background-color: ds.$hex-accent
+                  border-radius: ds.rem(17)
+                  padding: 0 ds.rem(7)
+                  font-size: ds.rem(14)
+                  color: ds.$hex-white
+
+              .description
+                display: flex
+                flex-direction: column
+                gap: ds.rem(7)
+
+              p
+                font-size: ds.rem(14)
+                line-height: 1.5
+                color: ds.$hex-white
+
+        header
+          display: flex
+          gap: ds.rem(7)
+          font-size: ds.rem(16)
+          line-height: 1
+
+          +ds.mq(minLarge)
+            font-ize: ds.rem(24)
+
+          span
+            font-weight: 100
+            color: ds.$hex-dayrise
+
+          strong
+            font-weight: 900
+            color: ds.$hex-rise
+
+        .logo
+          display: flex
+          flex-direction: column
+          align-items: center
+          gap: ds.rem(23)
+
+        .logo-btn
+          display: flex
+          justify-content: center
+
+          button
+            background-color: transparent
+            display: inline-flex
+            align-items: center
+            gap: ds.rem(5)
+            border-radius: ds.rem(20)
+            border: 1px solid ds.$hex-accent
+            padding: 0 ds.rem(25)
+            height: ds.rem(30)
+
+            span
+              font-size: ds.rem(14)
+              line-height: 1
+              color: ds.$rgba-white70
+
+            svg
+              width: ds.rem(14)
+              height: ds.rem(14)
+
+        footer
+          display: flex
+          flex-direction: column-reverse
+          gap: ds.rem(7)
+          opacity: 1
+          text-align: right
+
+          .primary, .link
+            opacity: .5
+            color: ds.$hex-white
+
+            a
+              color: ds.$hex-white
+
+              &:hover, &:focus-visible
+                text-decoration: underline
+
+          p
+            color: ds.$hex-accent
+
+          .button
+            button
+              background-color: ds.$hex-accent
+              border-radius: ds.rem(3)
+              padding: ds.rem(5) ds.rem(12)
+              color: ds.$hex-white
+              font-size: ds.rem(16)
+              font-weight: 500
+
+          .secondary
+            opacity: .7
+            font-size: ds.rem(12)
+            font-weight: 100
+            color: ds.$hex-white
+
+            +ds.mq(minLarge)
+              font-size: ds.rem(14)
+
+  dialog
+    background-color: transparent
+    margin: ds.rem(77) ds.rem(25)
+    border: 0
+    padding: 0
+
+    +ds.mq(minLarge)
+      margin: ds.rem(77) ds.rem(50)
+
+    &::backdrop
+      background-color: ds.$rgba-black70
+
+    .dialog-container
+      display: flex
+      flex-direction: column
+      gap: ds.rem(23)
+
+    .headline
+      display: flex
+      justify-content: space-between
+      align-items: center
+
+      h2
+        font-weight: 700
+        font-size: ds.rem(23)
+        color: ds.$hex-white
+
+      button
+        background-color: transparent
+
+        svg
+          width: ds.rem(27)
+          height: ds.rem(27)
+
+        span
+          +ds.screen-reader-only
+
+    .images
+      background-color: ds.$hex-white
+      display: flex
+      gap: ds.rem(23)
+      border-radius: ds.rem(20)
+      padding: ds.rem(23)
+
+      +ds.mq(minLarge)
+        gap: ds.rem(12)
+
+      +ds.mq(maxMedium)
+        flex-direction: column
+
+      .image
+        +ds.mq(minLarge)
+          +ds.col
+
+        img
+          aspect-ratio: 1291 / 2797
+          width: 100%
+          height: auto
+
+          +ds.mq(minLarge)
+            aspect-ratio: 1641 / 2361
+
+@keyframes card
+  0%
+    opacity: 0
+
+  100%
+    opacity: 1
