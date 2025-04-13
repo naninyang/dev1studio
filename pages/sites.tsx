@@ -190,8 +190,8 @@ export default function Sites() {
                   <div className={`${styles['item-back']} ${!isFront ? styles.active : ''}`}>
                     <header>
                       <div className={styles.primary}>
-                        <span>DEV1L</span>
-                        <strong>{site.siteName}</strong>
+                        <span>DEV1L.</span>
+                        <strong>{site.siteShort === 'dev1studios' ? 'studios' : site.siteName}</strong>
                       </div>
                       <div className={styles.secondary}>{site.siteKoName}</div>
                     </header>
@@ -232,7 +232,9 @@ export default function Sites() {
                           <Anchor href={site.siteUrl}>{site.siteUrl}</Anchor>
                         )}
                       </div>
-                      <div className={styles.secondary}>{site.siteKoUrl}닷데브원스튜드닷아이오</div>
+                      <div className={styles.secondary}>
+                        {site.siteShort !== 'dev1studios' && `${site.siteKoUrl}닷`}데브원스튜드닷아이오
+                      </div>
                       {site.siteShort === 'dev1studios' || site.siteShort === 'develog' || site.siteShort === 'moe' ? (
                         <p>!미리보기 없음!</p>
                       ) : (
