@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useMediaQuery } from 'react-responsive';
-import AnchorLink from '@/components/Anchor';
+import Anchor from '@/components/Anchor';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import PreviewDev1studio from './dev1studio';
 import { rem } from '@/styles/designSystem';
@@ -32,9 +32,9 @@ const PreviewCondition = () => {
           <h2>
             <span>
               condition studio
-              <AnchorLink href="https://condition.dev1stud.io">
+              <Anchor href="https://condition.dev1stud.io">
                 <MiscOutlink style={{ width: `${64 / 16}rem`, height: `${64 / 16}rem` }} />
-              </AnchorLink>
+              </Anchor>
             </span>
           </h2>
           <p>미리보기 Preview</p>

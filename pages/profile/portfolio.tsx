@@ -3,7 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { hex, rem, mixIn, mq } from '@/styles/designSystem';
-import AnchorLink from '@/components/Anchor';
+import Anchor from '@/components/Anchor';
 import MiscLeft from '@/images/misc/MiscLeft';
 import MiscOutlink from '@/images/misc/MiscOutlink';
 import MiscEmail from '@/images/misc/MiscEmail';
@@ -616,7 +616,7 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               <span>이메일</span>
             </dt>
             <dd>
-              <AnchorLink href="mailto:1157iamari@gmail.com">1157iamari@gmail.com</AnchorLink>
+              <Anchor href="mailto:1157iamari@gmail.com">1157iamari@gmail.com</Anchor>
             </dd>
           </div>
           <div>
@@ -630,13 +630,13 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
               <span>슬랙</span>
             </dt>
             <dd>
-              <AnchorLink href="https://arisdevelop.slack.com">https://arisdevelop.slack.com</AnchorLink>
+              <Anchor href="https://arisdevelop.slack.com">https://arisdevelop.slack.com</Anchor>
             </dd>
           </div>
         </dl>
         <ul>
           <li>
-            <AnchorLink href="/pdf/portfolio_chloe.pdf">
+            <Anchor href="/pdf/portfolio_chloe.pdf">
               <span>포트폴리오 PDF 파일 받기</span>
               <MiscOutlink
                 style={{
@@ -644,10 +644,10 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                   height: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
                 }}
               />
-            </AnchorLink>
+            </Anchor>
           </li>
           <li>
-            <AnchorLink href="/pdf/portfolio_print_chloe.pdf">
+            <Anchor href="/pdf/portfolio_print_chloe.pdf">
               <span>포트폴리오 프린트용 PDF 파일 받기</span>
               <MiscOutlink
                 style={{
@@ -655,7 +655,7 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                   height: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
                 }}
               />
-            </AnchorLink>
+            </Anchor>
           </li>
         </ul>
         <button type="button" onClick={onClose}>

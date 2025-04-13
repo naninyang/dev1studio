@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Seo from '@/components/Seo';
-import AnchorLink from '@/components/Anchor';
+import Anchor from '@/components/Anchor';
 import styles from '@/styles/home.module.sass';
 import MiscRight from '@/images/misc/MiscRight';
 import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';
@@ -35,7 +35,7 @@ export default function Home() {
           </div>
         ) : (
           <div className={styles.enterance}>
-            <AnchorLink href="/dev1studio">
+            <Anchor href="/dev1studio">
               <span>입장하기</span>
               <MiscRight
                 style={{
@@ -43,7 +43,7 @@ export default function Home() {
                   height: `${20 / 16}rem`,
                 }}
               />
-            </AnchorLink>
+            </Anchor>
           </div>
         )}
       </main>

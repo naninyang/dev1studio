@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
-import AnchorLink from '@/components/Anchor';
+import Anchor from '@/components/Anchor';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import PreviewDev1studio from './dev1studio';
 import MiscOutlink from '@/images/misc/MiscOutlink';
@@ -31,9 +31,9 @@ const PreviewDevelog = () => {
           <h2>
             <span>
               O612 develog
-              <AnchorLink href="https://develog.dev1stud.io">
+              <Anchor href="https://develog.dev1stud.io">
                 <MiscOutlink style={{ width: `${64 / 16}rem`, height: `${64 / 16}rem` }} />
-              </AnchorLink>
+              </Anchor>
             </span>
           </h2>
           <p>미리보기 Preview</p>

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { isSafari } from 'react-device-detect';
 import { useMediaQuery } from 'react-responsive';
-import AnchorLink from '@/components/Anchor';
+import Anchor from '@/components/Anchor';
 import { ScrollRefKeys, scrollRefs, scrollToRef } from '@/components/ScrollLink';
 import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';
 import styles from '@/styles/summary.module.sass';
@@ -33,7 +33,7 @@ const SummaryDev1studio = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div className={`${styles.pager} ${styles.prev}`}>
-            <AnchorLink href="/condition#summary">
+            <Anchor href="/condition#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8333 39.7298L23.9583 36.6048L14.4368 27.0833L43.75 27.0833L43.75 22.9166L14.4368 22.9166L23.9583 13.3952L20.8333 10.2702L6.10352 25L20.8333 39.7298Z"
@@ -41,7 +41,7 @@ const SummaryDev1studio = () => {
                 />
               </svg>
               <span>컨디션스튜디오 요약 보기</span>
-            </AnchorLink>
+            </Anchor>
           </div>
           <div className={styles.item}>
             <div className={styles.thumbnail}>
@@ -81,7 +81,7 @@ const SummaryDev1studio = () => {
             </div>
           </div>
           <div className={`${styles.pager} ${styles.next}`}>
-            <AnchorLink href="/develog#summary">
+            <Anchor href="/develog#summary">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M29.1667 10.2702L26.0417 13.3952L35.5631 22.9167L6.25 22.9167V27.0834L35.5631 27.0834L26.0417 36.6048L29.1667 39.7298L43.8965 25L29.1667 10.2702Z"
@@ -89,7 +89,7 @@ const SummaryDev1studio = () => {
                 />
               </svg>
               <span>디벨로그 요약 보기</span>
-            </AnchorLink>
+            </Anchor>
           </div>
         </div>
       </div>

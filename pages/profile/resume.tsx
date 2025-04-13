@@ -6,7 +6,7 @@ import styled from '@emotion/styled';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { DateProps, DescriptionProps, PrintProps, ResumeData } from '@/types';
-import AnchorLink from '@/components/Anchor';
+import Anchor from '@/components/Anchor';
 import { rem } from '@/styles/designSystem';
 import { Container, ServicePage } from '@/styles/serviceSystem';
 import MiscLeft from '@/images/misc/MiscLeft';
@@ -161,102 +161,102 @@ const Resume: NextPage<PrintProps> = ({ mdx, resume }) => {
                     <ul>
                       {resumeData.data?.references?.[0].github && (
                         <li className={styles.github}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://github.com/${resumeData.data?.references?.[0].github}`}
-                          >{`/${resumeData.data?.references?.[0].github}`}</AnchorLink>
+                          >{`/${resumeData.data?.references?.[0].github}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].velog && (
                         <li className={styles.velog}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://velog.io/@${resumeData.data?.references?.[0].velog}`}
-                          >{`@${resumeData.data?.references?.[0].velog}`}</AnchorLink>
+                          >{`@${resumeData.data?.references?.[0].velog}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].instagram && (
                         <li className={styles.instagram}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://www.instagram.com/${resumeData.data?.references?.[0].instagram}`}
-                          >{`/${resumeData.data?.references?.[0].instagram}`}</AnchorLink>
+                          >{`/${resumeData.data?.references?.[0].instagram}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].twitter && (
                         <li className={styles.twitter}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://twitter.com/${resumeData.data?.references?.[0].twitter}`}
-                          >{`/${resumeData.data?.references?.[0].twitter}`}</AnchorLink>
+                          >{`/${resumeData.data?.references?.[0].twitter}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].facebook && (
                         <li className={styles.facebook}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://www.facebook.com/${resumeData.data?.references?.[0].facebook}`}
-                          >{`/${resumeData.data?.references?.[0].facebook}`}</AnchorLink>
+                          >{`/${resumeData.data?.references?.[0].facebook}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].leadme && (
                         <li className={styles.leadme}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://www.leadme.today/@${resumeData.data?.references?.[0].leadme}`}
-                          >{`@${resumeData.data?.references?.[0].leadme}`}</AnchorLink>
+                          >{`@${resumeData.data?.references?.[0].leadme}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].brunch && (
                         <li className={styles.brunch}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://brunch.co.kr/@${resumeData.data?.references?.[0].brunch}`}
-                          >{`@${resumeData.data?.references?.[0].brunch}`}</AnchorLink>
+                          >{`@${resumeData.data?.references?.[0].brunch}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].tistory && (
                         <li className={styles.tistory}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://${resumeData.data?.references?.[0].tistory}.tistory.com`}
-                          >{`${resumeData.data?.references?.[0].tistory}.tistory.com`}</AnchorLink>
+                          >{`${resumeData.data?.references?.[0].tistory}.tistory.com`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].pinterest && (
                         <li className={styles.pinterest}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://www.pinterest.co.kr/${resumeData.data?.references?.[0].pinterest}`}
-                          >{`/${resumeData.data?.references?.[0].pinterest}`}</AnchorLink>
+                          >{`/${resumeData.data?.references?.[0].pinterest}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].linkedin && (
                         <li className={styles.linkedin}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://kr.linkedin.com/in/${encodeURIComponent(
                               resumeData.data?.references?.[0].linkedin,
                             )}`}
-                          >{`in/${encodeURIComponent(resumeData.data?.references?.[0].linkedin)}`}</AnchorLink>
+                          >{`in/${encodeURIComponent(resumeData.data?.references?.[0].linkedin)}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].dribble && (
                         <li className={styles.dribble}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://dribbble.com/${resumeData.data?.references?.[0].dribble}`}
-                          >{`/${resumeData.data?.references?.[0].dribble}`}</AnchorLink>
+                          >{`/${resumeData.data?.references?.[0].dribble}`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].postype && (
                         <li className={styles.postype}>
-                          <AnchorLink
+                          <Anchor
                             href={`https://${resumeData.data?.references?.[0].postype}.postype.com`}
-                          >{`${resumeData.data?.references?.[0].postype}.postype.com`}</AnchorLink>
+                          >{`${resumeData.data?.references?.[0].postype}.postype.com`}</Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].blog && (
                         <li className={styles.blog}>
-                          <AnchorLink href={`${encodeURIComponent(resumeData.data?.references?.[0].blog)}`}>
+                          <Anchor href={`${encodeURIComponent(resumeData.data?.references?.[0].blog)}`}>
                             {resumeData.data?.references?.[0].blog}
-                          </AnchorLink>
+                          </Anchor>
                         </li>
                       )}
                       {resumeData.data?.references?.[0].homepage && (
                         <li className={styles.homepage}>
-                          <AnchorLink href={`${encodeURIComponent(resumeData.data?.references?.[0].homepage)}`}>
+                          <Anchor href={`${encodeURIComponent(resumeData.data?.references?.[0].homepage)}`}>
                             {resumeData.data?.references?.[0].homepage}
-                          </AnchorLink>
+                          </Anchor>
                         </li>
                       )}
                     </ul>
