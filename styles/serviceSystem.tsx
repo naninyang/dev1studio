@@ -15,7 +15,7 @@ export const Container = styled.main({
     display: 'flex',
     gap: rem(7),
     background: 'none',
-    '& i': {
+    '& svg': {
       display: 'inline-block',
       width: rem(16),
       height: rem(16),
