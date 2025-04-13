@@ -1,11 +1,7 @@
 import { rem, mixIn, rgba, mq } from '@/styles/designSystem';
 import styled from '@emotion/styled';
-import AnchorLink from './Anchor';
-import LogoDev1StudioIcon from '@/images/logo/dev1studio/LogoDev1StudioIcon';
-import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';
-import LogoPostype from '@/images/logo/LogoPostype';
-import LogoVelog from '@/images/logo/LogoVelog';
-import LogoGithub from '@/images/logo/LogoGithub';
+import Anchor from './Anchor';
+import { LogoDev1, LogoDevelog, LogoGithub, LogoPostype, LogoVelog } from './Svgs';
 
 const Container = styled.header({
   display: 'flex',
@@ -33,6 +29,8 @@ const Container = styled.header({
     height: rem(17),
     '& svg': {
       display: 'block',
+      width: rem(132),
+      height: rem(17),
     },
     '& span': {
       ...mixIn.screenReaderOnly,
@@ -64,33 +62,33 @@ const Header = () => {
   return (
     <Container>
       <h1>
-        <LogoDev1StudioLogo style={{ width: `${132 / 16}rem`, height: `${17 / 16}rem` }} />
+        <LogoDev1 />
         <span>DEV1L.studio</span>
       </h1>
       <ul>
         <li>
-          <AnchorLink href="https://develog.dev1stud.io">
+          <Anchor href="https://develog.dev1stud.io">
             <span>Develog</span>
-            <LogoDev1StudioIcon style={{ width: `${17 / 16}rem`, height: `${17 / 16}rem` }} />
-          </AnchorLink>
+            <LogoDevelog />
+          </Anchor>
         </li>
         <li>
-          <AnchorLink href="https://dev-il-studio.postype.com">
+          <Anchor href="https://dev-il-studio.postype.com">
             <span>Postype</span>
-            <LogoPostype style={{ width: `${17 / 16}rem`, height: `${17 / 16}rem` }} />
-          </AnchorLink>
+            <LogoPostype />
+          </Anchor>
         </li>
         <li>
-          <AnchorLink href="https://velog.io/@naninyang">
+          <Anchor href="https://velog.io/@naninyang">
             <span>Velog</span>
-            <LogoVelog style={{ width: `${17 / 16}rem`, height: `${17 / 16}rem` }} />
-          </AnchorLink>
+            <LogoVelog />
+          </Anchor>
         </li>
         <li>
-          <AnchorLink href="https://github.com/naninyang">
+          <Anchor href="https://github.com/naninyang">
             <span>Gibhub</span>
-            <LogoGithub style={{ width: `${17 / 16}rem`, height: `${17 / 16}rem` }} />
-          </AnchorLink>
+            <LogoGithub />
+          </Anchor>
         </li>
       </ul>
     </Container>
