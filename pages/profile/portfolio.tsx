@@ -134,7 +134,7 @@ const Container = styled.div({
   },
   '& section': {
     borderTop: `${rem(2)} solid ${hex.white}`,
-    paddingTop: rem(32),
+    paddingTop: rem(53),
     '&:first-of-type': {
       borderTop: 0,
       paddingTop: 0,
@@ -155,6 +155,7 @@ const Container = styled.div({
       },
       '& img': {
         boxShadow: `0px ${rem(22)} ${rem(70)} ${rem(4)} rgba(0,0,0,0.56)`,
+        maxWidth: rem(770),
         width: '100%',
         height: 'auto',
       },
@@ -211,6 +212,31 @@ const Container = styled.div({
                   content: '", "',
                 },
                 '&:first-of-type::before': {
+                  display: 'none',
+                },
+              },
+            },
+          },
+          '& ul.skill': {
+            display: 'block!important',
+            '& li': {
+              display: 'inline-block',
+              float: 'left',
+              paddingLeft: rem(3),
+              '&::before': {
+                content: '" / "',
+              },
+              '&:first-of-type': {
+                paddingLeft: 0,
+                '&::before': {
+                  display: 'none',
+                },
+              },
+              '&:nth-child(4n)': {
+                clear: 'left',
+                display: 'block',
+                paddingLeft: 0,
+                '&::before': {
                   display: 'none',
                 },
               },
@@ -319,7 +345,7 @@ const Container = styled.div({
 const Content = styled.div({
   display: 'flex',
   flexDirection: 'column',
-  gap: rem(32),
+  gap: rem(53),
   background: `radial-gradient(farthest-side at 100% 100%, rgb(41, 8, 83), rgb(218, 53, 85))`,
   borderRadius: rem(17),
   padding: `${rem(67)} ${rem(47)}`,
@@ -465,7 +491,7 @@ export default function Portfolio({ onClose }: PortfolioProps) {
                     </dd>
                     <dt>사용된 기술</dt>
                     <dd>
-                      <ul>
+                      <ul className="skill">
                         {portfolio.skill.map((r, i) => (
                           <li key={i}>
                             <span>{r}</span>

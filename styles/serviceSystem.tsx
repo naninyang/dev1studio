@@ -14,7 +14,7 @@ export const ServicePage = styled.div({
 
 export const Container = styled.main({
   backgroundColor: hex.black,
-  '& > button': {
+  '& > button, & > a': {
     display: 'flex',
     gap: rem(7),
     background: 'none',
