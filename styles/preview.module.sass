@@ -78,6 +78,17 @@
           svg:nth-of-type(2)
             width: ds.rem(162)!important
 
+  dialog
+    margin: 0
+    border: 0
+    padding: 0
+    background-color: transparent
+    max-width: none
+    width: 100%
+
+    &::backdrop
+      background-color: ds.$hex-black
+
 .preview
   background-color: ds.$hex-dark
   display: flex

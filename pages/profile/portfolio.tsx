@@ -1,30 +1,37 @@
 import { useEffect, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { hex, rem, mixIn, mq } from '@/styles/designSystem';
 import Anchor from '@/components/Anchor';
-import MiscLeft from '@/images/misc/MiscLeft';
-import MiscOutlink from '@/images/misc/MiscOutlink';
-import MiscEmail from '@/images/misc/MiscEmail';
-import MiscSlack from '@/images/misc/MiscSlack';
+import { MiscEmail, MiscLeft, MiscOutlink, MiscSlack } from '@/components/Svgs';
 
-export function useDesktop() {
-  const [isDesktop, setIsDesktop] = useState(false);
-  const desktop = useMediaQuery({ query: '(min-width: 992px)' });
-  useEffect(() => {
-    setIsDesktop(desktop);
-  }, [desktop]);
-  return isDesktop;
-}
+type PortfolioProps = {
+  onClose: () => void;
+};
+
+type Portfolio = {
+  id: string;
+  name: string;
+  project: string;
+  term: {
+    start: string;
+    end: string | null;
+  } | null;
+  client: string;
+  agency: string;
+  position: string;
+  outsourcing: boolean;
+  role: string[];
+  skill: string[];
+  version: string[];
+};
 
 const Container = styled.div({
   display: 'flex',
   flexDirection: 'column',
   gap: rem(25),
-  background: hex.black,
-  position: 'relative',
   padding: `${rem(82)} ${rem(25)}`,
+  width: '100%',
   '& header': {
     display: 'flex',
     flexDirection: 'column',
@@ -45,7 +52,7 @@ const Container = styled.div({
       [mq.maxMedium]: {
         gap: rem(62),
       },
-      '& div[lang]': {
+      '& .en': {
         display: 'flex',
         flexDirection: 'column',
         gap: rem(27),
@@ -53,7 +60,7 @@ const Container = styled.div({
           display: 'flex',
           gap: rem(7),
           background: 'none',
-          '& i': {
+          '& svg': {
             display: 'inline-block',
             width: rem(16),
             height: rem(16),
@@ -126,6 +133,15 @@ const Container = styled.div({
     },
   },
   '& section': {
+    borderTop: `${rem(2)} solid ${hex.white}`,
+    paddingTop: rem(32),
+    '&:first-of-type': {
+      borderTop: 0,
+      paddingTop: 0,
+    },
+    [mq.maxSmall]: {
+      paddingTop: rem(17),
+    },
     '& .content': {
       display: 'flex',
       gap: rem(107),
@@ -139,10 +155,8 @@ const Container = styled.div({
       },
       '& img': {
         boxShadow: `0px ${rem(22)} ${rem(70)} ${rem(4)} rgba(0,0,0,0.56)`,
-        [mq.maxSmall]: {
-          width: '100%',
-          height: 'auto',
-        },
+        width: '100%',
+        height: 'auto',
       },
       '& dl': {
         display: 'flex',
@@ -166,7 +180,7 @@ const Container = styled.div({
           '& dt': {
             ...mixIn.coln,
             width: rem(110),
-            color: hex.rise,
+            color: hex.light,
             [mq.maxMedium]: {
               fontSize: rem(14),
             },
@@ -186,6 +200,20 @@ const Container = styled.div({
             },
             '& dd': {
               fontWeight: 400,
+              '& ul': {
+                display: 'flex',
+              },
+              '& li': {
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: rem(4),
+                '&::before': {
+                  content: '", "',
+                },
+                '&:first-of-type::before': {
+                  display: 'none',
+                },
+              },
             },
           },
         },
@@ -223,17 +251,18 @@ const Container = styled.div({
         '& dt span': {
           ...mixIn.screenReaderOnly,
         },
-        '& i': {
+        '& svg': {
           display: 'inline-block',
           width: rem(32),
           height: rem(32),
           [mq.maxSmall]: {
-            fontSize: rem(20),
+            width: rem(20),
+            height: rem(20),
           },
         },
         '& a': {
           color: hex.white,
-          '&:hover, &:focus': {
+          '&:hover, &:focus-visible': {
             textDecoration: 'underline',
           },
         },
@@ -258,7 +287,7 @@ const Container = styled.div({
           fontSize: rem(14),
         },
       },
-      '& i': {
+      '& svg': {
         display: 'inline-block',
         width: rem(17),
         height: rem(17),
@@ -272,7 +301,7 @@ const Container = styled.div({
       display: 'flex',
       gap: rem(7),
       background: 'none',
-      '& i': {
+      '& svg': {
         display: 'inline-block',
         width: rem(16),
         height: rem(16),
@@ -290,7 +319,7 @@ const Container = styled.div({
 const Content = styled.div({
   display: 'flex',
   flexDirection: 'column',
-  gap: rem(127),
+  gap: rem(32),
   background: `radial-gradient(farthest-side at 100% 100%, rgb(41, 8, 83), rgb(218, 53, 85))`,
   borderRadius: rem(17),
   padding: `${rem(67)} ${rem(47)}`,
@@ -298,7 +327,7 @@ const Content = styled.div({
   minHeight: `calc(100dvh - ${rem(107)})`,
   color: hex.white,
   [mq.maxSmall]: {
-    gap: rem(62),
+    gap: rem(17),
     padding: `${rem(47)} ${rem(27)}`,
   },
   '& h3': {
@@ -323,18 +352,56 @@ const Content = styled.div({
   },
 });
 
-const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const isDesktop = useDesktop();
+export default function Portfolio({ onClose }: PortfolioProps) {
+  const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
+
+  useEffect(() => {
+    fetch('/api/portfolio')
+      .then((res) => res.json())
+      .then((data) => setPortfolios(data))
+      .catch((err) => console.error(err));
+  }, []);
+
+  function formatTerm(term: Portfolio['term']): string {
+    if (!term?.start) return '';
+
+    const startDate = new Date(term.start);
+    const endDate = term.end ? new Date(term.end) : null;
+
+    const startYear = startDate.getFullYear();
+    const startMonth = String(startDate.getMonth() + 1).padStart(2, '0');
+
+    if (!endDate) {
+      return `${startYear}. ${startMonth}.`;
+    }
+
+    const endYear = endDate.getFullYear();
+    const endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
+
+    const isSameYear = startYear === endYear;
+    const isSameMonth = startMonth === endMonth;
+
+    if (isSameYear && isSameMonth) {
+      return `${startYear}. ${startMonth}.`;
+    }
+
+    if (isSameYear && !isSameMonth) {
+      return `${startYear}. ${startMonth}. ~ ${endMonth}.`;
+    }
+
+    return `${startYear}. ${startMonth}. ~ ${endYear}. ${endMonth}.`;
+  }
+
   return (
     <Container>
       <header>
         <div className="cover">
-          <div lang="en">
+          <div className="en">
             <button type="button" onClick={onClose}>
-              <MiscLeft style={{ width: `${16 / 16}rem`, height: `${16 / 16}rem` }} />
+              <MiscLeft />
               <span>이전화면으로</span>
             </button>
-            <div className="summary">
+            <div className="summary" lang="en">
               <p>
                 Figma UX/UI Designer <span>& NextJS Frontend Developer</span>
               </p>
@@ -345,274 +412,81 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           <p>UX/UI 디자이너 & 프론트엔드 개발자 고아리</p>
         </div>
       </header>
-      <Content>
-        <h3>
-          포트폴리오
-          <span lang="en">Portfolio</span>
-        </h3>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/naver.webp" width="770" height="441" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>N Tech Service</dd>
+      {portfolios.length > 0 ? (
+        <Content>
+          <h3>
+            포트폴리오
+            <span lang="en">Portfolio</span>
+          </h3>
+          {portfolios.map((portfolio, index) => (
+            <section key={index}>
+              <div className="content">
+                <Image
+                  src={`https://cdn.dev1stud.io/dev1studios/${portfolio.name}.webp`}
+                  width="770"
+                  height="620"
+                  unoptimized
+                  priority
+                  alt=""
+                />
+                <dl>
+                  <div>
+                    <dt>클라이언트</dt>
+                    <dd>{portfolio.client}</dd>
+                  </div>
+                  <div>
+                    <dt>소속사</dt>
+                    <dd>
+                      {portfolio.agency} ({portfolio.position}
+                      {portfolio.outsourcing && ', 외주건'})
+                    </dd>
+                  </div>
+                  <div className="detail">
+                    <dt>프로젝트명 및 기간</dt>
+                    <dd>
+                      {portfolio.project} {formatTerm(portfolio.term)}
+                    </dd>
+                    <dt>상세내용</dt>
+                    <dd>
+                      <ul>
+                        {portfolio.version.map((r, i) => (
+                          <li key={i}>
+                            <span>{r} 버전</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <ul>
+                        {portfolio.role.map((r, i) => (
+                          <li key={i}>
+                            <span>{r}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </dd>
+                    <dt>사용된 기술</dt>
+                    <dd>
+                      <ul>
+                        {portfolio.skill.map((r, i) => (
+                          <li key={i}>
+                            <span>{r}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </dd>
+                  </div>
+                </dl>
               </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>디와이즈 (프리랜서)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>네이버 개발자센터 리뉴얼 2015.08 ~ 09</dd>
-                <dt>상세내용</dt>
-                <dd>PC 버전 HTML5 & CSS3</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/prism.webp" width="770" height="441" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>(사)청년창업네트워크프리즘</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>플랜트삼이오 (프리랜서)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>프리즘네트워크 신규 2017.03 ~ 04</dd>
-                <dt>상세내용</dt>
-                <dd>UX Design, HTML5 & CSS3 & jQuery</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/mingles.webp" width="770" height="441" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>밍글링</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>밍글링 (개발팀장)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>밍글즈 신규 및 운영/유지보수 2019.04 ~ 2021.01</dd>
-                <dt>상세내용</dt>
-                <dd>HTML5 & CSS3 & jQuery</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/letalk.webp" width="770" height="441" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>비욘드코드</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>밍글링 (개발팀장, 외주건)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>리걸팀톡 신규 2020.03 ~ 2020.06</dd>
-                <dt>상세내용</dt>
-                <dd>UX Design, HTML5 & CSS3 & jQuery</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/skilup.webp" width="770" height="364" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>한국에너지공단</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>코드크레인 (프리랜서)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>제로에너지 - 스킬업 2021.10 ~ 2020.11</dd>
-                <dt>상세내용</dt>
-                <dd>ReactJS Web publishing (JavaScript & Styled Emotion & SASS)</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/mobilif.webp" width="770" height="364" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>모빌리프</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>코드크레인 (프리랜서)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>모빌리프 2021.10 ~ 2020.11</dd>
-                <dt>상세내용</dt>
-                <dd>ReactJS Web publishing (JavaScript & Styled Emotion & SASS)</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/reviews.webp" width="770" height="442" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>코드크레인</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>코드크레인 (프리랜서)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>데이터크레인 리뷰스 애널리틱스 2021.10 ~ 2020.11</dd>
-                <dt>상세내용</dt>
-                <dd>ReactJS Web publishing (JavaScript & Styled Emotion & SASS)</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/seammulter.webp" width="770" height="442" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>샘물터</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>샘물터 (테크리드)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>샘물터 공식 웹사이트 리뉴얼, 운영/유지보수 2022.03 ~ 04</dd>
-                <dt>상세내용</dt>
-                <dd>NextJS Web publishing (JavaScript & Styled Emotion & SASS)</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/yunsl.webp" width="770" height="618" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>샘물터</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>샘물터 (테크리드)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>윤슬지하수빅데이터포털 2022.06 ~ 2023.07</dd>
-                <dt>상세내용</dt>
-                <dd>PM, UX Design, NextJS Frontend</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/ureawater.webp" width="770" height="537" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>코리아케미컬</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>샘물터 (테크리드, 외주건)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>유리아워터 2022.12</dd>
-                <dt>상세내용</dt>
-                <dd>PM, UX Design</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/bdfire.webp" width="770" height="440" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>이엠시티</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>샘물터 (테크리드, 외주건)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>비디파이어 2022.12</dd>
-                <dt>상세내용</dt>
-                <dd>PM, UX Design</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-        <section>
-          <div className="content">
-            <Image src="/portfolio/nuvilab.webp" width="770" height="440" alt="" />
-            <dl>
-              <div>
-                <dt>클라이언트</dt>
-                <dd>누비랩</dd>
-              </div>
-              <div>
-                <dt>소속사</dt>
-                <dd>시소 (프리랜서)</dd>
-              </div>
-              <div className="detail">
-                <dt>프로젝트명 및 기간</dt>
-                <dd>누비랩 웹사이트 리뉴얼 2023.09</dd>
-                <dt>상세내용</dt>
-                <dd>NextJS Web publishing (JavaScript & Styled Emotion & SASS)</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-      </Content>
+            </section>
+          ))}
+        </Content>
+      ) : (
+        <p>불러오는 중입니다...</p>
+      )}
       <footer>
         <dl>
           <div>
             <dt>
-              <MiscEmail
-                style={{
-                  width: isDesktop ? `${32 / 16}rem` : `${20 / 16}rem`,
-                  height: isDesktop ? `${16 / 16}rem` : `${20 / 16}rem`,
-                }}
-              />
+              <MiscEmail />
               <span>이메일</span>
             </dt>
             <dd>
@@ -621,12 +495,7 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           </div>
           <div>
             <dt>
-              <MiscSlack
-                style={{
-                  width: isDesktop ? `${32 / 16}rem` : `${20 / 16}rem`,
-                  height: isDesktop ? `${16 / 16}rem` : `${20 / 16}rem`,
-                }}
-              />
+              <MiscSlack />
               <span>슬랙</span>
             </dt>
             <dd>
@@ -638,33 +507,21 @@ const Portfolio: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           <li>
             <Anchor href="/pdf/portfolio_chloe.pdf">
               <span>포트폴리오 PDF 파일 받기</span>
-              <MiscOutlink
-                style={{
-                  width: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
-                  height: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
-                }}
-              />
+              <MiscOutlink />
             </Anchor>
           </li>
           <li>
             <Anchor href="/pdf/portfolio_print_chloe.pdf">
               <span>포트폴리오 프린트용 PDF 파일 받기</span>
-              <MiscOutlink
-                style={{
-                  width: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
-                  height: isDesktop ? `${17 / 16}rem` : `${10 / 16}rem`,
-                }}
-              />
+              <MiscOutlink />
             </Anchor>
           </li>
         </ul>
         <button type="button" onClick={onClose}>
-          <MiscLeft style={{ width: `${16 / 16}rem`, height: `${16 / 16}rem` }} />
+          <MiscLeft />
           <span>이전화면으로</span>
         </button>
       </footer>
     </Container>
   );
-};
-
-export default Portfolio;
+}
