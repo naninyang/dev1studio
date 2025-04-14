@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import Seo from '@/components/Seo';
 import Anchor from '@/components/Anchor';
+import { LogoDev1, MiscRight } from '@/components/Svgs';
 import styles from '@/styles/home.module.sass';
-import MiscRight from '@/images/misc/MiscRight';
-import LogoDev1StudioLogo from '@/images/logo/dev1studio/LogoDev1StudioLogo';
 
 export default function Home() {
   const [splash, setSplash] = useState(true);
@@ -12,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     const splashTimer = setTimeout(() => {
       setSplash(false);
-    }, 700);
+    }, 3700);
 
     return () => clearTimeout(splashTimer);
   }, []);
@@ -26,23 +25,13 @@ export default function Home() {
       <main className={styles.home}>
         {splash ? (
           <div className={styles.splash} aria-label={'불러오는 중'}>
-            <LogoDev1StudioLogo
-              style={{
-                width: `${270 / 16}rem`,
-                height: `${34 / 16}rem`,
-              }}
-            />
+            <LogoDev1 />
           </div>
         ) : (
           <div className={styles.enterance}>
-            <Anchor href="/dev1studio">
+            <Anchor href="/sites">
               <span>입장하기</span>
-              <MiscRight
-                style={{
-                  width: `${20 / 16}rem`,
-                  height: `${20 / 16}rem`,
-                }}
-              />
+              <MiscRight />
             </Anchor>
           </div>
         )}

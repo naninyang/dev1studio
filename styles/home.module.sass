@@ -10,8 +10,8 @@
     width: 100%
     height: 100dvh
     backdrop-filter: blur(ds.rem(270))
-    opacity: 1
-    animation: splash 7s cubic-bezier(.4,0,.2,1)
+    opacity: 0
+    animation: splash 3.7s cubic-bezier(.4,0,.2,1)
 
     svg
       width: ds.rem(270)
@@ -22,6 +22,7 @@
     justify-content: center
     align-items: center
     height: 100dvh
+    animation: enterance 3.7s cubic-bezier(.4,0,.2,1)
 
     a
       display: flex
@@ -37,9 +38,9 @@
         font-weight: 700
         color: ds.$hex-black
 
-      i
+      svg
         transform: translateX(ds.rem(-2))
-        animation: enterance 1.2s cubic-bezier(.4,0,.2,1) infinite
+        animation: icon 1.2s cubic-bezier(.4,0,.7,1) infinite
 
 @keyframes splash
   0%
@@ -53,13 +54,26 @@
 
 @keyframes enterance
   0%
+    opacity: 0
+
+  70.07%
+    opacity: 1
+
+  100%
+    opacity: 1
+
+@keyframes icon
+  0%
     transform: translateX(ds.rem(-2))
 
   22.22%
-    transform: translateX(ds.rem(2))
+    transform: translateX(ds.rem(1))
+
+  50%
+    transform: translateX(ds.rem(3))
 
   77.77%
-    transform: translateX(ds.rem(2))
+    transform: translateX(ds.rem(1))
 
   100%
     transform: translateX(ds.rem(-2))
