@@ -1,0 +1,221 @@
+.viewer
+  display: flex
+  flex-direction: column
+  width: 297mm
+
+  .screen &
+    background-color: ds.$hex-black
+
+  .module
+    display: flex
+    flex-direction: column
+    width: 297mm
+    height: 210mm
+    padding: 3mm
+
+  header, footer, section
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+    border-radius: ds.rem(9)
+    padding: ds.rem(43) ds.rem(27)
+    width: 100%
+
+    .print
+      color: ds.$hex-black
+
+    .screen &
+      background: radial-gradient(ellipse at center, #DA3555 0%, #290853 100%)
+      color: ds.$hex-white
+
+  header
+    .cover
+      display: flex
+      flex-direction: column
+      gap: ds.rem(73)
+
+      .en
+        display: flex
+        flex-direction: column
+        gap: ds.rem(15)
+
+        .summary
+          display: flex
+          align-items: flex-end
+          gap: ds.rem(9)
+
+          p
+            display: flex
+            flex-direction: column
+            font-size: ds.rem(21)
+            font-weight: 100
+            line-height: 1.25
+
+          em
+            font-size: ds.rem(14)
+            font-style: normal
+            font-weight: 900
+            line-height: 1.5
+
+      h2
+        font-size: ds.rem(75)
+        font-weight: 900
+        text-transform: uppercase
+        line-height: 1
+
+      > p
+        font-size: ds.rem(14)
+        line-height: 1.20833333
+
+  section
+    gap: ds.rem(74)
+
+    .header
+      h3
+        display: flex
+        align-items: flex-end
+        gap: ds.rem(5)
+        font-size: ds.rem(21)
+        font-weight: 900
+        line-height: 1
+
+        span
+          font-size: ds.rem(14)
+          font-weight: 300
+          text-transform: lowercase
+          line-height: 1
+
+    .content
+      display: flex
+      gap: ds.rem(63)
+
+      img
+        width: ds.rem(450)
+        height: auto!important
+        object-fit: contain
+        aspect-ratio: auto!important
+
+      dl
+        display: flex
+        flex-direction: column
+        gap: ds.rem(18)
+        padding-top: ds.rem(27)
+
+        div
+          display: flex
+          gap: ds.rem(16)
+          font-size: ds.rem(14)
+          line-height: 1.20833333
+
+          dt
+            @include ds.coln
+            width: ds.rem(65)
+
+            .print
+              color: ds.$hex-dark
+
+            .screen
+              color: ds.$hex-light
+
+          dd
+            @include ds.col
+            font-weight: 700
+
+            ul.skill
+              display: block!important
+
+              li
+                display: inline-block
+                float: left
+                padding-left: ds.rem(3)
+
+                &::before
+                  content: " / "
+
+                &:first-of-type
+                  padding-left: 0
+
+                  &::before
+                    display: none
+
+                &:nth-child(4n)
+                  clear: left
+                  display: block
+                  padding-left: 0
+
+                  &::before
+                    display: none
+
+            &.description
+              display: flex
+              flex-direction: column
+              gap: ds.rem(5)
+
+              p
+                line-height: 1.25
+
+          &.detail
+            flex-direction: column
+            gap: ds.rem(12)
+
+            dt
+              @include ds.screen-reader-only
+
+            dd
+              font-weight: 400
+
+              &.details
+                display: flex
+                gap: ds.rem(7)
+
+              ul
+                display: flex
+
+              li
+                display: inline-flex
+                align-items: center
+                gap: ds.rem(4)
+
+                &::before
+                  content: ", "
+
+                &:first-of-type::before
+                  display: none
+
+  footer
+    justify-content: center
+    align-items: center
+    gap: ds.rem(32)
+
+    p
+      font-size: ds.rem(24)
+      font-weight: 600
+
+    dl
+      display: flex
+      flex-direction: column
+      gap: ds.rem(12)
+      font-size: ds.rem(20)
+      font-weight: 900
+      line-height: 1
+
+      div
+        display: flex
+        gap: ds.rem(7)
+
+        dt
+          span
+            @include ds.screen-reader-only
+
+        svg
+          display: inline-block
+          width: ds.rem(20)
+          height: ds.rem(20)
+
+          .print &
+            path
+              fill: ds.$hex-black
+
+.content
+  display: flex
+  gap: ds.rem(32)

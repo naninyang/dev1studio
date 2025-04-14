@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:pdf": "ts-node scripts/generatePdf.ts"
   },
   "dependencies": {
     "@emotion/css": "^11.13.5",
@@ -41,7 +42,9 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
     "prettier": "^3.5.3",
+    "puppeteer": "^24.6.1",
     "sass": "^1.86.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

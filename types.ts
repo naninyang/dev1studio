@@ -171,3 +171,37 @@ export type DateProps = {
   end_date?: string;
   end_time?: string;
 };
+
+export type Portfolio = {
+  id: string;
+  name: string;
+  project: string;
+  term: {
+    start: string;
+    end: string | null;
+  } | null;
+  client: string;
+  agency: string;
+  position: string;
+  outsourcing: boolean;
+  role: string[];
+  skill: string[];
+  version: string[];
+};
+
+export type PortfolioSite = {
+  id: string;
+  name: string;
+  project: string;
+  term: {
+    start: string;
+    end: string | null;
+  } | null;
+  company: string;
+  outsourcing: boolean;
+  role: string[];
+  skill: string[];
+  version: string[];
+  url: string;
+  desc: string;
+};
