@@ -18,10 +18,22 @@
       height: calc(100vh - ds.rem(104))
 
     .content
-      > p
-        font-size: ds.rem(23)
-        font-weight: 700
-        color: ds.$hex-white
+      .loading
+        display: flex
+        justify-content: center
+        align-items: center
+        flex: 1
+
+        span
+          +ds.screen-reader-only
+
+        i
+          display: block
+          width: ds.rem(50)
+          height: ds.rem(50)
+          border: ds.rem(5) solid transparent
+          border-radius: 50%
+          animation: spin 4s cubic-bezier(.4,0,.2,1) infinite
 
       > div
         animation: card 1s cubic-bezier(.4,0,.2,1)
@@ -366,3 +378,33 @@
 
   100%
     opacity: 1
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+    border-right-color: ds.$hex-dayrise
+    border-bottom-color: ds.$hex-dayrise
+
+  25%
+    transform: rotate(360deg)
+    border: ds.rem(5) solid transparent
+    border-bottom-color: ds.$hex-dayrise
+    border-left-color: ds.$hex-dayrise
+
+  50%
+    transform: rotate(720deg)
+    border: ds.rem(5) solid transparent
+    border-top-color: ds.$hex-dayrise
+    border-left-color: ds.$hex-dayrise
+
+  75%
+    transform: rotate(1080deg)
+    border: ds.rem(5) solid transparent
+    border-top-color: ds.$hex-dayrise
+    border-right-color: ds.$hex-dayrise
+
+  100%
+    transform: rotate(1440deg)
+    border: ds.rem(5) solid transparent
+    border-right-color: ds.$hex-dayrise
+    border-bottom-color: ds.$hex-dayrise

@@ -250,7 +250,10 @@ export default function Sites() {
               ))}
             </Slider>
           ) : (
-            <p>데이터를 불러오는 중입니다.</p>
+            <p className={styles.loading}>
+              <span>데이터 불러오는 중</span>
+              <i />
+            </p>
           )}
         </div>
       </div>
