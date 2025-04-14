@@ -505,13 +505,13 @@ export default function Portfolio({ onClose }: PortfolioProps) {
         </dl>
         <ul>
           <li>
-            <Anchor href="/pdf/portfolio_chloe.pdf">
-              <span>포트폴리오 PDF 파일 받기</span>
+            <Anchor href="https://cdn.dev1stud.io/dev1studios/portfolio_screen_chloe.pdf">
+              <span>포트폴리오 화면용 PDF 파일 받기</span>
               <MiscOutlink />
             </Anchor>
           </li>
           <li>
-            <Anchor href="/pdf/portfolio_print_chloe.pdf">
+            <Anchor href="https://cdn.dev1stud.io/dev1studios/portfolio_print_chloe.pdf">
               <span>포트폴리오 프린트용 PDF 파일 받기</span>
               <MiscOutlink />
             </Anchor>
