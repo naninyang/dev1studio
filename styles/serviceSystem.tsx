@@ -7,6 +7,9 @@ export const ServicePage = styled.div({
   alignItems: 'center',
   backgroundColor: hex.black,
   minHeight: '100vh',
+  '@media print': {
+    backgroundColor: '#fff',
+  },
 });
 
 export const Container = styled.main({

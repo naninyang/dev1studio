@@ -8,8 +8,8 @@ import { DateProps, DescriptionProps, ResumeData } from '@/types';
 import Anchor from '@/components/Anchor';
 import { rem } from '@/styles/designSystem';
 import { Container, ServicePage } from '@/styles/serviceSystem';
-import styles from '@/styles/print.module.sass';
 import { MiscLeft } from '@/components/Svgs';
+import styles from '@/styles/print.module.sass';
 
 const Avatar = styled.div({
   width: rem(100),
@@ -22,6 +22,7 @@ export default function Resume() {
   const [resumeData, setResumeData] = useState<ResumeData | null>(null);
   const [mdx, setMdx] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  const [backlink, setBacklink] = useState(false);
 
   useEffect(() => {
     const fetchResume = async () => {
@@ -43,6 +44,30 @@ export default function Resume() {
     };
 
     fetchResume();
+  }, []);
+
+  useEffect(() => {
+    const referrer = document.referrer;
+
+    if (!referrer) return;
+
+    try {
+      const referrerUrl = new URL(referrer);
+
+      const isFromCondition =
+        referrerUrl.pathname === '/condition' ||
+        referrerUrl.pathname === '/dev1studio' ||
+        referrerUrl.pathname === '/develog' ||
+        referrerUrl.pathname === '/komponent' ||
+        referrerUrl.pathname === '/nol2tr' ||
+        referrerUrl.pathname === '/semoview';
+
+      if (isFromCondition) {
+        setBacklink(true);
+      }
+    } catch (err) {
+      console.error('Invalid referrer URL:', err);
+    }
   }, []);
 
   const careerDescription = (value: number | undefined): string => {
@@ -151,10 +176,17 @@ export default function Resume() {
             <Head>
               {resumeData.data.username_show ? <title>{resumeData.data.username} 이력서</title> : <title>이력서</title>}
             </Head>
-            <button type="button" className="close-button" onClick={handleClose}>
-              <MiscLeft />
-              <span>이전화면으로</span>
-            </button>
+            {backlink ? (
+              <button type="button" className="close-button" onClick={handleClose}>
+                <MiscLeft />
+                <span>이전화면으로</span>
+              </button>
+            ) : (
+              <Anchor href="/profile" className="close-button">
+                <MiscLeft />
+                <span>이전화면으로</span>
+              </Anchor>
+            )}
             <h1>이력서</h1>
             <blockquote>
               <p>
@@ -535,51 +567,11 @@ export default function Resume() {
                         <div>
                           <dt>숙련도</dt>
                           <dd>
-                            {skill.skill_level === 1 && (
-                              <span>
-                                <i className={styles.circle} />
-                                <i />
-                                <i />
-                                <i />
-                                <i />
-                              </span>
-                            )}
-                            {skill.skill_level === 2 && (
-                              <span>
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i />
-                                <i />
-                                <i />
-                              </span>
-                            )}
-                            {skill.skill_level === 3 && (
-                              <span>
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i />
-                                <i />
-                              </span>
-                            )}
-                            {skill.skill_level === 4 && (
-                              <span>
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i />
-                              </span>
-                            )}
-                            {skill.skill_level === 5 && (
-                              <span>
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                                <i className={styles.circle} />
-                              </span>
-                            )}
+                            <span aria-label={`5레벨 중 ${skill.skill_level ?? 0}레벨`}>
+                              {[...Array(5)].map((_, i) => (
+                                <i key={i} className={i < (skill.skill_level ?? 0) ? styles.circle : undefined} />
+                              ))}
+                            </span>
                           </dd>
                         </div>
                         <div>
