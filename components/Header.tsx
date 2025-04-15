@@ -1,7 +1,19 @@
-import { rem, mixIn, rgba, mq } from '@/styles/designSystem';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useMediaQuery } from 'react-responsive';
 import styled from '@emotion/styled';
+import { rem, mixIn, rgba, mq, hex } from '@/styles/designSystem';
 import Anchor from './Anchor';
 import { LogoDev1, LogoDevelog, LogoGithub, LogoPostype, LogoVelog } from './Svgs';
+
+export function useDesktop() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const desktop = useMediaQuery({ query: `(min-width: ${768 / 16}rem)` });
+  useEffect(() => {
+    setIsDesktop(desktop);
+  }, [desktop]);
+  return isDesktop;
+}
 
 const Container = styled.header({
   display: 'flex',
@@ -23,6 +35,10 @@ const Container = styled.header({
       50,
     )}) 0 calc(env(safe-area-inset-left) + ${rem(50)})`,
   },
+  '.headline': {
+    display: 'flex',
+    gap: rem(37),
+  },
   '& h1': {
     display: 'block',
     width: rem(132),
@@ -36,6 +52,23 @@ const Container = styled.header({
       ...mixIn.screenReaderOnly,
     },
   },
+  '& ol': {
+    display: 'flex',
+    gap: rem(23),
+    '& li.current': {
+      '& a': {
+        color: hex.white,
+        borderBottom: `${rem(2)} solid ${hex.white}`,
+      },
+    },
+    '& a': {
+      transition: 'all .4s cubic-bezier(.4,0,.2,1)',
+      '&:hover, &:focus-visible': {
+        color: hex.white,
+        borderBottom: `${rem(2)} solid ${hex.white}`,
+      },
+    },
+  },
   '& ul': {
     display: 'flex',
     gap: rem(10),
@@ -44,12 +77,11 @@ const Container = styled.header({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: rem(17),
-    height: rem(17),
+    color: hex.rise,
     '& span': {
       ...mixIn.screenReaderOnly,
     },
-    '& i': {
+    '& svg': {
       display: 'block',
       width: rem(17),
       height: rem(17),
@@ -58,41 +90,61 @@ const Container = styled.header({
   },
 });
 
-const Header = () => {
+export default function Header() {
+  const isDesktop = useDesktop();
+  const router = useRouter();
   return (
     <Container>
-      <h1>
-        <LogoDev1 />
-        <span>DEV1L.studio</span>
-      </h1>
-      <ul>
-        <li>
-          <Anchor href="https://develog.dev1stud.io">
-            <span>Develog</span>
-            <LogoDevelog />
-          </Anchor>
-        </li>
-        <li>
-          <Anchor href="https://dev-il-studio.postype.com">
-            <span>Postype</span>
-            <LogoPostype />
-          </Anchor>
-        </li>
-        <li>
-          <Anchor href="https://velog.io/@naninyang">
-            <span>Velog</span>
-            <LogoVelog />
-          </Anchor>
-        </li>
-        <li>
-          <Anchor href="https://github.com/naninyang">
-            <span>Gibhub</span>
-            <LogoGithub />
-          </Anchor>
-        </li>
-      </ul>
+      <div className="headline">
+        <h1>
+          <LogoDev1 />
+          <span>DEV1L.studio</span>
+        </h1>
+        <nav>
+          <ol>
+            <li
+              className={router.asPath === `/sites` ? 'current' : ''}
+              aria-current={router.asPath === `/sites` ? 'page' : false}
+            >
+              <Anchor href="/sites">개발 사이트</Anchor>
+            </li>
+            <li
+              className={router.asPath === `/profile` ? 'current' : ''}
+              aria-current={router.asPath === `/profile` ? 'page' : false}
+            >
+              <Anchor href="/profile">프로필</Anchor>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      {isDesktop && (
+        <ul>
+          <li>
+            <Anchor href="https://develog.dev1stud.io">
+              <span>Develog</span>
+              <LogoDevelog />
+            </Anchor>
+          </li>
+          <li>
+            <Anchor href="https://dev-il-studio.postype.com">
+              <span>Postype</span>
+              <LogoPostype />
+            </Anchor>
+          </li>
+          <li>
+            <Anchor href="https://velog.io/@naninyang">
+              <span>Velog</span>
+              <LogoVelog />
+            </Anchor>
+          </li>
+          <li>
+            <Anchor href="https://github.com/naninyang">
+              <span>Gibhub</span>
+              <LogoGithub />
+            </Anchor>
+          </li>
+        </ul>
+      )}
     </Container>
   );
-};
-
-export default Header;
+}

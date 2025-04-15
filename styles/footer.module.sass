@@ -1,0 +1,42 @@
+footer.footer
+  position: fixed
+  bottom: 0
+  left: 0
+  width: 100%
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: ds.rem(52)
+  padding: 0 calc(env(safe-area-inset-right) + ds.rem(25)) env(safe-area-inset-bottom) calc(env(safe-area-inset-left) + ds.rem(25))
+  background-color: ds.$rgba-black70
+  backdrop-filter: blur(ds.rem(20))
+
+  p
+    font-size: ds.rem(16)
+    font-weight: 300
+    color: ds.$hex-dayrise
+
+    strong
+      font-weight: 900
+      color: ds.$hex-rise
+
+  ul
+    display: flex
+    gap: ds.rem(10)
+
+  li
+    a
+      display: flex
+      justify-content: center
+      align-items: center
+      width: ds.rem(17)
+      height: ds.rem(17)
+
+    span
+      +ds.screen-reader-only
+
+    svg
+      display: block
+      width: ds.rem(17)
+      height: ds.rem(17)
+      opacity: 0.5

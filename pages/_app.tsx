@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
 import Header from '@/components/Header';
 import '@/styles/global.sass';
+import Footer from '@/components/Footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Script>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </>
   );
 }
