@@ -5,6 +5,19 @@ const notion = new NotionClient({ auth: process.env.NOTION_API_KEY });
 const notionSitesID = process.env.NOTION_SITES_ID || '';
 const notionPortfolioID = process.env.NOTION_PORTFOLIO_ID || '';
 const notionPortfolioSiteID = process.env.NOTION_PORTFOLIO_SITE_ID || '';
+const notionJasopeID = process.env.NOTION_JASOPE_ID || '';
+
+export type NotionFile = {
+  name: string;
+  type: 'file' | 'external';
+  file?: {
+    url: string;
+    expiry_time: string;
+  };
+  external?: {
+    url: string;
+  };
+};
 
 type NotionSite = {
   id: string;
@@ -51,6 +64,18 @@ type NotionPortfolioSite = {
   version: string[];
   url: string;
   desc: string;
+};
+
+type NotionJasope = {
+  id: string;
+  name: string;
+  kor: string;
+  one: string;
+  company: string;
+  desc: string;
+  thumbnail: NotionFile[];
+  job: string;
+  skill: string[];
 };
 
 export async function fetchSites(): Promise<NotionSite[]> {
@@ -179,6 +204,37 @@ export async function fetchPortfolioSite(): Promise<NotionPortfolioSite[]> {
       version: p.version.multi_select.map((s) => s.name),
       url: p.url.rich_text[0]?.plain_text || '',
       desc: p.desc.rich_text[0]?.plain_text || '',
+    };
+  });
+}
+
+export async function fetchJasope(): Promise<NotionJasope[]> {
+  const response = await notion.databases.query({
+    database_id: notionJasopeID,
+  });
+
+  return response.results.filter(isFullPage).map((page): NotionJasope => {
+    const p = page.properties as unknown as {
+      name: { type: 'title'; title: { plain_text: string }[] };
+      kor: { type: 'rich_text'; rich_text: { plain_text: string }[] };
+      one: { type: 'rich_text'; rich_text: { plain_text: string }[] };
+      company: { type: 'rich_text'; rich_text: { plain_text: string }[] };
+      desc: { type: 'rich_text'; rich_text: { plain_text: string }[] };
+      thumbnail: { type: 'files'; files: NotionFile[] };
+      job: { type: 'rich_text'; rich_text: { plain_text: string }[] };
+      skill: { type: 'multi_select'; multi_select: { name: string }[] };
+    };
+
+    return {
+      id: page.id,
+      name: p.name.title[0]?.plain_text || '',
+      kor: p.kor.rich_text[0]?.plain_text || '',
+      one: p.one.rich_text[0]?.plain_text || '',
+      company: p.company.rich_text[0]?.plain_text || '',
+      desc: p.desc.rich_text[0]?.plain_text || '',
+      thumbnail: p.thumbnail.files || [],
+      job: p.job.rich_text[0]?.plain_text || '',
+      skill: p.skill.multi_select.map((s) => s.name),
     };
   });
 }

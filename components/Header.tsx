@@ -37,7 +37,7 @@ const Container = styled.header({
   },
   '.headline': {
     display: 'flex',
-    gap: rem(37),
+    gap: rem(12),
   },
   '& h1': {
     display: 'block',
@@ -54,7 +54,7 @@ const Container = styled.header({
   },
   '& ol': {
     display: 'flex',
-    gap: rem(23),
+    gap: rem(12),
     '& li.current': {
       '& a': {
         color: hex.white,
@@ -106,13 +106,19 @@ export default function Header() {
               className={router.asPath === `/sites` ? 'current' : ''}
               aria-current={router.asPath === `/sites` ? 'page' : false}
             >
-              <Anchor href="/sites">개발 사이트</Anchor>
+              <Anchor href="/sites">사이트</Anchor>
             </li>
             <li
               className={router.asPath === `/profile` ? 'current' : ''}
               aria-current={router.asPath === `/profile` ? 'page' : false}
             >
               <Anchor href="/profile">프로필</Anchor>
+            </li>
+            <li
+              className={router.asPath === `/jasope` ? 'current' : ''}
+              aria-current={router.asPath === `/jasope` ? 'page' : false}
+            >
+              <Anchor href="/jasope">자소페</Anchor>
             </li>
           </ol>
         </nav>
