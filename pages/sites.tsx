@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import Image from 'next/image';
 import Slider from 'react-slick';
 import Anchor from '@/components/Anchor';
 import styles from '@/styles/sites.module.sass';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Image from 'next/image';
 
 type Site = {
   id: string;
@@ -144,7 +144,7 @@ export default function Sites() {
                       <div className={styles['logo-img']}>
                         <i
                           style={{
-                            backgroundImage: `url('https://cdn.dev1stud.io/dev1studios/logo-${site.siteShort}.svg?t=${timestamp}')`,
+                            backgroundImage: `url(https://cdn.dev1stud.io/dev1studios/logo-${site.siteShort}.svg?t=${timestamp})`,
                           }}
                         />
                       </div>
