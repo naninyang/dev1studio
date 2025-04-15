@@ -1,22 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { isSafari } from 'react-device-detect';
-import { useMediaQuery } from 'react-responsive';
 import Anchor from '@/components/Anchor';
 import { ProfilePortfolioEng, ProfilePortfolioKor, ProfileResumeEng, ProfileResumeKor } from '@/components/Svgs';
 import Portfolio from '../profile/portfolio';
 import styles from '@/styles/profile.module.sass';
 
-export function useDesktop() {
-  const [isDesktop, setIsDesktop] = useState(false);
-  const desktop = useMediaQuery({ query: `(min-width: ${992 / 16}rem` });
-  useEffect(() => {
-    setIsDesktop(desktop);
-  }, [desktop]);
-  return isDesktop;
-}
-
 const PreviewDev1studio = () => {
-  const isDesktop = useDesktop();
   const [isPortfolio, setIsPortfolio] = useState(false);
   const portfolioRef = useRef<HTMLDialogElement>(null);
 

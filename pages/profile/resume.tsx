@@ -4,6 +4,7 @@ import Image from 'next/image';
 import styled from '@emotion/styled';
 import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
+import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { DateProps, DescriptionProps, ResumeData } from '@/types';
 import Anchor from '@/components/Anchor';
 import { rem } from '@/styles/designSystem';
@@ -20,7 +21,7 @@ const Avatar = styled.div({
 
 export default function Resume() {
   const [resumeData, setResumeData] = useState<ResumeData | null>(null);
-  const [mdx, setMdx] = useState<any>(null);
+  const [mdx, setMdx] = useState<MDXRemoteSerializeResult<Record<string, unknown>> | null>(null);
   const [loading, setLoading] = useState(true);
   const [backlink, setBacklink] = useState(false);
 

@@ -2,12 +2,6 @@ import { useEffect, useState } from 'react';
 import { Portfolio, PortfolioSite } from '@/types';
 import PortfolioPdfView from '@/components/PortfolioPdfView';
 
-type Props = {
-  data: Portfolio[];
-  site: PortfolioSite[];
-  version?: 'screen' | 'print';
-};
-
 export default function Preview() {
   const [data, setData] = useState<Portfolio[]>([]);
   const [site, setSite] = useState<PortfolioSite[]>([]);

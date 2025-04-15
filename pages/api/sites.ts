@@ -6,6 +6,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const sites = await fetchSites();
     res.status(200).json(sites);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to fetch sites data' });
+    res.status(500).json({ error: `Failed to fetch sites data: ${error}` });
   }
 }
