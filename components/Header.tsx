@@ -109,8 +109,8 @@ export default function Header() {
               <Anchor href="/sites">사이트</Anchor>
             </li>
             <li
-              className={router.asPath === `/profile` ? 'current' : ''}
-              aria-current={router.asPath === `/profile` ? 'page' : false}
+              className={router.asPath === `/profile` || router.asPath === `/profile/resume` ? 'current' : ''}
+              aria-current={router.asPath === `/profile` || router.asPath === `/profile/resume` ? 'page' : false}
             >
               <Anchor href="/profile">프로필</Anchor>
             </li>
