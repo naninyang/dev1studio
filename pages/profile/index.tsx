@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
 import { isSafari } from 'react-device-detect';
 import { useMediaQuery } from 'react-responsive';
+import Anchor from '@/components/Anchor';
 import { ProfilePortfolioEng, ProfilePortfolioKor, ProfileResumeEng, ProfileResumeKor } from '@/components/Svgs';
 import Portfolio from '../profile/portfolio';
 import styles from '@/styles/profile.module.sass';
-import Anchor from '@/components/Anchor';
 
 export function useDesktop() {
   const [isDesktop, setIsDesktop] = useState(false);
