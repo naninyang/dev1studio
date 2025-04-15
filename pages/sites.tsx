@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 import Slider from 'react-slick';
 import Anchor from '@/components/Anchor';
 import styles from '@/styles/sites.module.sass';

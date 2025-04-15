@@ -9,6 +9,8 @@ export const ServicePage = styled.div({
   minHeight: '100vh',
   '@media print': {
     backgroundColor: '#fff',
+    position: 'relative',
+    zIndex: '7777',
   },
 });
 
