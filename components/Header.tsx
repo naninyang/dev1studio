@@ -38,6 +38,10 @@ const Container = styled.header({
   '.headline': {
     display: 'flex',
     gap: rem(12),
+    [mq.maxSmall]: {
+      justifyContent: 'space-between',
+      width: '100%',
+    },
   },
   '& h1': {
     display: 'block',

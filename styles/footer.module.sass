@@ -12,9 +12,12 @@ footer.footer
   backdrop-filter: blur(ds.rem(20))
 
   p
-    font-size: ds.rem(16)
+    font-size: ds.rem(14)
     font-weight: 300
     color: ds.$hex-dayrise
+
+    +ds.mq(minMedium)
+      font-size: ds.rem(16)
 
     strong
       font-weight: 900
