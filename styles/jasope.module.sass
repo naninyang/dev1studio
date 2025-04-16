@@ -27,7 +27,9 @@
     +ds.mq(maxSmall)
       flex-direction: column
       align-items: center
-      width: 100%
+
+    +ds.mq(minMedium)
+      justify-content: center
 
     .thumbnail
       overflow: hidden
@@ -68,7 +70,6 @@
       display: flex
       flex-direction: column
       gap: ds.rem(25)
-      +ds.col
       background-color: ds.$rgba-white70
       backdrop-filter: blur(ds.rem(20))
       border-radius: ds.rem(20)
