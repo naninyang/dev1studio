@@ -31,6 +31,7 @@
 
     .thumbnail
       overflow: hidden
+      position: relative
       border-radius: ds.rem(170)
       width: ds.rem(170)
       height: ds.rem(170)
@@ -40,9 +41,28 @@
         width: ds.rem(270)
         height: ds.rem(270)
 
+      p
+        display: flex
+        align-items: center
+        justify-content: center
+        width: ds.rem(270)
+        height: ds.rem(270)
+        font-size: ds.rem(16)
+        font-weight: 700
+
       img
         width: 100%
         height: 100%
+
+        &:not(.loading)
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 7
+          transition: all 5s cubic-bezier(.4,0,.2,1)
+
+          &.isLoading
+            opacity: 0
 
     .info
       display: flex
@@ -177,3 +197,60 @@
 
         &::after
           content: '”'
+
+.loading
+  display: flex
+  justify-content: center
+  align-items: center
+  flex: 1
+
+  span
+    +ds.screen-reader-only
+
+  i
+    display: block
+    width: ds.rem(50)
+    height: ds.rem(50)
+    border: ds.rem(5) solid transparent
+    border-radius: 50%
+    animation: spin 4s cubic-bezier(.4,0,.2,1) infinite
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+    border-right-color: ds.$hex-dayrise
+    border-bottom-color: ds.$hex-dayrise
+
+  25%
+    transform: rotate(360deg)
+    border: ds.rem(5) solid transparent
+    border-bottom-color: ds.$hex-dayrise
+    border-left-color: ds.$hex-dayrise
+
+  50%
+    transform: rotate(720deg)
+    border: ds.rem(5) solid transparent
+    border-top-color: ds.$hex-dayrise
+    border-left-color: ds.$hex-dayrise
+
+  75%
+    transform: rotate(1080deg)
+    border: ds.rem(5) solid transparent
+    border-top-color: ds.$hex-dayrise
+    border-right-color: ds.$hex-dayrise
+
+  100%
+    transform: rotate(1440deg)
+    border: ds.rem(5) solid transparent
+    border-right-color: ds.$hex-dayrise
+    border-bottom-color: ds.$hex-dayrise
+
+@keyframes loading
+  0%
+    opacity: 0
+
+  70.07%
+    opacity: 1
+
+  100%
+    opacity: 1

@@ -18,6 +18,8 @@ type Jasope = {
 
 export default function Jasope() {
   const [jasope, setJasope] = useState<Jasope[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   useEffect(() => {
     fetch('/api/jasope')
       .then((res) => res.json())
@@ -41,13 +43,29 @@ export default function Jasope() {
             <article key={index}>
               {item.thumbnail[0]?.file?.url && (
                 <div className={styles.thumbnail}>
+                  {!hasError && (
+                    <Image
+                      src="/images/loading.webp"
+                      width={270}
+                      height={270}
+                      alt="이미지 로딩중"
+                      className={styles.loading}
+                    />
+                  )}
+                  {hasError && <p style={{ color: 'white' }}>이미지 로딩 실패</p>}
                   <Image
                     src={item.thumbnail[0].file.url}
                     width={1024}
                     height={1024}
                     unoptimized
                     priority
-                    alt={item.name}
+                    alt="이미지 로딩 완료"
+                    className={isLoading && !hasError ? styles.isLoading : undefined}
+                    onLoad={() => setIsLoading(false)}
+                    onError={() => {
+                      setHasError(true);
+                      setIsLoading(false);
+                    }}
                   />
                 </div>
               )}
