@@ -29,7 +29,7 @@ export default function Preview() {
   }, []);
 
   return (
-    <main style={{ backgroundColor: 'black' }}>
+    <main style={{ backgroundColor: version === 'screen' ? 'black' : 'white' }}>
       <PortfolioViewer data={data} site={site} version={version} />
     </main>
   );
