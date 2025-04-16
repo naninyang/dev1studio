@@ -39,7 +39,6 @@ export default function Resume() {
           setMdx(serialized);
         }
       } catch (error) {
-        console.log('error');
         console.error('이력서 로딩 실패:', error);
       } finally {
         setLoading(false);
@@ -193,11 +192,9 @@ export default function Resume() {
             <h1>이력서</h1>
             <blockquote>
               <p>
-                사용하실 때는 웹브라우저의 <code>인쇄</code> 기능을 사용해 주세요.
+                PDF 파일은 <Anchor href="https://cdn.dev1stud.io/dev1studios/resume_chloe.pdf">여기</Anchor>를 눌러
+                확인하세요.
               </p>
-              <pre>
-                <code>Mac: command + p / Win: ctrl + p</code>
-              </pre>
             </blockquote>
             {(resumeData.data?.essays?.length ?? 0) > 0 &&
               resumeData.data.essays &&
