@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import styled from '@emotion/styled';
 import { hex, rem, mixIn, mq } from '@/styles/designSystem';
@@ -383,31 +384,12 @@ const Content = styled.div({
 
 export default function Portfolio({ onClose }: PortfolioProps) {
   const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
-  const [backHistory, setBackHistory] = useState(false);
 
   useEffect(() => {
     fetch('/api/portfolio')
       .then((res) => res.json())
       .then((data) => setPortfolios(data))
       .catch((err) => console.error(err));
-  }, []);
-
-  useEffect(() => {
-    const referrer = document.referrer;
-
-    if (!referrer) return;
-
-    try {
-      const referrerUrl = new URL(referrer);
-
-      const isFromCondition = referrerUrl.pathname === '/profile';
-
-      if (isFromCondition) {
-        setBackHistory(true);
-      }
-    } catch (err) {
-      console.error('Invalid referrer URL:', err);
-    }
   }, []);
 
   function formatTerm(term: Portfolio['term']): string {
@@ -440,21 +422,23 @@ export default function Portfolio({ onClose }: PortfolioProps) {
     return `${startYear}. ${startMonth}. ~ ${endYear}. ${endMonth}.`;
   }
 
+  const router = useRouter();
+
   return (
-    <Container className={!backHistory ? 'backhistory' : ''}>
+    <Container className={router.asPath === `/profile/portfolio` ? 'backhistory' : ''}>
       <header>
         <div className="cover">
           <div className="en">
-            {backHistory ? (
-              <button type="button" onClick={onClose}>
-                <MiscLeft />
-                <span>이전화면으로</span>
-              </button>
-            ) : (
+            {router.asPath === `/profile/portfolio` ? (
               <Anchor href="/profile">
                 <MiscLeft />
                 <span>이전화면으로</span>
               </Anchor>
+            ) : (
+              <button type="button" onClick={onClose}>
+                <MiscLeft />
+                <span>이전화면으로</span>
+              </button>
             )}
             <div className="summary" lang="en">
               <p>
@@ -572,16 +556,16 @@ export default function Portfolio({ onClose }: PortfolioProps) {
             </Anchor>
           </li>
         </ul>
-        {backHistory ? (
-          <button type="button" onClick={onClose}>
-            <MiscLeft />
-            <span>이전화면으로</span>
-          </button>
-        ) : (
+        {router.asPath === `/profile/portfolio` ? (
           <Anchor href="/profile">
             <MiscLeft />
             <span>이전화면으로</span>
           </Anchor>
+        ) : (
+          <button type="button" onClick={onClose}>
+            <MiscLeft />
+            <span>이전화면으로</span>
+          </button>
         )}
       </footer>
     </Container>

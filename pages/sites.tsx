@@ -241,7 +241,7 @@ export default function Sites() {
                           <Anchor href={site.siteUrl}>{site.siteUrl}</Anchor>
                         )}
                       </div>
-                      <div className={styles.secondary}>
+                      <div className={styles.secondary} aria-label="웹주고 국문발음">
                         {site.siteShort !== 'dev1studios' && `${site.siteKoUrl}닷`}데브원스튜드닷아이오
                       </div>
                       {site.siteShort === 'dev1studios' || site.siteShort === 'develog' || site.siteShort === 'moe' ? (
