@@ -14,6 +14,7 @@ type Jasope = {
   thumbnail: NotionFile[];
   job: string;
   skill: string[];
+  email: string;
 };
 
 export default function Jasope() {
@@ -70,9 +71,15 @@ export default function Jasope() {
                 </div>
               )}
               <div className={styles.info}>
-                <cite>
-                  <strong>{item.name}</strong> <span>{item.kor}</span>
-                </cite>
+                <div className={styles.privacy}>
+                  <cite>
+                    <strong>{item.name}</strong> <span>{item.kor}</span>
+                  </cite>
+                  <dl>
+                    <dt>이메일</dt>
+                    <dd>{item.email}</dd>
+                  </dl>
+                </div>
                 <dl>
                   <div className={styles.general}>
                     <dt>직업</dt>

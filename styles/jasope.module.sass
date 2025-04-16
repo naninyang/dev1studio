@@ -81,15 +81,24 @@
       +ds.mq(maxSmall)
         width: 100%
 
+      .privacy
+        display: flex
+        flex-direction: column
+
+        dl
+          dd
+            font-size: ds.rem(18)
+
+            +ds.mq(maxSmall)
+              font-size: ds.rem(16)
+
       cite
         display: flex
+        align-items: flex-end
+        gap: ds.rem(7)
 
-        +ds.mq(maxSmall)
-          flex-direction: column
-
-        +ds.mq(minMedium)
-          align-items: flex-end
-          gap: ds.rem(12)
+        strong, span
+          line-height: 1
 
         strong
           font-size: ds.rem(27)
@@ -100,12 +109,8 @@
             font-size: ds.rem(37)
 
         span
-          font-size: ds.rem(20)
+          font-size: ds.rem(18)
           font-weight: 500
-          line-height: 1
-
-          +ds.mq(minMedium)
-            line-height: 1.7
 
       dl
         display: flex

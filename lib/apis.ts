@@ -76,6 +76,7 @@ type NotionJasope = {
   thumbnail: NotionFile[];
   job: string;
   skill: string[];
+  email: string;
 };
 
 export async function fetchSites(): Promise<NotionSite[]> {
@@ -223,6 +224,7 @@ export async function fetchJasope(): Promise<NotionJasope[]> {
       thumbnail: { type: 'files'; files: NotionFile[] };
       job: { type: 'rich_text'; rich_text: { plain_text: string }[] };
       skill: { type: 'multi_select'; multi_select: { name: string }[] };
+      email: { type: 'rich_text'; rich_text: { plain_text: string }[] };
     };
 
     return {
@@ -235,6 +237,7 @@ export async function fetchJasope(): Promise<NotionJasope[]> {
       thumbnail: p.thumbnail.files || [],
       job: p.job.rich_text[0]?.plain_text || '',
       skill: p.skill.multi_select.map((s) => s.name),
+      email: p.email.rich_text[0]?.plain_text || '',
     };
   });
 }
