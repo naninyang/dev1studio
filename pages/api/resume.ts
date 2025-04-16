@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { getAuth } from '@/utils/getAuth';
+import { getAuth } from '@/lib/getAuth';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const authToken = await getAuth();

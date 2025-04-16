@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Portfolio, PortfolioSite } from '@/types';
-import PortfolioPdfView from '@/components/PortfolioPdfView';
+import PortfolioViewer from '@/components/PortfolioViewer';
 
 export default function Preview() {
   const [data, setData] = useState<Portfolio[]>([]);
@@ -30,13 +30,9 @@ export default function Preview() {
     setVersion(new URLSearchParams(window.location.search).get('version') ?? 'screen');
   }, []);
 
-  if (process.env.NODE_ENV !== 'development') {
-    return <p>미리보기는 개발 환경에서만 볼 수 있습니다.</p>;
-  }
-
   return (
-    <main>
-      <PortfolioPdfView data={data} site={site} version={version} />
+    <main style={{ backgroundColor: 'black' }}>
+      <PortfolioViewer data={data} site={site} version={version} />
     </main>
   );
 }

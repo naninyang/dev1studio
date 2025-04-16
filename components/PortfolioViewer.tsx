@@ -9,7 +9,7 @@ type Props = {
   version: string;
 };
 
-export default function PortfolioPdfView({ data, site, version }: Props) {
+export default function PortfolioViewer({ data, site, version }: Props) {
   function formatTerm(term: Portfolio['term'], type: string): string {
     if (!term?.start) return '';
 
