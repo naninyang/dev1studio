@@ -22,6 +22,7 @@ export default function Home() {
         pageDescription="UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리의 포트폴리오"
         pageImg={`https://dev1stud.io/images/og-image.webp?ts=${timestamp}`}
       />
+      <p className="seo">UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리의 포트폴리오</p>
       <main className={styles.home}>
         {splash ? (
           <div className={styles.splash} aria-label={'불러오는 중'}>

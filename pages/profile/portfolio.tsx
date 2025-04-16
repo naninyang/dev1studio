@@ -32,6 +32,9 @@ const Container = styled.div({
   gap: rem(25),
   padding: `${rem(82)} ${rem(25)}`,
   width: '100%',
+  '&.backhistory': {
+    backgroundColor: hex.black,
+  },
   '& header': {
     display: 'flex',
     flexDirection: 'column',
@@ -56,7 +59,7 @@ const Container = styled.div({
         display: 'flex',
         flexDirection: 'column',
         gap: rem(27),
-        '& button': {
+        '& button, & a': {
           display: 'flex',
           gap: rem(7),
           background: 'none',
@@ -323,7 +326,7 @@ const Container = styled.div({
         },
       },
     },
-    '& button': {
+    '& button, & > a': {
       display: 'flex',
       gap: rem(7),
       background: 'none',
@@ -380,12 +383,31 @@ const Content = styled.div({
 
 export default function Portfolio({ onClose }: PortfolioProps) {
   const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
+  const [backHistory, setBackHistory] = useState(false);
 
   useEffect(() => {
     fetch('/api/portfolio')
       .then((res) => res.json())
       .then((data) => setPortfolios(data))
       .catch((err) => console.error(err));
+  }, []);
+
+  useEffect(() => {
+    const referrer = document.referrer;
+
+    if (!referrer) return;
+
+    try {
+      const referrerUrl = new URL(referrer);
+
+      const isFromCondition = referrerUrl.pathname === '/profile';
+
+      if (isFromCondition) {
+        setBackHistory(true);
+      }
+    } catch (err) {
+      console.error('Invalid referrer URL:', err);
+    }
   }, []);
 
   function formatTerm(term: Portfolio['term']): string {
@@ -419,14 +441,21 @@ export default function Portfolio({ onClose }: PortfolioProps) {
   }
 
   return (
-    <Container>
+    <Container className={!backHistory ? 'backhistory' : ''}>
       <header>
         <div className="cover">
           <div className="en">
-            <button type="button" onClick={onClose}>
-              <MiscLeft />
-              <span>이전화면으로</span>
-            </button>
+            {backHistory ? (
+              <button type="button" onClick={onClose}>
+                <MiscLeft />
+                <span>이전화면으로</span>
+              </button>
+            ) : (
+              <Anchor href="/profile">
+                <MiscLeft />
+                <span>이전화면으로</span>
+              </Anchor>
+            )}
             <div className="summary" lang="en">
               <p>
                 Figma UX/UI Designer <span>& NextJS Frontend Developer</span>
@@ -543,10 +572,17 @@ export default function Portfolio({ onClose }: PortfolioProps) {
             </Anchor>
           </li>
         </ul>
-        <button type="button" onClick={onClose}>
-          <MiscLeft />
-          <span>이전화면으로</span>
-        </button>
+        {backHistory ? (
+          <button type="button" onClick={onClose}>
+            <MiscLeft />
+            <span>이전화면으로</span>
+          </button>
+        ) : (
+          <Anchor href="/profile">
+            <MiscLeft />
+            <span>이전화면으로</span>
+          </Anchor>
+        )}
       </footer>
     </Container>
   );

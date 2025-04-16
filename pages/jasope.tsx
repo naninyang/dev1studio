@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { NotionFile } from '@/lib/apis';
+import Seo, { originTitle } from '@/components/Seo';
 import styles from '@/styles/jasope.module.sass';
 
 type Jasope = {
@@ -23,9 +24,17 @@ export default function Jasope() {
       .then((data) => setJasope(data))
       .catch((err) => console.error(err));
   }, []);
+  const timestamp = Date.now();
   return (
     <main className={styles.main}>
-      <h1>자소페</h1>
+      <Seo
+        pageTitles={`자기소개 페이지 - ${originTitle}`}
+        pageTitle={`자기소개 페이지`}
+        pageDescription={`UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리의 자기소개.`}
+        pageImg={`https://dev1stud.io/images/og-image.webp?ts=${timestamp}`}
+      />
+      <p className="seo">UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리 자기소개</p>
+      <h1>자기소개 페이지</h1>
       {jasope.length > 0 ? (
         <div className={styles.jasope}>
           {jasope.map((item, index) => (

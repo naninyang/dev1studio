@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { useMediaQuery } from 'react-responsive';
 import Slider from 'react-slick';
+import { useMediaQuery } from 'react-responsive';
 import Anchor from '@/components/Anchor';
+import Seo, { originTitle } from '@/components/Seo';
 import styles from '@/styles/sites.module.sass';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -129,6 +130,14 @@ export default function Sites() {
 
   return (
     <main className={styles.main}>
+      <Seo
+        pageTitles={`DEV1L.sites - ${originTitle}`}
+        pageTitle={`DEV1L.sites`}
+        pageDescription={`UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리가 만든 개인 사이트 모음`}
+        pageImg={`https://dev1stud.io/images/og-image.webp?ts=${timestamp}`}
+      />
+      <p className="seo">UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리가 만든 개인 사이트 모음</p>
+      <h1>DEV1L.sites</h1>
       <div className={styles.container}>
         <div className={styles.content}>
           {sites.length > 0 ? (

@@ -83,6 +83,12 @@ address, cite
 iframe
   display: block
 
+.sr-only, hr, .seo
+  @include ds.screen-reader-only
+
+.sr-only:focus
+  @include ds.visually-hidden-focusable
+
 #__next > header
   @media print
     display: none!important
