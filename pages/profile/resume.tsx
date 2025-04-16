@@ -31,6 +31,7 @@ export default function Resume() {
         const response = await fetch(`/api/resume`);
         const resume = await response.json();
         setResumeData({ data: resume });
+        console.log('api-loaded');
 
         const mdxSource = resume.essays?.[0]?.bio;
         if (mdxSource) {
