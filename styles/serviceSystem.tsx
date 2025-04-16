@@ -11,6 +11,9 @@ export const ServicePage = styled.div({
     backgroundColor: '#fff',
     position: 'relative',
     zIndex: '7777',
+    '& + footer': {
+      display: 'none',
+    },
   },
 });
 

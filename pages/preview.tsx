@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Portfolio, PortfolioSite } from '@/types';
 import PortfolioViewer from '@/components/PortfolioViewer';
+import styles from '@/styles/viewer.module.sass';
 
 export default function Preview() {
   const [data, setData] = useState<Portfolio[]>([]);
@@ -29,7 +30,7 @@ export default function Preview() {
   }, []);
 
   return (
-    <main style={{ backgroundColor: version === 'screen' ? 'black' : 'white' }}>
+    <main className={styles.preview} style={{ backgroundColor: version === 'screen' ? 'black' : 'white' }}>
       <PortfolioViewer data={data} site={site} version={version} />
     </main>
   );
