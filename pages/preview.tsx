@@ -8,8 +8,6 @@ export default function Preview() {
   const [version, setVersion] = useState('');
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'development') return;
-
     const fetchData = async () => {
       const res = await fetch('/api/portfolio');
       const json = await res.json();
