@@ -39,6 +39,7 @@ export default function Resume() {
           setMdx(serialized);
         }
       } catch (error) {
+        console.log('error');
         console.error('이력서 로딩 실패:', error);
       } finally {
         setLoading(false);
