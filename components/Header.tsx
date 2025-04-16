@@ -78,6 +78,11 @@ const Container = styled.header({
     justifyContent: 'center',
     alignItems: 'center',
     color: hex.rise,
+    '&:focus-visible': {
+      '& svg': {
+        opacity: 1,
+      },
+    },
     '& span': {
       ...mixIn.screenReaderOnly,
     },

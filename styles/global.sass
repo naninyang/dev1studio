@@ -38,6 +38,9 @@ a
   text-decoration: none
   -webkit-tap-highlight-color: rgba(255,255,255,.10)
 
+  &:focus
+    outline: 0
+
 fieldset
   margin: 0
   padding: 0
@@ -88,6 +91,11 @@ iframe
 
 .sr-only:focus
   @include ds.visually-hidden-focusable
+  background-color: ds.$hex-white
+  padding: ds.rem(5) ds.rem(7)
+  font-size: ds.rem(20)
+  font-weight: 900
+  color: ds.$hex-accent
 
 #__next > header
   @media print
