@@ -26,7 +26,16 @@
     min-height: ds.rem(800)
 
   h1
-    +ds.screen-reader-only
+    position: absolute
+    z-index: 2222
+    top: ds.rem(104)
+    left: ds.rem(50)
+    font-size: ds.rem(27)
+    font-weight: 900
+    color: ds.$hex-white
+
+    +ds.mq(minLarge)
+      font-size: ds.rem(38)
 
   .profile
     display: flex
@@ -55,53 +64,99 @@
       svg
         display: block
 
-      +ds.mq(minLarge)
+      &:not(.touch)
         svg
+          transition: all .4s cubic-bezier(.4,0,.2,1)
+
           &:nth-of-type(1)
             opacity: .5
-            transition: all .4s cubic-bezier(.4,0,.2,1)
-            width: ds.rem(453)
 
           &:nth-of-type(2)
             opacity: 0
-            width: 0!important
-            transition: all .4s cubic-bezier(.4,0,.2,1)
+            width: 0
+            height: 0
 
-        &:hover, &:focus
+        &:hover, &:focus-visible
           svg
             opacity: 1
 
-    +ds.mq(maxMedium)
-      button
+            &:nth-of-type(2)
+              height: 0
+
+              +ds.mq(minLarge)
+                height: ds.rem(60)
+
+    button
+      &:not(.touch), &.touch
         svg
-          height: auto
-
           &:nth-of-type(1)
-            width: ds.rem(153)!important
+            width: ds.rem(153)
+            height: ds.rem(62)
 
-          &:nth-of-type(2)
-            width: ds.rem(96)!important
+      &:not(.touch)
+        &:hover, &:focus-visible
+          svg:nth-of-type(2)
+            width: ds.rem(96)
+            height: ds.rem(19)
 
-      a
+      &.touch
+        svg:nth-of-type(2)
+          width: ds.rem(96)
+          height: ds.rem(19)
+
+      +ds.mq(minLarge)
+        &:not(.touch), &.touch
+          svg
+            &:nth-of-type(1)
+              width: ds.rem(453)
+              height: ds.rem(185)
+
+        &:not(.touch)
+          &:hover, &:focus-visible
+            svg:nth-of-type(2)
+              width: ds.rem(290)
+              height: ds.rem(61)
+
+        &.touch
+          svg:nth-of-type(2)
+            width: ds.rem(290)
+            height: ds.rem(61)
+
+    a
+      &:not(.touch), &.touch
         svg
-          height: auto
-
           &:nth-of-type(1)
-            width: ds.rem(107)!important
+            width: ds.rem(153)
+            height: ds.rem(62)
 
-          &:nth-of-type(2)
-            width: ds.rem(54)!important
-
-    +ds.mq(minLarge)
-      button
-        &:hover, &:focus
+      &:not(.touch)
+        &:hover, &:focus-visible
           svg:nth-of-type(2)
-            width: ds.rem(289)!important
+            width: ds.rem(54)
+            height: ds.rem(19)
 
-      a
-        &:hover, &:focus
+      &.touch
+        svg:nth-of-type(2)
+          width: ds.rem(54)
+          height: ds.rem(19)
+
+      +ds.mq(minLarge)
+        &:not(.touch), &.touch
+          svg
+            &:nth-of-type(1)
+              width: ds.rem(324)
+              height: ds.rem(101)
+
+        &:not(.touch)
+          &:hover, &:focus-visible
+            svg:nth-of-type(2)
+              width: ds.rem(163)
+              height: ds.rem(61)
+
+        &.touch
           svg:nth-of-type(2)
-            width: ds.rem(162)!important
+            width: ds.rem(163)
+            height: ds.rem(61)
 
   dialog
     margin: 0

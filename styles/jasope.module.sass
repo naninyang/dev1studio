@@ -7,6 +7,9 @@
   position: relative
   background: url(/images/summary.webp) fixed no-repeat 50% 50%/cover
 
+  &.safar1studio
+    background-attachment: scroll
+
   +ds.mq(minLarge)
     padding: ds.rem(104) ds.rem(50) ds.rem(50)
 
@@ -64,7 +67,7 @@
           top: 0
           left: 0
           z-index: 7
-          transition: all 3s cubic-bezier(.4,0,.2,1)
+          transition: all .7s cubic-bezier(.4,0,.2,1)
 
           &.isLoading
             opacity: 0

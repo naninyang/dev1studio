@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import { isIOS } from 'react-device-detect';
 import Slider from 'react-slick';
 import { useMediaQuery } from 'react-responsive';
 import Anchor from '@/components/Anchor';
@@ -35,6 +36,7 @@ export default function Sites() {
   const [sites, setSites] = useState<Site[]>([]);
   const [isFront, setIsFront] = useState(true);
   const [activePreview, setActivePreview] = useState<Site | null>(null);
+  const [isAppleOs, setIsAppleOs] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const isDesktop = useDesktop();
 
@@ -55,6 +57,13 @@ export default function Sites() {
     return () => {
       dialog?.removeEventListener('mousedown', handleOutsideClick);
     };
+  }, []);
+
+  const isIPadOS = () => {
+    return navigator.userAgent.includes('Macintosh') && 'ontouchend' in document;
+  };
+  useEffect(() => {
+    setIsAppleOs(isIOS || isIPadOS);
   }, []);
 
   useEffect(() => {
@@ -130,7 +139,7 @@ export default function Sites() {
   const timestamp = Date.now();
 
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main} ${isAppleOs ? styles.safar1studio : ''}`}>
       <Seo
         pageTitles={`DEV1L.sites - ${originTitle}`}
         pageTitle={`DEV1L.sites`}

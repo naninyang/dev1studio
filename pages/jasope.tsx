@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { isIOS } from 'react-device-detect';
 import { NotionFile } from '@/lib/apis';
 import Seo, { originTitle } from '@/components/Seo';
 import styles from '@/styles/jasope.module.sass';
@@ -19,8 +20,16 @@ type Jasope = {
 
 export default function Jasope() {
   const [jasope, setJasope] = useState<Jasope[]>([]);
+  const [isAppleOs, setIsAppleOs] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const isIPadOS = () => {
+    return navigator.userAgent.includes('Macintosh') && 'ontouchend' in document;
+  };
+  useEffect(() => {
+    setIsAppleOs(isIOS || isIPadOS);
+  }, []);
+
   useEffect(() => {
     fetch('/api/jasope')
       .then((res) => res.json())
@@ -29,7 +38,7 @@ export default function Jasope() {
   }, []);
   const timestamp = Date.now();
   return (
-    <main className={styles.main}>
+    <main className={`${styles.main} ${isAppleOs ? styles.safar1studio : ''}`}>
       <Seo
         pageTitles={`자기소개 페이지 - ${originTitle}`}
         pageTitle={`자기소개 페이지`}
