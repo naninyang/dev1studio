@@ -17,7 +17,7 @@
     display: flex
     gap: ds.rem(2)
     position: absolute
-    z-index: 2222
+    z-index: 1000
     top: ds.rem(79)
     left: ds.rem(25)
     color: ds.$hex-white
@@ -56,7 +56,7 @@
 
     +ds.mq(maxMedium)
       position: relative
-      height: 100vh
+      height: calc(100vh - ds.rem(147))
 
     .content
       .loading
