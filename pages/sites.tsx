@@ -203,7 +203,10 @@ export default function Sites() {
                     <footer>
                       <div className={styles.link}>
                         {site.siteShort === 'dev1studios' || site.siteShort === 'moe' ? (
-                          site.siteUrl
+                          <>
+                            {site.siteShort === 'dev1studios' && `${site.siteUrl} (현재 웹사이트)`}
+                            {site.siteShort === 'moe' && `${site.siteUrl} (디비 에러 수정 중)`}
+                          </>
                         ) : (
                           <Anchor href={site.siteUrl}>{site.siteUrl}</Anchor>
                         )}
@@ -259,7 +262,10 @@ export default function Sites() {
                     <footer>
                       <div className={styles.primary}>
                         {site.siteShort === 'dev1studios' || site.siteShort === 'moe' ? (
-                          site.siteUrl
+                          <>
+                            {site.siteShort === 'dev1studios' && `${site.siteUrl} (현재 웹사이트)`}
+                            {site.siteShort === 'moe' && `${site.siteUrl} (디비 에러 수정 중)`}
+                          </>
                         ) : (
                           <Anchor href={site.siteUrl}>{site.siteUrl}</Anchor>
                         )}
