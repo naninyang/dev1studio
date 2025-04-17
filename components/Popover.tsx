@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from '@/styles/popover.module.sass';
 
-type Position = 'top' | 'right' | 'bottom' | 'left';
-
 type PopoverContent = {
   html: string;
   x: number;
