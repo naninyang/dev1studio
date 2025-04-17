@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Head from 'next/head';
 import { Portfolio, PortfolioSite } from '@/types';
 import { MiscEmail, MiscHome, MiscSlack } from './Svgs';
 import styles from '@/styles/viewer.module.sass';
@@ -43,6 +44,7 @@ export default function PortfolioViewer({ data, site, version }: Props) {
 
   return (
     <div className={version === 'screen' ? styles.screen : styles.print}>
+      <Head>고아리 포트폴리오 {version === 'screen' ? '(화면용)' : '(프린트용'}</Head>
       <div className={styles.viewer}>
         <div className={styles.module}>
           <header>
