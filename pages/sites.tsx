@@ -7,6 +7,7 @@ import Seo, { originTitle } from '@/components/Seo';
 import styles from '@/styles/sites.module.sass';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { triggerPopover } from '@/lib/triggerPopover';
 
 type Site = {
   id: string;
@@ -137,7 +138,20 @@ export default function Sites() {
         pageImg={`https://dev1stud.io/images/og-image.webp?ts=${timestamp}`}
       />
       <p className="seo">UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리가 만든 개인 사이트 모음</p>
-      <h1>DEV1L.sites</h1>
+      <div className={styles.headline}>
+        <h1>DEV1L.sites</h1>
+        <p>
+          자체 제작한 웹사이트를 보여드려요.
+          <button
+            type="button"
+            onClick={(e) =>
+              triggerPopover(e.currentTarget, '<p>디자인 컨셉은 명함에서 아이디어를 얻었습니다.</p>', 'bottom')
+            }
+          >
+            <span>컨셉 설명</span>
+          </button>
+        </p>
+      </div>
       <div className={styles.container}>
         <div className={styles.content}>
           {sites.length > 0 ? (

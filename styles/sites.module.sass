@@ -10,15 +10,48 @@
     align-items: center
     padding: ds.rem(104) ds.rem(50) ds.rem(50)
 
-  h1
-    +ds.screen-reader-only
+  .headline
+    display: flex
+    gap: ds.rem(2)
+    position: absolute
+    z-index: 2222
+    top: ds.rem(104)
+    left: ds.rem(50)
+    color: ds.$hex-white
+    line-height: 1
+
+    +ds.mq(maxMedium)
+      flex-direction: column
+
+    +ds.mq(minLarge)
+      align-items: flex-end
+      gap: ds.rem(23)
+
+    h1
+      font-size: ds.rem(27)
+      font-weight: 900
+
+      +ds.mq(minLarge)
+        font-size: ds.rem(38)
+
+    p
+      display: flex
+      align-self: center
+      gap: ds.rem(7)
+      font-weight: 500
+      line-height: ds.rem(27)
+
+      button
+        border-radius: ds.rem(27)
+        padding: 0 ds.rem(12)
+        height: ds.rem(27)
 
   .container
     animation: card 1s cubic-bezier(.4,0,.2,1)
 
     +ds.mq(maxMedium)
       position: relative
-      height: calc(100vh - ds.rem(104))
+      height: 100vh
 
     .content
       .loading
@@ -235,6 +268,7 @@
                 color: ds.$hex-white
 
         header
+          position: relative
           display: flex
           gap: ds.rem(7)
           font-size: ds.rem(16)

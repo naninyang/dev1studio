@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { GA_TRACKING_ID } from '@/lib/gtag';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Popover from '@/components/Popover';
 import '@/styles/global.sass';
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <hr id="content" />
       <Component {...pageProps} />
       <Footer />
+      <Popover />
     </>
   );
 }
