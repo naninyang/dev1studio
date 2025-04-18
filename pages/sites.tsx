@@ -202,16 +202,13 @@ export default function Sites() {
                     </div>
                     <footer>
                       <div className={styles.link}>
-                        {site.siteShort === 'dev1studios' || site.siteShort === 'moe' ? (
-                          <>
-                            {site.siteShort === 'dev1studios' && `${site.siteUrl} (현재 웹사이트)`}
-                            {site.siteShort === 'moe' && `${site.siteUrl} (디비 에러 수정 중)`}
-                          </>
+                        {site.siteShort === 'dev1studios' ? (
+                          site.siteShort === 'dev1studios' && `${site.siteUrl} (현재 웹사이트)`
                         ) : (
                           <Anchor href={site.siteUrl}>{site.siteUrl}</Anchor>
                         )}
                       </div>
-                      {site.siteShort === 'dev1studios' || site.siteShort === 'develog' || site.siteShort === 'moe' ? (
+                      {site.siteShort === 'dev1studios' || site.siteShort === 'develog' ? (
                         <p>!미리보기 없음!</p>
                       ) : (
                         <div className={styles.button}>
@@ -261,19 +258,16 @@ export default function Sites() {
                     </div>
                     <footer>
                       <div className={styles.primary}>
-                        {site.siteShort === 'dev1studios' || site.siteShort === 'moe' ? (
-                          <>
-                            {site.siteShort === 'dev1studios' && `${site.siteUrl} (현재 웹사이트)`}
-                            {site.siteShort === 'moe' && `${site.siteUrl} (디비 에러 수정 중)`}
-                          </>
+                        {site.siteShort === 'dev1studios' ? (
+                          <>{site.siteShort === 'dev1studios' && `${site.siteUrl} (현재 웹사이트)`}</>
                         ) : (
                           <Anchor href={site.siteUrl}>{site.siteUrl}</Anchor>
                         )}
                       </div>
-                      <div className={styles.secondary} aria-label="웹주고 국문발음">
+                      <div className={styles.secondary} aria-label="웹주소의 국문발음">
                         {site.siteShort !== 'dev1studios' && `${site.siteKoUrl}닷`}데브원스튜드닷아이오
                       </div>
-                      {site.siteShort === 'dev1studios' || site.siteShort === 'develog' || site.siteShort === 'moe' ? (
+                      {site.siteShort === 'dev1studios' || site.siteShort === 'develog' ? (
                         <p>!미리보기 없음!</p>
                       ) : (
                         <div className={styles.button}>
