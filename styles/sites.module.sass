@@ -394,20 +394,32 @@
 
     .images
       background-color: ds.$hex-white
-      display: flex
-      gap: ds.rem(23)
       border-radius: ds.rem(20)
       padding: ds.rem(23)
-
-      +ds.mq(minLarge)
-        gap: ds.rem(12)
+      max-width: calc(100vw - ds.rem(100))
+      max-height: calc(100vh - ds.rem(208))
+      width: 100%
+      overflow: auto
 
       +ds.mq(maxMedium)
+        display: flex
+        gap: ds.rem(23)
         flex-direction: column
+
+      +ds.mq(minLarge)
+        .dummy
+          display: inline-flex
+          width: ds.rem(12)
 
       .image
         +ds.mq(minLarge)
-          +ds.col
+          display: inline-flex
+          aspect-ratio: 1641 / 2361
+          width: calc(33.33% - ds.rem(8))
+
+        +ds.mq(maxMedium)
+          .dummy
+            display: none
 
         img
           aspect-ratio: 1291 / 2797
@@ -416,6 +428,8 @@
 
           +ds.mq(minLarge)
             aspect-ratio: 1641 / 2361
+            width: auto
+            height: 100%
 
 @keyframes card
   0%

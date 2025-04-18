@@ -306,16 +306,19 @@ export default function Sites() {
             </div>
             <div className={styles.images}>
               {activePreview.timestamp.map((time, index) => (
-                <div className={styles.image} key={index}>
-                  <Image
-                    src={`https://cdn.dev1stud.io/dev1studios/${activePreview.siteShort}-${isDesktop ? 'pc' : 'mo'}-${time}.webp`}
-                    width={isDesktop ? 1641 : 1291}
-                    height={isDesktop ? 2361 : 2797}
-                    unoptimized
-                    priority
-                    alt=""
-                  />
-                </div>
+                <>
+                  {index > 0 && <div className={styles.dummy} />}
+                  <div className={styles.image} key={index}>
+                    <Image
+                      src={`https://cdn.dev1stud.io/dev1studios/${activePreview.siteShort}-${isDesktop ? 'pc' : 'mo'}-${time}.webp`}
+                      width={isDesktop ? 1641 : 1291}
+                      height={isDesktop ? 2361 : 2797}
+                      unoptimized
+                      priority
+                      alt=""
+                    />
+                  </div>
+                </>
               ))}
             </div>
           </div>

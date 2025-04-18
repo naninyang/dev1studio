@@ -63,7 +63,7 @@ const PreviewDev1studio = () => {
       <h1>Profile</h1>
       <div className={styles.profile}>
         <button type="button" onClick={() => openDialog()} className={isMobile ? styles.touch : ''}>
-          <span>{isMobile ? 'true' : 'false'} 포트폴리오</span>
+          <span>포트폴리오</span>
           <ProfilePortfolioEng />
           <ProfilePortfolioKor />
         </button>
