@@ -43,7 +43,7 @@ export default function Jasope() {
         pageTitles={`자기소개 페이지 - ${originTitle}`}
         pageTitle={`자기소개 페이지`}
         pageDescription={`UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리의 자기소개.`}
-        pageImg={`https://dev1stud.io/images/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://dev1stud.io/images/og-jasope.webp?ts=${timestamp}`}
       />
       <p className="seo">UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리 자기소개</p>
       <h1>자기소개 페이지</h1>

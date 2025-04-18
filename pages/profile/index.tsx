@@ -8,9 +8,9 @@ import styles from '@/styles/profile.module.sass';
 
 const PreviewDev1studio = () => {
   const [isPortfolio, setIsPortfolio] = useState(false);
-  const portfolioRef = useRef<HTMLDialogElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isAppleOs, setIsAppleOs] = useState(false);
+  const portfolioRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -57,7 +57,7 @@ const PreviewDev1studio = () => {
         pageTitles={`DEV1L.sites - ${originTitle}`}
         pageTitle={`DEV1L.sites`}
         pageDescription={`UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리의 프로필.`}
-        pageImg={`https://dev1stud.io/images/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://dev1stud.io/images/og-profile.webp?ts=${timestamp}`}
       />
       <p className="seo">UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리의 포트폴리오와 이력서</p>
       <h1>Profile</h1>

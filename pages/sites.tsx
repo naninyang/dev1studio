@@ -144,7 +144,7 @@ export default function Sites() {
         pageTitles={`DEV1L.sites - ${originTitle}`}
         pageTitle={`DEV1L.sites`}
         pageDescription={`UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리가 만든 개인 사이트 모음`}
-        pageImg={`https://dev1stud.io/images/og-image.webp?ts=${timestamp}`}
+        pageImg={`https://dev1stud.io/images/og-site.webp?ts=${timestamp}`}
       />
       <p className="seo">UX 디자이너, 웹퍼블리셔 & 프론트엔드 개발자 O612 고아리가 만든 개인 사이트 모음</p>
       <div className={styles.headline}>
