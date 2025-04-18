@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Head from 'next/head';
 import { Portfolio, PortfolioSite } from '@/types';
 import { MiscEmail, MiscHome, MiscSlack } from './Svgs';
@@ -72,14 +71,7 @@ export default function PortfolioViewer({ data, site, version }: Props) {
                 </h3>
               </div>
               <div className={styles.content}>
-                <Image
-                  src={`https://cdn.dev1stud.io/dev1studios/${item.name}.webp`}
-                  width="450"
-                  height="335"
-                  unoptimized
-                  priority
-                  alt=""
-                />
+                <img src={`https://cdn.dev1stud.io/dev1studios/${item.name}.webp`} alt="" />
                 <dl>
                   <div>
                     <dt>클라이언트</dt>
@@ -140,14 +132,7 @@ export default function PortfolioViewer({ data, site, version }: Props) {
                 </h3>
               </div>
               <div className={styles.content}>
-                <Image
-                  src={`https://cdn.dev1stud.io/dev1studios/${item.name}.webp`}
-                  width="450"
-                  height="335"
-                  unoptimized
-                  priority
-                  alt=""
-                />
+                <img src={`https://cdn.dev1stud.io/dev1studios/${item.name}.webp`} alt="" />
                 <dl>
                   <div>
                     <dt>클라이언트</dt>
